@@ -190,7 +190,6 @@ pe.py               100%[===================>]     214  --.-KB/s    in 0s
 2022-08-21 06:17:39 (21.7 MB/s) - 'pe.py' saved [214/214]
 
 scriptmanager@bashed:/scripts$ mv pe.py test.py
-mv pe.py test.py
 ```
 
 ```bash
