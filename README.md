@@ -51,4 +51,4 @@
 - [ ] Previse
 - [ ] Forge
 - [ ] Horizontall
-- [ ] Shibboleth
+- [x] Shibboleth
