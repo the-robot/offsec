@@ -97,7 +97,7 @@ myproject
 user.txt
 
 strapi@horizontall:~$ cat /home/developer/user.txt
-dcf7ae49d0ad0643785fccad6b16e712
+dcf7a***
 ```
 
 ## adding SSH key
@@ -210,5 +210,5 @@ root@horizontall:/home/developer/myproject/public# id
 uid=0(root) gid=0(root) groups=0(root)
 
 root@horizontall:/home/developer/myproject/public# cat /root/root.txt
-4d7e647a6a228bf8e8faac22f53dfddf
+4d7e6***
 ```
