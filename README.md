@@ -50,5 +50,5 @@
 - [ ] Seal
 - [ ] Previse
 - [ ] Forge
-- [ ] Horizontall
+- [x] Horizontall
 - [x] Shibboleth
