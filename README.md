@@ -49,6 +49,6 @@
 - [ ] Pit
 - [ ] Seal
 - [ ] Previse
-- [ ] Forge
+- [x] Forge
 - [x] Horizontall
 - [x] Shibboleth
