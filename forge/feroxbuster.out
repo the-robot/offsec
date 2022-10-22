@@ -1,0 +1,6 @@
+200      GET       72l       92w     2050c http://forge.htb/
+301      GET        4l       24w      224c http://forge.htb/uploads => http://forge.htb/uploads/
+200      GET       33l       58w      929c http://forge.htb/upload
+301      GET        9l       28w      307c http://forge.htb/static => http://forge.htb/static/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://forge.htb/static (Apache)
+403      GET        9l       28w      274c http://forge.htb/server-status
