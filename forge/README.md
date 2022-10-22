@@ -1,4 +1,4 @@
-	# Scan
+# Scan
 
 ```bash
 ghost@localhost [02:27:00] [~/Documents/hacking/tj-null-boxes/forge] [master]
