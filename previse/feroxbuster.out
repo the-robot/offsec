@@ -1,0 +1,6 @@
+302      GET       71l      164w     2801c http://10.10.11.104/ => login.php
+301      GET        9l       28w      309c http://10.10.11.104/js => http://10.10.11.104/js/
+301      GET        9l       28w      310c http://10.10.11.104/css => http://10.10.11.104/css/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.11.104/css (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.11.104/js (Apache)
+403      GET        9l       28w      277c http://10.10.11.104/server-status

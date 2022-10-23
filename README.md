@@ -48,7 +48,7 @@
 - [ ] Knife
 - [ ] Pit
 - [ ] Seal
-- [ ] Previse
+- [x] Previse
 - [x] Forge
 - [x] Horizontall
 - [x] Shibboleth
