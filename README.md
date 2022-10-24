@@ -51,7 +51,7 @@
 - [ ] Armageddon
 - [ ] Knife
 - [ ] Pit
-- [ ] Seal
+- [x] Seal
 - [x] Previse
 - [x] Forge
 - [x] Horizontall

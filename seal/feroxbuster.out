@@ -1,0 +1,7 @@
+302      GET        0l        0w        0c https://seal.htb/images => http://seal.htb/images/
+200      GET      518l     1140w    19737c https://seal.htb/
+302      GET        0l        0w        0c https://seal.htb/admin => http://seal.htb/admin/
+302      GET        0l        0w        0c https://seal.htb/icon => http://seal.htb/icon/
+302      GET        0l        0w        0c https://seal.htb/css => http://seal.htb/css/
+302      GET        0l        0w        0c https://seal.htb/js => http://seal.htb/js/
+302      GET        0l        0w        0c https://seal.htb/manager => http://seal.htb/manager/

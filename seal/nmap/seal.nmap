@@ -1,0 +1,1 @@
+# Nmap 7.93 scan initiated Mon Oct 24 12:09:38 2022 as: nmap -sC -sV -oA nmap/seal -v 10.10.10.250
