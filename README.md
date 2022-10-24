@@ -50,7 +50,7 @@
 - [ ] ScriptKiddie
 - [ ] Armageddon
 - [ ] Knife
-- [ ] Pit
+- [x] Pit
 - [x] Seal
 - [x] Previse
 - [x] Forge

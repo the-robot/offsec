@@ -1,0 +1,2135 @@
+--------------------------------------------------------------------------------
+                     Changes in version 5.1.15
+--------------------------------------------------------------------------------
+- Improved import from file system
+- HTTP Proxy for access on external extension repository can be set
+- Do not use unzip in ExtensionMgr anymore
+- fix version compare on info page
+- allow one page mode on search page
+- fix import of older extension versions from repository
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.1.14
+--------------------------------------------------------------------------------
+- allow mimetype to specify documents which can be edited online
+- show number of indexing tasks in progress bar
+- fix comparison of last indexing time with creation date of document content
+- new hooks leftContentPre and leftContentPost
+- minimize sql queries when fetching sub folders and documents of a folder
+- custom attributes can be validated in a hook
+- document attributes comment, keywords, categories, expiration date, and sequence
+  can be turned off in the configuration
+- workflows can be turned off completely
+- Extension can be enabled/disabled in the extension manager, the previously
+  used method by setting a parameter in the extension's config file will no
+  longer work.
+- clean up code for managing extensions
+- fix renaming of folders via webdav
+- fix list of expired documents on MyDocuments page
+- pass showtree to ViewDocument (Closes: #462)
+- fix upgrade script for sqlite3
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.1.13
+--------------------------------------------------------------------------------
+- make use of backup dir, do not allow backup if backup dir is not set
+- the referer parameter in op/op.Settings.php is turned into an url before used
+  for redirect
+- Import from filesystem can read a file with metadata
+- drop folder chooser can be put multiple times on a page
+- add section in README.Install.md on how to secure the configuration
+- fix php error when removing a version of a document
+- major rework of ViewFolder page, most parts of the page are now loaded by ajax
+- do not set mandatory reviewer when document is uploaded and workflow mode is
+  set to 'traditional without review'.
+- turn off auto complete for date fields
+- new hook pageNavigationBar in bootstrap, preContent, postContent in ViewDocument
+- major update of italian translation
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.1.12
+--------------------------------------------------------------------------------
+- fix for CVE-2019-12932 (Persistent or Stored XSS), excaping the search
+  result in the autocompletion search form placed in the header
+- fix more XSS problems on ViewDocument page
+- folder/document list can be sorted by name, date, sequence (ascending or descending)
+- search result can be sorted by name, date (ascending or descending)
+- do not check for Log.php during installation anymore, it's part of the
+  vendor directory anyway
+- fix uploading documents from drop folder
+- replace placeholders in email body header and footer
+- SeedDMS_EmailNotify::toIndividual() can send attachments
+- fix for searching a document with the same name, which sometimes found a duplicate
+  name even if it didn't exist
+- add config option for checking of duplicate subfolder names in the same folder
+- rest api also checks for duplicate folder/document names if turned on
+- before moving a document/folder the target folder is checked for an object with
+  the same name, if this is turned on in the configuration
+- new controller EmptyFolder (currently not used)
+- check for duplicate mails to the same group when a workflow was triggered
+- new hook to output clipboard items
+- turn on load on demand again in the folder tree
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.1.11
+--------------------------------------------------------------------------------
+- fix for CVE-2019-12744 (Remote Command Execution through unvalidated
+  file upload), add .htaccess file to data directory, better documentation
+  for installing seeddms
+- fix for CVE-2019-12745 (Persistent or Stored XSS in UsrMgr) and
+  CVE-2019-12801 (Persistent or Stored XSS in GroupMgr), propperly escape
+  strings used in Select2 js library used by UsrMgr and GroupMgr
+- do not show attributes in search results in extra column anymore
+- fix setting language during login (Closes #437)
+- fix indexing documents even if no preIndexDocument hook is set (Closes #437)
+- fix moving documents on the clipboard into the current folder
+- new hook 'footNote' in class Bootstrap
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.1.10
+--------------------------------------------------------------------------------
+- add new hook on ViewDetails page
+- running Controller::factory() will include class file only once
+- use only Packagist for external dependencies
+- set configured command timeout when creating pdf preview
+- show numbers of reviews in main menu again
+- do not send multiple emails after triggering a workflow transition, if a user
+  is involved in more than one of the following transitions
+- fix javascript errors in out/out.TriggerWorkflow.php
+- minor corrections in worklflow manager
+- fix lots of javascript errors when removing, rewinding a workflow and
+  running, returning from a subworkflow
+- show splash messages after triggering a workflow transition
+- reindex document version also if time of last indexing is equal to creation
+  time of document version
+- allow mimetypes (not just file extensions) in config variable viewOnlineFileTypes
+- added Slim-Framework for a simple router
+- move most of the login code into a controller, added more hooks in login process
+- failed login is reported in log file
+- update of cytoscape library, fix output of workflow on TriggerWorkflowGraph
+- call hook preIndexDocument and postAddDocument even if the hook addDocument
+  was implemented by a user extension
+- call hook preIndexDocument and postUpdateDocument even if the hook updateDocument
+  was implemented by a user extension
+- call hook postEditFolder even if the hook editFolder was implemented by a
+  user extension
+- whether the apache module xsendfile is used, can be configured
+- add hooks for filtering tasks shown in the menu bar
+- allow to set more parameters when upload a document or creating a new folder
+  via restapi
+- add an input field on the substitute user and extension list page for filtering
+  table rows by string
+- do not list users/groups in select menu on DocumentAccess page which already
+  has an access right
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.1.9
+--------------------------------------------------------------------------------
+- show messages when access rights for folders are being changed
+- set date field in mails send (See #334)
+- fix check for errors when a folder, document or document file is edited
+- use controller RemoveDocument when delete a document in op/op.Ajax.php
+  (partially solves #408)
+- catch error when updating a document fails (Closes #410)
+- use always 'Send from' address as Return-Path when set, only if not set the
+  logged in user's email will be used (Closes #418)
+- show the debug output when sendind a test mail
+- add hooks add hooks folderListPreContent and folderListPostContent in
+  class.ViewFolder.php
+- do not redirect to ForcePassword page if out.Logout.php was opened. This
+  allows to at least logout when the forced password change happens (Closes #421)
+- set selection menu for expiration to 'date' if date is entered (Closes #423)
+- check if a new password is identical to the current password and
+  password history check > 0 (Closes #424)
+- propperly encode url for following pages of search result (Closes $426)
+- set date of folder in webdav view
+- fix output of status on approval/review summary page
+- pass context to getAccessMode()
+- add opensearch description
+- make buttons on admin page smaller
+- pass optional parameter to hook documentListItem() which turns off the
+  surrounding tr tag
+- do not be strict anymore when checking if config value of extension is
+  in list of possible values (Closes #413)
+- mtime of files and folders can be taken over when importing from filesystem
+- fix sending emails in op/op.Ajax.php (Closes #417)
+- inform subscribers of parent folder if a folder is deleted (Closes #416)
+- remove duplicate subscribers from notification list (Closes #415)
+- inform subscriber of a folder which has been added, previously only the
+  subscribers of the parent folder were informed.
+- do not make subscribers of docs/folders selectable anymore if they are
+  already subscribed (Closes #414)
+- use the same layout for class.FolderNotify.php as for class.DocumentNotify.php
+- add another hook for sending the notification email (Closes #419)
+- fix checking passwords in UsrMgr (Closes #420)
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.1.8
+--------------------------------------------------------------------------------
+- fix javascript errors when an error page was shown
+- add new extraTabs in ViewDocument for adding more tabs
+- fix validation of maxuplodsize in fine uploader
+- do not leak information in calendar about documents the logged in user has
+  no read access on
+- fix vulnerability when uploading a new file with the fine uploader, make
+  sure the chunk identifier contains only allowed chars '[0-9a-f-]' (CVE-2018-12939
+  and CVE-2018-12940)
+- fix vulnerability when clearing the cache, make sure the cache directory
+  to clean actually exists. (CVE-2018-12941)
+- prevent cross side scripting when loading the dashboard, removed dashboard
+  as it was never finished anyway (CVE-2018-12944)
+- prevent cross side scripting when url parameter 'action' is manipulated,
+  url parameter is run through htmlspecialchars() before output (CVE-2018-12943)
+- fix possible sql-injection, do not use integers in sql statement before
+  casting them to int (CVE-2018-12942)
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.1.7
+--------------------------------------------------------------------------------
+- PLEASE READ doc/README.Dist-Layout WHEN UPGRADING!!!!
+- support for upload/import/download of extensions
+- extension can have a changelog file
+- remove ancient code to upgrade from old config file
+- place all log files in contentDir/log
+- add readme for new dist layout
+- do not list empty groups as reviewer/approver
+- fix sending notification when document attributes change
+- sending notification when folder attributes change
+- check if converters are set in out/out.ViewDocument.php at all (Closes #394)
+- do not remove user when transfering objects
+- do not periodically count tasks if task list in menu is turned off
+- use utf8_basename() in op.ImportFS.php
+- update font-awesome from 3.1.0 to 3.2.1
+- merged changes up to 5.0.14
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.1.6
+--------------------------------------------------------------------------------
+- fix wrong check in restapi (part of #373)
+- mayApprove() and mayReview() require the status of the document to be
+  S_DRAFT_APP resp. S_DRAFT_REV
+- add preview for webm videos (Closes #374)
+- add support for apache mod_xsendfile, minor optimization of file download (see #382)
+- animate button to download more objects in folder list when loading is active
+- use converters for creating preview images as configured in settings (Closes #389)
+- propperly check if user is already in database when doing ldap auth (Closes #388)
+- list linked documents on the ViewDocument page in the same way as in other document lists
+- fix 2-factor authentification
+- configuration variables in extension of type 'select' may have an empty option
+- default position of documents/folders can be set in configuration (Closes #381)
+- attribute values can be deleted from all folders, documents
+- new settings to disallow upload of documents with just a reviewer in traditional
+  workflow mode
+- webdav and various script use the controller framework instead of calling
+  SeedDMS_Core methods
+- do not verify peer name and certificate when connecting to smtp server
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.1.5
+--------------------------------------------------------------------------------
+- add controller for AttributeMgr
+- converters for image previews and pdf previews can be configured in settings
+- show list of documents having the selected category on page for managing
+  categories
+- use same layout for group and category manager as already used in user manager
+- meta data of attachments can be edited
+- show number of reverse document links in folder/document list
+- documents can be transfered to another user (Closes partly #368)
+- list of folders/documents on ViewFolder page can be limited, more objects
+  will be loaded when user scrolls to the end of the page
+- add more hooks in ViewFolder
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.1.4
+--------------------------------------------------------------------------------
+- fix javascript error when indexing document, because the indexer was also
+  created when the js-code was requested (Closes #340)
+- new list of expired documents
+- access on document links and attachments can be controlled by a hook
+- move AddSubFolder code into controller, add hooks equivalent to AddDocment (Closes #359)
+- add list of expired documents to MyDocument page
+- move code of DocumentAccess and EditDocument into controller
+- make width of preview images in drop folder configurable
+- hide pager on search page when all folders/documents are listed
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.1.3
+--------------------------------------------------------------------------------
+- add link to search for attribute value in attribute mgr
+- fix output of validation errors in attribute mgr
+- check if user has access on document and is not disabled if set as
+  reviewer, approver
+- notifications are only send to none disabled users
+- nicer layout in user manager, group buttons, more information
+- merged changes from 5.0.13
+- show number of users where the select user is a mandatory reviewer/approver of
+- fix upload of attachments
+- documents, folders, files, events can be moved to a new user
+- do not show quota information in user manager if quotas are turn off
+- files in drop folder can be listed in main menu
+- webdav can use orig. filename of last version instead of document name (experimental)
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.1.2
+--------------------------------------------------------------------------------
+- do not show spinner when clipboard is loaded in menu (prevents flickering of
+  page)
+- add select menu for predifined expiration dates
+- add some more hooks
+- add list of currently logged in users in menu
+- the owner of a document can see even none public attachments
+- uploading multiple files can be turned off
+- add list of tasks in menu
+- merged changes from 5.0.12
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.1.1
+--------------------------------------------------------------------------------
+- fix initial creation of postgres database
+- merged changes from 5.0.11
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.1.0
+--------------------------------------------------------------------------------
+- added support for postgresql
+- document attachments can linked to a version and be public or hidden
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.0.14
+--------------------------------------------------------------------------------
+- use cmd timeout when indexing documents (Closes #344)
+- add change password function to rest api (merge from sebbuku)
+- merged changes from 4.3.37
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.0.13
+--------------------------------------------------------------------------------
+- fix php warning if an error occurs in one of the out/*.php pages
+- merged changes from 4.3.36
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.0.12
+--------------------------------------------------------------------------------
+- show name and parent folder of document/folder in search list on different
+  lines
+- check for guest login, admin ip and disabled accounts in webdav server
+- update last access time in session only once a minute
+- set Return-Path in emails if from_address in settings is set
+- pass more arguments to hooks (pre|post)UpdateDocument and searchListHeader
+- show help messages on settings page if available
+- fix regex expression in op/op.Settings.php (Closes #317)
+- better debugging of sql statements in SeedDM_Core
+- move css for timeline into Timeline view
+- merged changes from 4.3.35
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.0.11
+--------------------------------------------------------------------------------
+- merged changes from 4.3.34
+- added some more hooks
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.0.10
+--------------------------------------------------------------------------------
+- merged changes from 4.3.33
+- new javascript base calendar
+- overhaul indexing of documents
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.0.9
+--------------------------------------------------------------------------------
+- merged changes from 4.3.32
+- add hooks for previewing documents
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.0.8
+--------------------------------------------------------------------------------
+- merged changes from 4.3.31
+- fix saving online editing file
+- replace some php short tags by <?php (Closes #294)
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.0.7
+--------------------------------------------------------------------------------
+- merged changes from 4.3.30
+- validate email address of attributes of type email
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.0.6
+--------------------------------------------------------------------------------
+- merged changes from 4.3.29
+- set quota and homefolder propperly when creating new user (Closes #285)
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.0.5
+--------------------------------------------------------------------------------
+- merged changes from 4.3.28
+- fix choosing home folder of users
+- fix clearing cache
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.0.4
+--------------------------------------------------------------------------------
+- merged changes from 4.3.27
+- much better dependency checking for extensions, turn off extensions which
+  do not match seeddms version dependency
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.0.3
+--------------------------------------------------------------------------------
+- merged changes from 4.3.26
+- fix ldap authentification
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.0.2
+--------------------------------------------------------------------------------
+- merged changes from 4.3.25
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.0.1
+--------------------------------------------------------------------------------
+- merged changes from 4.3.24
+- fixed sending test mail
+- fixed sending password forgotten mail
+
+--------------------------------------------------------------------------------
+                     Changes in version 5.0.0
+--------------------------------------------------------------------------------
+- support for customer extensions
+- smtp authentification
+- add .xml to online file types by default
+- add home folder for users
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.38
+--------------------------------------------------------------------------------
+- translation updates
+- pass email instead of fullname to restapi /account/email
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.37
+--------------------------------------------------------------------------------
+- fix label in password forgotten form (Closes #346)
+- translation updates
+- search result contains documents without a status log
+- fix setting categories in utils/adddoc.php
+- fetch all records from tblVersion in install/update.php. If not, the database
+  will be locked and e.g. a drop table in the update script will not work 
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.36
+--------------------------------------------------------------------------------
+- mark disabled users in user list and substitute user list
+- if expandFolderTree is set to hidden the tree actually is hidden (partially
+  closes #312)
+- fix sql statement for creating temp. tables (sqlite)
+- remove empty lines at end of view/bootstrap/class.*.php files (Closes #329)
+- make sure contentDir ends with DIRECTORY_SEPARATOR (Closes #323)
+- minor improvements of installation
+- better checking in out/*.php for allowed operation (e.g. EditOnline,
+  RemoveVersion, SetReviewersApprovers, ...)
+- SetReviewersApprovers checks for mandatory reviewers/approvers
+- reviewers/approvers can only be modified by users with unrestricted access
+  and as long as no reviewer/approver has reviewed/approved the document
+- use only svg icons for mimetypes
+- add check for processes (reviews/approvals) where the user/group is deleted
+- redirect in op/op.Login.php to referuri will not add protocol and host,
+  because this doesn't work if a reverse proxy is used (Closes #336)
+- major update of korean translations
+- fix browse button of fine-uploader when 'Enable large file upload' is
+  turned on firefox is used (Closes #339 and #338)
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.35
+--------------------------------------------------------------------------------
+- fix authentication in webdav.php (Closes #250)
+- update last access time only once a minute
+- run action 'css' in view if it exists, move css code for timeline
+- show role of users in user list and substitute user list
+- mysql sql_mode=only_full_group_by can be set without causing errors when
+  creating a temporary table
+- translation updates
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.34
+--------------------------------------------------------------------------------
+- add multibyte save basename() replacement, which fixes uploading files whose
+  name starts with a multibyte char
+- show both number of links from a document A to B and vise versa in tab header
+  on ViewDocuments page
+- add link to duplicate document on ObjectCheck page
+- fix some incompatibilities in sql statements
+- new config parameter maxUploadSize
+- fix document upload by fine-uploader, when using firefox
+- scale default icons for document types, use svg images when available
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.33
+--------------------------------------------------------------------------------
+- add support for fine-uploader as a replacement for the old jumploader
+- when importing from filesystem, the imported folder can be deleted afterwards
+- new calendar
+- move folder/document properly checks for access right if done by drag and
+  drop (Closes #309)
+- show workflow log on document details page
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.32
+--------------------------------------------------------------------------------
+- fix saving new mimetype for fulltext search, available languages (Closes #308)
+- put access rights of folder into popup box if more than 3 exists
+- do not execute code which uses apache_request_headers() if it does not exists,
+  makes webdav work in fast cgi mode or on webservers other than apache (Closes #300)
+- clean up of distribution created by makefile
+- order groups in select boxes by name
+- javascript added by addToFooterJS() will be written to a temp. file
+  which can then be read without violating the CSP
+- clearing cache can just remove temp. js files or preview images
+- new mimetype of preview command may contain a '.' now
+- fix incorrect calls of $app->response()->header() in restapi.php
+- set filetype propperly after uploadind a new document with the restapi
+- add new method getDocumentPreview() to restapi
+- replace lots of tables in forms by bootstraps control-group
+- add remove button to folder selector
+- editing of an exiting review/approval can be turned off
+- add searching for id of folder/document (Closes #302)
+- admin may set owner of document when uploading it
+- default access rights for documents can be set in configuration
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.31
+--------------------------------------------------------------------------------
+- use bootstrap classes for some forms
+- show transitions in WorkflowActionMgr and WorkflowStateMgr where actions and
+  states are used
+- remove file from dropfolder when updating a document and requested by
+  configuration
+- another check if dropfolder is accessible when opening the dialog box
+- add preview of pdf documents and conversion to pdf
+- replace some more php short tags
+- list of available languages can be set in configuration
+- check for cycles in workflows and issue warning
+- major update of russian language (Thanks to r3code)
+- when updating or adding a document do not send request for approval
+  if review needs to be done before
+- uncheck checkbox for expiration date if date is selected.
+- remove some old references to Lucene when indexing a document
+  uploaded by fast upload
+- show workflow state in list of documents instead of just 'in workflow'
+- overhaul notification system. Do not send extra notifications to owner
+  anymore. Send notifications to users/groups watching the old and new
+  folder if a document/folder is moved.
+- drop alternative themes blue, hc, and clean
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.30
+--------------------------------------------------------------------------------
+- fix adding new workflows
+- fix moving documents/folders via drag&drop in Edge (Closes #286)
+- update folder tree after moving a document/folder with drag&drop (Closes #288)
+- trim each value of a value sets of attribute definitions before saving
+- assign role 'user' instead of 'admin' to accounts automatically created during
+  ldap authentication
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.29
+--------------------------------------------------------------------------------
+- started greek translation (thanks to ank-99)
+- move guest authentication from inc/inc.ClassDbAuthentication.php into op/op.Login.php
+- use jquery.validate for form validation
+- new graph layout for workflow manager using cytoscape
+- show current workflow and highlight possible transitions on workflow tab
+  of ViewDocument page
+- webdav checks authentication against ldap and uses the authentication classes
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.28
+--------------------------------------------------------------------------------
+- add expiration in list of documents
+- fix SetReviewersApprovers if reviewer/approver is an admin or the owner
+- full text index documents after upload if they are smaller than a configured
+  size
+- reindex documents when versions were added or removed in order to keep the
+  full text index up to date
+- show only those groups in GroupView the current user is a member of (partly
+  fixes #239)
+- make UserView look similar to UserList
+- log correct ip even after a reverse proxy (Closes #206)
+- fix sql error in table creation if sql mode is set to STRICT_TRANS_TABLE
+- menu entry 'Clear clipboard' will call ajax function and no longer
+  redirects to new page
+- apply all login restrictions like guest login, restrict to ip address,
+  disabled account when authenticating by ldap
+- place all authentication methods into its own class
+- do not cache output of op/op.Ajax.php (Closes #280)
+- major update of italian translations
+- search also in comment of document versions
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.27
+--------------------------------------------------------------------------------
+- check for minimum number of attribute values for each attribute type
+- fix selection of imported folder in ImportFS, add it to the admin tools
+- file from drop folder can be removed after successful upload
+- remove preview images when document or document content is removed (Closes #262)
+- add clear cache operation in admin tools
+- fix strict standard error in SeedDMS_Lucene (Closes #263)
+- fix some sql statements, because they didn't work for mysql 5.7.5 anymore (Closes #273)
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.26
+--------------------------------------------------------------------------------
+- move some left over javascript from html code into application.js (Closes #253)
+- take out last empty line from view/bootstrap/class.Search.php which causes a
+  header to be send to early (Closes: #252, #254) 
+- regular users with sufficient access rights may remove documents via webdav
+- fix error in utils/indexer.php when new documents were indexed
+- set url in approval request email after reviewing a document (Closes #259)
+- inform groups and users watching a new document too (Closes #260)
+- use bootstrap theme for all steps in install tool
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.25
+--------------------------------------------------------------------------------
+- much more consistent drag & drop
+- various translation updates
+- take out file deletion because it was not (and probabbly never has been) useful
+- send notification if folder is deleted by ajax call
+- add page ImportFS for mass importing files from drop folder
+- add initial version for editing text files online
+- further pages with content security policy turned on
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.24
+--------------------------------------------------------------------------------
+- fixed possible XSS attack in user substitution
+- users can have mor than one mandatory workflow, in that case the user can select one
+- completed MyDocuments page for advanced workflows
+- guest user can be automatically logged in
+- get/set custom attributes by webdav, better handling of different attribute types
+- default search method can be set (fulltext, database)
+- further pages with content security policy turned on
+- various translation updates
+- check for document expiration when showing search result and folder content
+- more rest api functions
+- do not send notification mails to disabled users
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.23
+--------------------------------------------------------------------------------
+- send notification if document is delete to those users watching the folder
+- fix editing of customer attributes of type checkbox
+- disallowed read access for a group didn't prevent the users from being selected
+  as a reviewer/approver
+- move the last bits of plain sql code from op/*.php into the core
+- group manager uses ajax like user manager
+- start to enforce content security policy
+- fixed possible XSS attack in user manager
+- ldap search can be filtered (Thanks to Tobias for the patch)
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.22
+--------------------------------------------------------------------------------
+- fix lots of HTTP-Headers in op.Ajax.php (Closes: #233)
+- Timeline will be updated by ajax call, clicking on an item in the timeline
+  will output some document information
+- Timeline now ends at end of the last day. Previously this day wasn't included
+- new attribute type 'date'
+- all dates are now in format 'yyyy-mm-dd'
+- fix fatal error when requesting new password
+- send emails to reviewers/approvers if new document or version was uploaded
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.21
+--------------------------------------------------------------------------------
+- fix sql statement when searching for attributes (SeedDMS_Core, Closes: 227)
+- show preview images file list of drop folder
+- add timeline for single document and all documents in a given period
+  of time
+- ensure dates in database are localtime, even if sqlite3 is used
+- fix document and page count in fulltext search
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.20
+--------------------------------------------------------------------------------
+- fix setting expire date when editing a document (Closes: #225)
+- MyDocumets: list only documents to approve which have passed review
+- show preview image in Review/Approval summary
+- timeout for external commands for creating fulltext index can be set
+- add translations for korean, croation, ukrainian
+- file can be submitted with approval/review
+- alternative full text search engine without dependency on Zend
+- much faster user manager
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.19
+--------------------------------------------------------------------------------
+- end date in search form actually ends at the end of the day
+- allow context sensitive help
+- document chooser shows docs in root folder again
+- fixed regression from 4.3.18. Documents can not be approved if
+  review is still pending
+- polish page for document version details, add review/approval log
+- take out remaining link to old version info file
+- new configuration parameter for overriding the mimetype delivered
+  by the browser (Closes #195)
+- new option -c to force recreation of index (Closes #219)
+- username can be passed to utils/adddoc.php (Closes #214)
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.18
+--------------------------------------------------------------------------------
+- utils/indexer.php uses propper converter settings
+- search result can be restricted to folders or documents only
+- documents still in review can still be reviewed even if the workflow
+  mode changes to traditional_only_approval
+- approvals can be submitted, even if document was released/rejected
+- check for duplicate content on document/folder check page
+- open tab on ViewDocument page as specified in URL
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.17
+--------------------------------------------------------------------------------
+- when adding a document, notifications can be specified
+- send mail to those users and groups next in the workflow after adding
+  a document or a new version (previously mails were only send when a
+  transition was triggered)
+- clean workflow log when deleting a document version.
+- programms for indexing are actually used (Bug #137)
+- fix take over of reviewers/approvers from previos version
+- fix calculation of quota in user list
+- do not show hidden users in select box of search form
+- notifier can be set when new document is uploaded
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.16
+--------------------------------------------------------------------------------
+- propperly take new workflow mode 'traditional without review' into
+  account
+- fix bug in calculating pages for page browser
+- updated italian and german translation
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.15
+--------------------------------------------------------------------------------
+- ѕend notification to users if they are required to take action
+  in the next workflow transition
+- escape quotes in workflow graph (javascript threw an error if usernames
+  contains quotes)
+- fix installation issue on MS Windows
+- propperly escape quotes in strings to confirm deletion when clicking
+  on the delete icon in the folder/document list (Bug #189, #204)
+- new language turkish
+- SeedDMS_Core_DMS::getAllUsers() returns now previously missing
+  language and theme of user
+- fix setting a group notification only (Bug #201)
+- old cached preview images will be replaced with a new version
+- reviewers and approvers can be taken over from the previous version
+- disabling clipboard will disable all clipboard functions not just
+  the clipboard area on the ViewFolder page
+- if a user substitution was done, it will be done in the restapi too
+- doSearch() in restapi applies the limit after filtering the hits
+  by access rights. This slows down search, but at least returns a
+  result set in cases where the user has access to very few documents only.
+- workflow mode can be set to traditional without review process
+- add bulgarian translation
+- propperly obey permissions of documents and folders in search result
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.14
+--------------------------------------------------------------------------------
+- add missing start in transaction in SeedDMS_Core_Folder::remove()
+- pass access object to view in out.ReviewDocument.php (Bug #191)
+- unset expiration date works again
+- complete revised italian translate (Thanks to Diego Fiorani)
+- preset expiration date for documents in settings
+- fix checking for subfolders when moving folder (Bug #194)
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.13
+--------------------------------------------------------------------------------
+- more error fixes when searching for attributes
+- fix saving multi value attributes without a maximum number of values
+- webdav sets propper modification time
+- add button to select all log files for removal
+- deleted folders and documents on the clipboard don't crash seeddms anymore
+  when moving into a different folder (Bug #186)
+- Download of documents whose content is gone will not be possible anymore
+  (Bug #185)
+- allow user to access a locked document via webdav if he/she is the owner
+  of that document
+- saving a document via webdav will not in any case create a new version
+  anymore. If the user and mimetype hasn't changed the content is just
+  replaced.
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.12
+--------------------------------------------------------------------------------
+- log each operation in op/op.Ajax.php
+- fix another error when search for multi value attributes of folders
+- do not use strptime anymore (Bug #129)
+- fix specfying port for database in hostname (Bug #173)
+- propperly check for min/max values of attributes
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.11
+--------------------------------------------------------------------------------
+- translation updates
+- password expiration can be set to 'never'
+- fixed saving multi value attributes
+- do not close browser window anymore when keywords are chosen (Bug #141)
+- fix almost unrestricted fast upload (Bug #175)
+- no more php warning on Workflow summary page (Bug #177)
+- various bug fixes in saving and searching for multi value attributes
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.10
+--------------------------------------------------------------------------------
+- various bug fixes (e.g. Bug #171, #165)
+- translation updates
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.9
+--------------------------------------------------------------------------------
+- fix another encoding error when creating/updating full text index (Bug #83)
+- renew time limit during indexing documents
+- new file selection input when uploading files
+- top navigation uses full width of screen (Bug #157)
+- replace dskspace() with platform independend version (Bug #156)
+- much better handling of quotas
+- add list of users in admin menu
+- delete inactive sessions after configured cookie lifetime or 1 week if
+  cookie lifetime is set to 0
+- add more information on user list page
+- admins can edit their account details even if 'self edit' is turned off
+- consistent handling of document locking
+- op/op.ViewOnline.php returns the latest version if version<1
+- delete document/folder with ajax call when clicking on cross-icon in
+  document list (ViewFolder and Search)
+- critical ajax calls require form token to be set
+- fix drag and drop from clipboard
+- much improved document handling
+- list mandatory approvers/reviewers on AddDocument and UpdateDocument page (Bug #154)
+₋ search in attributes of folders, reorganize search form, do not search
+  unless a search criteria is given
+- fix document selection on ManageNotify page
+- add file upload via Drag&Drop
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.8
+--------------------------------------------------------------------------------
+- fix error in xml dump (Bug #114)
+- all folders with documenst/subfolders in document chooser can be
+  opened (Bug #136)
+- fix error in command line indexer, now uses converters in settings.xml (Bug #137)
+- more condensed output of full text info page
+- use settings for enable theme and language selector in profile (Bug #142)
+- restrict number of items in pager on search result page
+- іssue error if end date is before start when adding an event (Bug #146)
+- blank categories and keywords cannot be saved anymore (Bug #148)
+- add missing error msg in attribute editor (Bug #149)
+- better user feedback after reseting password (Bug #139)
+- add page with statistical data (pie charts)
+- add mode for showing missing translations (turned off by default)
+- better checking of posted parameters in op/op.EditDocument.php (Bug #150)
+- fix login as guest by clicking on 'Login as guest' link (Bug #152)
+- add check for new version on version info page
+- preview images are always as wide as configured in the settings (Bug #153, #124)
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.7
+--------------------------------------------------------------------------------
+- fix some vulnerabilities discovered by Steven Seeley
+- fix javascript error when clicking on folder in document chooser (Bug #135)
+- always sort folders/documents in sequence chooser by sequence
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.6
+--------------------------------------------------------------------------------
+- fix mandatory reviewer/approver, if it is the owner or an administrator
+- fix wrong sort order in second level of folder tree
+- add missing translation (Bug #130)
+- update of russion translation (Bug #131)
+- turn off http only cookies if large file upload is turned on (Bug #132)
+- list documents having a link to the current document
+- preview image sizes can be set in configuration (Bug #124)
+- show missing link to document in list of approvals
+- update of document version detail page
+- fix link to folder in clipboard shown in menu (Bug #123)
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.5
+--------------------------------------------------------------------------------
+- fix setting of order by sequence in configuration (Bug #127)
+- fix ordering by sequence in folder listing
+- list mandatory approvers/reviewers without access on document
+- login failures will actually increment the failure counter of the user
+- fix error when doing operations on root folder and notification is
+  turned on (Bug #128)
+- renew session timeout on each click unless cookie lifetime is set to 0
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.4
+--------------------------------------------------------------------------------
+- clean up and test ldap authentication code
+- fix handling of multivalue attributes
+- use same ordering in tree as in list view (Bug #121)
+- add missing parenthesis in version file (Bug #100)
+- add missing file views/bootstrap/class.RemoveFolderFileѕ.php (Bug #101)
+- unlinked documents/folders can be moved into root folder
+- take out debug echo statement (Bug #125)
+- fix some errors in notification mails
+- fix some security holes (found by Craig Arendt, Stratum Security)
+- add initial version of REST api
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.3
+--------------------------------------------------------------------------------
+- theme and language selector can be turned off (Bug #109)
+  turning off the language selector will also turn it off on the login page
+- default method for sorting folders and documents can be set (#112)
+- port of database can be set behind hostname (separated by colon)
+- fix minor compatibility errors in database table creation
+- fix some php warnings when php 5.5.x is used (Bug #119)
+- strip slashes from _GET, _POST, _COOKIE, _REQUEST if magic quotes is
+  turned on
+- use From address from smtp settings when sending mails
+- major translation update
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.2
+--------------------------------------------------------------------------------
+- fix approval of documents by group if owner of document is member of group
+- make jumploader work with java 1.7
+- turning of the language selector will no longer turn off user substitution
+- use PATH_SEPARATOR and DIRECTORY_SEPARATOR when checking the include path
+  for files
+- check if target folder is a child of the current folder when moving folders
+- fix missing documents in tree of document choser (Bug #105)
+- add another folder/document check
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.1
+--------------------------------------------------------------------------------
+- translates strings (Bug #86, #87, #88, #90)
+- add icon for rar files (Bug #85)
+- webdav: PROPFIND returns only released documents (just like GET did already)
+- folder tree can be completely expanded again if set in configuration
+- add missing div to header and fix folding of main menu
+- consistent implementation of approval/release of document owner
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.3.0
+--------------------------------------------------------------------------------
+- create preview images for attachted document files
+- expiration date cannot be set for the version as indicated by the gui.
+  Even in the past it was set for the document, but this was not clear
+	for the user.
+- reorganization of ViewDocument page
+- maximum execution time of php scripts can be set in the settings and
+  is now actually used.
+- replaced folder tree view with a tree based on jquery which loads subfolders
+  on demand
+- attribute value must match regular expression if given (Bug #49)
+- show more information about attributes in attribute manager
+- set url in notification mail after document review (Bug #56)
+- new configuration setting specifying a list of user ids that cannot be deleted
+- fix output of breadcrumbs on some pages (Bug #55)
+- do not take document comment for version if version comment is empty.
+  The user must explicitly force it.
+- combine full text and database search in one form, filtering search result
+  by document status or category will no longer return folders
+- update of translation for zh_CN, fr_FR, sv_SE, es_ES
+- added new language arabic (Egypt) (Bug #63)
+- turn on foreign key constraints for sqlite3 databases
+- update to bootstrap 2.3.2
+- better checking of valid search term for fulltext search (Bug #61)
+- moving several documents/folders at a time (Bug #64)
+- set encoding of terms when adding document to full text index (Bug #66)
+- droped support for myisam database engine
+- add support for connecting to ldap servers without anonymous bind
+- if a user has a mandatory workflow, don't allow him/her to set a workflow
+  on insert/update of a document
+- fixed calculation of password strength when simple password strength
+  is set and user data is saved (Bug #69)
+- better handling of invalid query terms in full text search.
+- check for minimum php version 5.2.0 in install tool (Bug #74)
+- fix missing url params of paginator in search result
+- fix missing email header in password forgotten mail (Bug #81)
+- use POST request for password strength checking
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.2.2
+--------------------------------------------------------------------------------
+- admin can be set as reviewer/approver again and do the review/approval
+- fixed minor layout problem in folder tree (Bug #51)
+- close folder choose dialog when folder is selected (Bug #52)
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.2.1
+--------------------------------------------------------------------------------
+- fixing jumploader upload, added missing file for uploading attachments
+- various improvements of user interface
+- fixed bug when adding individual approver (Core)
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.2.0
+--------------------------------------------------------------------------------
+- sqlite3 database can be updated
+- use awesome font for icons
+- currently logged in user can be changed temporarily if being admin
+- count documents/folders recursively for output in folder list (Bug #43)
+- remove multiple log files at once (Bug #35)
+- return to same tab on LogManagement page as before removing a log
+  file (Bug #30)
+- new bootstrap datepicker with localization (Bug #36) 
+- users can be assigned to a group when edited or added (Bug #39)
+- place a message on ViewDocument page if the document needs an action
+  in the workflow (Bug #4)
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.1.3
+--------------------------------------------------------------------------------
+- fixed setting document link (no more PHP fatal error)
+- fixed typo in variable name which cause a PHP warning when sending the
+  notification mail after updating a folder comment
+- fixed code to determine required approver and reviewer
+- fixed wrong language setting in installer (Bug #45)
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.1.2
+--------------------------------------------------------------------------------
+- set propper internal folder path of sub folders after moving a folder
+  to a new place
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.1.1
+--------------------------------------------------------------------------------
+- fixed update of folders (no more php error)
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.1.0
+--------------------------------------------------------------------------------
+- minor fixeѕ in german help file (Bug #27)
+- fixed various php warnings and errors due to strict error checking
+- database update from 3.4.x to 4.0.x doesn't issue an error anymore (Bug #26)
+- new configuration variables to enable owner and logged in user to
+  review and approve documents
+- global menu will be turned in a drop down menu if screen width decreases
+- overall better support for mobile devices with small screens
+- reworked notification system: notification will be send in the language
+  of the receiver.
+- fixed multiple file upload (Bug #40)
+- use bootstrap icons in folder tree
+
+--------------------------------------------------------------------------------
+                     Changes in version 4.0.0
+--------------------------------------------------------------------------------
+- completely new user interface based on bootstrap
+- quota support on user basis
+- support for sqlite3
+- added pdo database abstraction as an alternative to adodb, pdo is not the default
+- search by expiration date
+- completely new and much more powerful workflow engine
+- language can be switched at any time
+- check for duplicate document names in a folder
+- document/folder chooser allows to search
+- added clipboard and drag&drop for moving documents
+- show used disk space of a document and all files of a user
+- show access rights and id for folders and documents on info page (admin only)
+- added checksum to document versions
+- webdav: saving an identical document several times will not create new versions but just update the modification time
+- check and cancel upload if a new version of a document is identical to the last one
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.4.3
+--------------------------------------------------------------------------------
+- fixed saving of multiple values field for attribute definitions
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.4.2
+--------------------------------------------------------------------------------
+- fixed database update script (second trial)
+- fixed jumploader upload
+- updated dutch language file
+- fixed list on MyDocuments page
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.4.1
+--------------------------------------------------------------------------------
+- fixed database update script
+- check if full text index is available before added new document
+- minor translation settings
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.4.0
+--------------------------------------------------------------------------------
+- check for password strength
+- passwords can expire after a given number of days
+- prevent passwords from being reused
+- user can be disabled after n login failures
+- added autocompletion to document chooser
+- do not list documents in search result which cannot be accessed by the user
+- more database constraints and transaction management
+- documents, folders and document content can have user defined attributes
+- update of swedish language (Thanks to Thorsten M.)
+- update of french language (Thanks to Yves)
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.3.11
+--------------------------------------------------------------------------------
+- fixed output of status in full text search result
+- do not allow to insert categories with an empty name
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.3.10
+--------------------------------------------------------------------------------
+- fixed stupid error in addDocumentCategory
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.3.9
+--------------------------------------------------------------------------------
+- more security fixes for preventing XSS
+- minor fix in spanish translation
+- do not show document on mydocuments page twice
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.3.8
+--------------------------------------------------------------------------------
+- more security fixes for preventing CSRF, XSS and sql injection attacks
+- fixed search for special chars (e.g. german umlaute) in fulltext search
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.3.7
+--------------------------------------------------------------------------------
+- major security update which fixeѕ lots of possible XSS and CSRF attacks
+- comment is no longer needed when adding a user, email is now required (this
+  time it is really changed)
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.3.6
+--------------------------------------------------------------------------------
+- fixed deletion of files over WebDAV for some clients
+- updated russian language
+- comment is no longer needed when adding a user, email is now required
+- added debug mode in DBAccess class
+- list of users/groups on 'Edit Access' page does not contain users/groups
+  which are already on the acl
+- if a document/folder has access rights based on a group, then the highest
+  access right will be used (not the one first assigned)
+- added configuration of path to stop words file
+- fixed creation of database dump file
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.3.5
+--------------------------------------------------------------------------------
+- extend the php include path with ADOdb path much earlier. This fixeѕ
+  problems with Log.php if installed in the same as ADOdb.
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.3.4
+--------------------------------------------------------------------------------
+- fixed another issue of incorrect document access if masDirID != 0
+- updated README
+- use common way to check for configuration file
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.3.3
+--------------------------------------------------------------------------------
+- fixed incorrect document access if masDirID != 0
+- added swedish translation (thanks to Thorsten Michelfelder)
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.3.2
+--------------------------------------------------------------------------------
+- minor bugfixes
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.3.1
+--------------------------------------------------------------------------------
+- added missing check for access right in webdav server
+- update.sql creates table tblUserPasswordRequest
+- minor changes in language files
+- fixed link to login page on password forgotten page
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.3.0
+--------------------------------------------------------------------------------
+- all data is saved into the database without prior modification
+- smoother installation process with less manual interaction
+- support multi level content directory to overcome the limitations of recent
+  filesystems
+- better approval/review workflow
+- do not allow any operation on a document if is locked (unless you are the
+  owner)
+- searching for folders (run the new consistency check function!)
+- initial consistency check of database with repair function 
+- group managers are allowed to remove and delete users from their group
+- withdraw rights from a group if the group access is set to none
+- added password forgotten function
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.2.2
+--------------------------------------------------------------------------------
+- fixed unallowed access on documents and folders
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.2.1
+--------------------------------------------------------------------------------
+- large file upload with jumploader can be turned off
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.2.0
+--------------------------------------------------------------------------------
+- select keywords from list in advanced search form
+- support for full text index lucene
+- much better support for uploading several files at once and huge files
+- put configuration into xml file
+- added installation script
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.0.1
+--------------------------------------------------------------------------------
+- Fixed license in package.xml
+- Removed some php short tags
+- updated czech translation (Thanks to Radek Žufan Tichý <silent.cz@gmail.com>)
+- do not ask for a filename if _strictFormCheck is set to false
+- do not erase file selection fields if a new document is added
+- fixed problems with expiry system
+
+--------------------------------------------------------------------------------
+                     Changes in version 3.0.0
+--------------------------------------------------------------------------------
+Major reorganisation of code
+
+Split LetoDMS into a core module, webdav server, and the known web application
+
+--------------------------------------------------------------------------------
+                     Changes in version 2.0.1
+--------------------------------------------------------------------------------
+
+ADDED A GRAPHIC LOGO
+The user can personalize it changing the image in styles/logo.png
+Reviewed the style to accomplish with the logo
+
+New settings' flag "_expandFolderTree" to start with the navigation tree
+hidden, expanded or expanded at the first level
+
+The tree status (hide/show) will be preserved through folder actions
+
+The witdh of open/closed tree can be defined using CSS (in "clean" CSS style 
+"tree-open" and "tree-closed" )
+
+DIFFERENT COMMENTS FOR DOCUMENT AND VERSION
+Creating a document user can insert a different comment for version and for 
+entire document. If the version comment is leaved empty the document comment 
+will be used for both
+
+Added a warning about the maximum upload file size in the upload pages 
+(add document and add files). The size is a server setting and does not depend 
+by letoDMS
+
+Better allignment in the view document page (Thanks to alekseyn). Better 
+allignment in the view document version page.
+Note: the allignement is simply suggested setting width in table columns, thus
+can be modified by very long strings.
+
+Now checking none between keywords,name and comment in search form means 
+searching all. That's a more logical way (same as behaviour of status checks)
+
+Added a settings var for default calendar view (week,month or year)
+
+Simplified the "Related documents" table: now the public yes/no is visible
+only to the user tha can edit it
+
+Removed a small bug with calendar function inclusion (thanks to c8900219)
+
+Bugfixed the control of empty document names (thanks to turkeburgr)
+
+Fixed a compatiblity bug in log management page (removed the unused readlink function)
+
+Restyled the warnings appearance in clean style
+
+Fixed a bug with empty vars on user management
+
+Fixed a small bug when trying to download deleted files from folder view 
+
+Fixed a smal bug with logging on version removing (Thanks to larppaxyz)
+
+Reviewed print css according to folder tree and logo 
+
+In print view the status was hide by css. Fixed
+
+EXPERIMENTAL: review the LDAP autentication by Doudoux. The old code is leaved 
+commented in op.Login.php and in inc.Settings.php.
+
+the submit review/approval has moved in the reviewer/approvers list
+
+--------------------------------------------------------------------------------
+                     Changes in version 2.0.0
+--------------------------------------------------------------------------------
+
+ADDED MULTIPLE DOCUMENT INCLUSION
+in "Add document" page there's a new switch to add multiple files
+for every file a new document will be created in the folder
+the size limit depends on server settings
+if multiple file are added:
+- the file name is used to name the document
+- expiration, reviewers, approvers, comment, etc will be the same for every 
+  document
+
+ADDED HUMAN-READABLE OPTION ON ARCHIVE CREATION:
+with a flag in the "archive creation" tool the archive can be created using
+DMS paths and original file names. The archive contains only the last version
+of every file. Clearly a human readable archive cannot be used to restore a 
+server backup but they are handyer for external uses.
+
+ADDED A SIDEBAR WITH TREE VIEW on the folder browsing
+the feature is optional an there's a new settings flag
+	var $_enableFolderTree = true;
+The sidebar shows only folders (a complete tree wich includes document would be 
+very heavy on most installation)
+
+ADDED A SHARED CALENDAR for DMS users
+- there'a new menu item ("calendar") to access the calendar
+- the starting view is current week
+- calendar has 3 view : year, month and week
+- every event has start/end time (only date), user, creation and date, name and comment
+- no hour/minute management (is not intent as personal/daily calendar)
+- events can be added and viewed by everyone (are public)
+- the event can be edit and delete by the user who insert it or by administrators
+- the feature is optional (can be deactivated in inc.Settings)
+
+ADDED A SIMPLE DB DUMP UTILITY in the Admin-Tools/Backup tools
+- the feature should complete the backup utilities toolkit
+- THE DB DUMP IS EXPERIMENTAL AND MUST BE TESTED WITH YOUR DB
+- The created will require an empty existing db to restore data (content only)
+
+IMPROVED THE DOCUMENT SEARCH FOR DOCUMENT STATUS
+now one can search all document rejected, expired, obsolete, ecc.
+reordered and restyled search form and result list
+
+Beautyfied e-mail messages
+
+The document expiration date (if any) is now showed near the status
+
+lined up the reviewer approvers table in view document and document details
+ 
+fixed a bug with group notify list administration
+
+reverse alphabetical order (newer first) for log list, backup list, dump list
+
+minor bugfix in versioning file creation/notification list editing
+
+added confirmation page for user/group deletion
+
+improve some log lines in user/group management
+
+minor bugfix in myDocuments view
+
+Now when editing a user the password can be leaved unchanged 
+(if nothing is inserted the password will not be changed)
+
+Completed (not translated) some languages files
+
+fixed some bug with user deletion (there were some tables not updated)
+
+Fixed a bug with the time picker
+
+improved the folder chooser dialog 
+
+Now the "view on line" works regardless to the case of the extension string
+(the extension can be upper, lower or mixed case)
+
+Same bugfix for the icon used in folder/document view
+
+Removed the javascript hide/show for reviewers/approvers list (buggy with some browser)
+
+Resolved a bug with hidden user flag
+
+Improved the log view page
+
+Reordered document action casistics (lock/unlock, permissiones, ecc.)
+
+Removed the js source folder and file (not used)
+
+Added new features description to the on-line help
+
+On update operation the mandatory users/reviwers where not used: fixed
+
+Bugfix again on View online function
+
+Bugfix in personal keyword list editing
+
+Removed a lot of php notice (viable only on some servers with php Notice enabled)
+
+Removed a bug with direcotry creation and safe_mod activated
+
+Reordered the theme folders
+
+Fixed a not define accessmode in document chooser
+
+--------------------------------------------------------------------------------
+                     Changes in version 1.9
+--------------------------------------------------------------------------------
+
+This is a first major release with a lot of changes, then some new features 
+can contain new bugs. The DB require a small change: update.sql is included 
+in the folder UPDATE-v1.9
+
+ADDED THE MANDATORY REVIEWERS AND APPROVERS LIST (per user):
+Administrator can associate to every user one or more users as mandatory 
+reviewer/approver. Every document inserted by that user will be forced 
+to be reviewed/approved by the users in that list. Note that if document is
+not readable by the mandatory approver/reviewer then the appoval/review
+will not be required (for example will not be required for private documents).
+
+ADDED A LOGGING SYSTEM:
+- works with plain files
+- administrator tools includes a page to view/download/delete log files
+- log files are rotated with a time parameter in settings ($_logFileRotation)
+The logging system is an experimental feature and must be carefully tested in 
+large multiuser environments. There are two new parameters in inc.Settings to enable. 
+
+USERS CAN NOW BE HIDDEN FROM USERS LISTS viewed by all (there's a "hide" checkbox in user manager page) 
+this function works with the "user view" list shown to all users
+clearly if "$_enableUsersView = false" in configuration the option is useless
+
+Restyled and improve the notify management:
+- the new personal administration is included in "myAccount" menu of every user
+- ADDED RECURSIVE INCLUSION (folder with all subfolders and/or all documents)
+
+Viewonline now works (but should be tested again with different platforms)
+
+Owner of a document is now emailed if someone else rename/move/update the document
+
+When a document is reviewed/approved the mail is now correclty sent to the 
+document updater (the user who update the version) not necessarly to the owner.
+
+ADDED SWITCH BETWEEN ALPHABETICAL OR ORIGINAL ORDER in the folder view 
+clicking on the "name" column header
+
+The archive includes an older version of adodb working with MySQL-4
+
+The downloadable text file with versioning infos is now updated immediatly before download
+
+Bugfixed the create_table.sql
+
+Removed a bug in english language file
+
+Removed last references to the old name "myDMS"
+
+Restyled and improved the "backup tools" page
+
+Bugfixed the datechooser (was limited to 2010)
+
+ADDED THE EDITABLE "MANAGER" FLAG TO GROUP MEMBER
+now one (or more) user can be flagged as "manager" group member
+Currently group notification are editable only by group managers
+but the flag will be required for future use
+
+IMPROVED THE GROUP/USER MANAGEMENT PAGES
+- operation are ordered in a more clear way
+- the "add new" operation uses the hide/show javascript
+- now the page refresh immediatly when new data are saved
+
+Restyled and improve the "edit access permission" pages
+
+Improved the keyword category editing
+- operation are ordered in a more clear way
+- the "add new" operation uses the hide/show javascript
+- now the page refresh immediatly when new data are saved
+- the keyword category operation has been removed from administration 
+  personal account menu (the operation has gone in administration tool's menu
+  because administrator edits the global keywords categories)
+  
+Improved Keword chooser
+
+Added quick installation instruction on the README file
+
+THE USER IMAGES ARE NOW OPTIONAL (the implementation is poor and doesn't work
+on every system, then can be disabled)
+
+-------------------------------------------------------------------
+                     Changes in version 1.8.3
+-------------------------------------------------------------------
+
+Improved portuguese (thanks to Pedro.broggini), slovak (thanks to deb00t) and 
+german (thanks to Vault) languages translations.
+Resolved some minor bugs (undefined variables) in inc.Class document and inc.ClassUI
+Bugfixed UPDATE script - added update instruction in README file
+Resolved a bug on ViewOnline feature (thanks to doudoux)
+
+
+-------------------------------------------------------------------
+                     Changes in version 1.8.2
+-------------------------------------------------------------------
+
+The link in revision/approval request email now is for the ViewDocument
+
+Fix a bug in big backup file creation
+
+Review ad reorganized the ViewFolder page: removed Reviewers/Approvers 
+list and added directory contents (file and subfolder count) and comments
+
+Added directory dimension and content in out.Statistics
+Now thwe initial version number of a new document can be set (you can 
+start a document with a version > 1)
+
+Some mail are corrected
+
+The various input field has been enlarged (using clean style)
+
+-------------------------------------------------------------------
+                     Changes in version 1.8.1
+-------------------------------------------------------------------
+
+REDESIGNED THE ORGANIZATION OF DATA FOLDER 
+
+Now the data folder (where files are located) has a more efficient organization:
+data_dir / id / version.filetype
+
+This scheme makes backups much more intuitive (the folder name corresponds 
+to the id of the document, all versions and attached files
+are in the same folder.
+
+- Removed no longer needed tdbDirPath and tdlPathList
+- Removed no longer needed free path lookup functions
+- Modified sql create_tables.sql for changes to the DB in accordance with the new organization
+
+WARNING: This change makes the version incompatible with existing archives/DB
+but is required by the all thennew features (read ahead)
+
+The "UPDATE" folder contais two script for updating existing installations
+
+To update an existing archive:
+- Backup all (including DB)
+- Install the new DMS version
+- Install the "UPDATE" folder containing two files update.php and update.sql
+- Log in as administrator
+- Manually invoke the script (http://indirizzo/UPDATE/update.php
+- Remove the folder "UPDATE"
+
+If everything works well the old content has ben renamed "old" and can be removed (eg via ftp)
+
+ADDITIONAL FILES 
+
+Added the ability to upload additional files associated to a document (as attachments)
+these files are not versioned and are designed as accessories to the document
+(Eg the PDF version or reductions in the image). The files are associated with
+the document, not to version.
+
+NOTE: To add attachments the user must have write permission on the document
+The attachment can be removed by the user who added it or having total permissions
+
+BACKUP
+
+Added some useful tools for backing up files and folders (real files, not the DB).
+Especially useful for working with entire folders which, being virtual,
+can not easily be backupped via ftp.
+
+There are three operations designed to be eventually applied in sequence.
+
+Data Backup versioning:
+Create for each document in a DMS folder a file containing the main versioning informations
+This allows you to make backup copies of which also contain information from the DB.
+This is meant to be performed before the creation of an archive,
+After creating the file versioning file can be viewed from out.ViewDocument
+
+Creating Archives:
+Creates a tar.gz file containing all files related to a specific
+DMS folder. The file is created in settings->_contentDir
+The file is constructed so that it can be unpacked again in the settings->_contentDir
+to restore removed files. In the page is presented the list of existing backup files
+which you can downloaded or delete
+
+Deleting files:
+you can delete from the server all the files related to a specific
+DMS folder and all its subfolders. By doing this you can
+free space on the server without removing the version information
+saved in the database that will be available for regular consultation.
+Having a backup deleted files can easily be restored when needed.
+
+All backups operations can be performed on the entire archive or only on a DMS folder.
+All backups operations are accessible only to administrators.
+
+OTHER FEATURES
+
+Added the possibility to change a approval/review already done.
+The editing is possible at any moment only to the user who made it.
+The time is retained (so you can understand subsequent amendments).
+The document status is updated automatically following a change.
+The editing is only possible on the latest version of the document.
+If a document expire date is set editing is only possible within that time
+
+Added delete_all_contents script. Cleaning DB tool for test use
+
+Proper content of some e-mail
+
+Added general information to the statistic page:
+- No. of documents
+- No. of folders
+- No. of files in every document
+- Number of total files
+- Total size of the archive
+
+Fixed the view of system notify list
+
+The comments related to the update opration (versione comment) are now editable
+
+Adjusted out.DefaultKeywords now equal to out.UserDefaultKeyword
+
+Added function formatted_size (view size in Bytes / Kb / Mb / Gb) in inc.Utils and applied where necessary
+
+Fixed a bug on documents cancellation (was not removed the corresponding list of notification)
+
+The files in data folder can be removed without cause errors in the DMS.
+When a file is not effectively present in out.ViewDocument displays a warning "file removed"
+and, of course, is no longer given the option to download.
+This feature can be used to free up space on the server, removing old files, while leaving available the corresponding
+version information.
+
+Fixed the view in out.AddSubFolder.php (default font size)
+
+Added icons for openoffice.org mime-type
+Added icons for some types of extensions (bz, dot, docx, etc.).
+
+Added (in inc.settings) option to disable the user administrator as a reviewer / approver (not listed)
+
+Remove the untranslated instructions "die" (replaced by UI:: exitError)
+
+Proper control permissions for internal links (related document):
+- The guest user can not add links
+- Users without write permission can only add links private
+- Add link publici the user must have write permission
+- To cancel link should be the user that added or have permission to total
+
+-------------------------------------------------------------------
+                     Changes in version 1.8
+-------------------------------------------------------------------
+
+The reviewer/approver can edit his review/approval after having submitted it. 
+Only the user whom effectivly submitted the review/approval can edit it, 
+even if he was required as group member. The document status will be updated 
+autmatically according with the modified submission. The edit is possible only 
+on the last version of a document (there's no reason to edit a old version).
+If expiration date is set the edit is possible (obviously) only within that date.
+
+Account menu has been reviewed.
+
+Two new pages containing general views of groups and users are integrated in 
+the account menu. The feature can be disabled in inc.Settings.php.
+
+The email notification can be completely disabled in inc.Settings.php. Every 
+users can leave empty his e-mail field to not receive e-mail even if 
+strictFormCheck is on.
+
+Fix of two redirection bugs after deleting documents or folders.
+
+The notification list is now integrated in the myDocument page/menu.
+
+The general tree view has been enhance.
+
+Fix of some e-mail composition errors.
+
+Fix of some italian translation errors.
+
+The owner is no longer automatically added to the notification list of 
+a document. The notification lists should not be modified automatically 
+(if not required the notification are annoying)
+
+-------------------------------------------------------------------
+                     Changes in version 1.7.3
+-------------------------------------------------------------------
+
+- removed vulnerability lang/theme at login (TODO: referuri in op.Login.php)
+- completed translation calls
+- a print css added
+- added "warning" and "error" styles
+- new css clean e hc (high contrast for visually impaired folks)
+- guest login must be default false
+- reorderer the first level menu
+- reordered personal document navigation
+- reorderd personal account navigation
+- out.info is now linked to administrator only and access protected
+- added permission control on root folder (no inheritance)
+- removed "remove" and "move" commands for root folder
+- reorganized permission pages
+- added disclaimer note (shown on every page) with setting flag and translation
+- where possible ALL the operation feedback are removed (where no errors the page return immedatly to the contents)
+- added and exitError function in ClassUI and review ALL pages to comply
+- syled the out.KeywordChooser page
+- deleted inc.OutUtils
+- deleted op.NotifyMailer (not used)
+- added a "legend" to out.Statistics
+
+-------------------------------------------------------------------
+                     Changes in version 1.7.2
+-------------------------------------------------------------------
+
+- Style Sheet modifications to improve IE6 compatibility, contributed by
+	Juan Lago (thanks Juan!). This fixes some placement issues with elements
+	that have the position attribute set to "absolute".
+
+- The div elements that are used to clear floats have been fixed so that they
+	have zero height in IE6. It is not enough to specify "height: 0"; one must
+	also set "font-size:0" otherwise IE6 will set the height of the element to
+	match the standard font size.
+
+- UI layout improvements. Various changes to the user interface to improve
+	the page flow and allow for further expansion in the future. The context
+	menu bar has been separated from the page heading into its own container
+	underneath the title. It's a more logical place to present the menu, and
+	will allow for the easy addition of further sub-headings in the future
+	without compromising the page flow.
+
+- The last dependency on the original theme system has been eliminated with
+	the introduction of updated chooser dialogues for selecting files and
+	folders. These dialogues have the new themes and the code has been revamped,
+	replacing the old table structures with unordered lists.
+
+- LDAP update. A minor change to the LDAP authentication code to allow for
+	the use of URIs to identify the server name (e.g. ldaps://host.com).
+	Also, the LDAP version is set to 3 in order to support secure connections.
+
+- New language translations for Czech and Slovak. Contributed by SF user
+	helix84 (thanks!).
+
+
+-------------------------------------------------------------------
+                     Changes in version 1.7.1
+-------------------------------------------------------------------
+
+- Re-vamped Notification system allows users to receive an email when a
+  document or folder is changed. This is a new, event-based mechanism that
+  notifies the user as soon as the change has been made and replaces the
+  cron mechanism originally developed. Any user that has read access to a
+  document or folder can subscribe to be notified of changes. Users that
+  have been assigned as reviewers or approvers for a document are
+  automatically added to the notification system for that document.
+
+  A new page has been created for users to assist with the management of
+  their notification subscriptions. This can be found in the "My Account"
+  section under "Notification List".
+
+- The test used to identify HTTPS connections has been improved so that it
+  correctly identifies IIS servers that have ISAPI enabled but are not
+  using HTTPS protocol.
+
+
+-------------------------------------------------------------------
+                     Changes in version 1.7.0
+-------------------------------------------------------------------
+
+- Fixes to CSS display bugs. Minor updates to the display.
+
+- Improved handling of character escape sequences.
+
+- Review / Approve dates added to folder views and search results.
+
+- New file system directory management code to accommodate limitations in the
+  underlying filesystem which restrict the number of files that MyDMS can
+  store. MyDMS now uses a nested directory structure to store files, rather
+  than a flat one. However, note that individual files are still stored one
+  per directory in order to preserve compatibility with older versions of
+  MyDMS.
+
+  For details of the problem and the solution implemented, please refer to:
+
+    http://mydms.sf.net/2007/08/15/new-file-system-storage-structure/
+
+- Hungarian translation.
+
+- And as a bonus, there is a Drupal theme compatible with MyDMS.
+
+
+-------------------------------------------------------------------
+                     Changes in version 1.6.1
+-------------------------------------------------------------------
+
+- Theme and language choice are now saved as user attributes between
+	sessions. Read update-1.6.1.txt for changes to database schema.
+
+- Link to document review / approval page from out.ViewDocument.php.
+
+- French translation.
+
+- Brazilian Portuguese translation.
+
+- Traditional Chinese translation.
+
+- Relaxation of criteria for selecting reviewers / approvers. Users now only
+	require read access to be eligible reviewers or approvers.
+
+- Documents are now displayed in the correct sequence in the folder view.
+
+- Documents can be downloaded directly from the folder view by clicking their
+	icon.
+
+- Document icons in the folder view now reflect the document type.
+
+- Empty passwords are not accepted, even when JS is disabled in the browser.
+
+- New restricted access mode rejects login from users who are not entered
+	into the internal database, even if LDAP authentication was successful.
+
+
+-------------------------------------------------------------------
+                     Changes in version 1.6.0
+-------------------------------------------------------------------		     
+
+- Introduction of a document workflow system that manages the life-cycle of a
+  document, including review and approval stages.
+
+	Details:
+
+	Document Class:
+		Created new methods:
+			Document::addIndReviewer()
+			Document::addGrpReviewer()
+			Document::addIndApprover()
+			Document::addGrpApprover()
+
+		Changes to:
+			Document::addContent()
+
+	New Class: Email.
+
+	out.AddDocument.php
+	op.AddDocument.php
+		Changes to allow selection of reviewers and approvers.
+
+	Group Class:
+		Changes to:
+			Group::getUsers() -- query optimised
+		New Methods:
+			Group::getReviewStatus()
+			Group::getApprovalStatus()
+
+	User Class:
+		New Methods:
+			User::getReviewStatus()
+			User::getApprovalStatus()
+
+	Class Folder:
+		Changes to:
+			Folder::addDocument() -- accept reviewers, approvers as parameters.
+
+	New Class: AddContentResultSet.
+
+	Database:
+		Document version field changed from TINYINT to unsigned SMALLINT throughout
+		database.
+		`tblGroupMembers`:
+			`id` field removed as it is unnecessary.
+			Created a primary of `groupID`, `userID`.
+
+	DocumentContent Class:
+		Created new methods:
+			DocumentContent::getStatus()
+			DocumentContent::getReviewStatus()
+			DocumentContent::getApprovalStatus()
+			DocumentContent::delIndReviewer()
+			DocumentContent::delGrpReviewer()
+			DocumentContent::delIndApprover()
+			DocumentContent::delGrpApprover()
+
+	out.ViewDocument.php
+	op.ViewDocument.php
+		Changes to incorporate display of workflow status.
+		Links to allow user to change status of a document revision.
+
+	out.UpdateDocument.php
+	op.UpdateDocument.php
+		Changes to allow selection of reviewers and approvers.
+
+	out.Login.php
+	op.Login.php
+		redirect user to originally requested URL upon successful login.
+
+	out.ReviewDocument.php
+	op.ReviewDocument.php
+	out.ApproveDocument.php
+	op.ApproveDocument.php
+		Created to enable users to review and approve documents.
+
+	out.OverrideContentStatus.php
+	op.OverrideContentStatus.php
+		Allows document owner or site administrator to override the status of a
+		document.
+
+	out.SetReviewersApprovers.php
+	op.SetReviewersApprovers.php
+		Allows document owner or site administrator to re-assign reviewers and
+		approvers to a document revision that is pending review or approval.
+
+	out.ActionSummary.php
+		Lists all the documents owned by current user that are pending review or
+		approval. Lists all documents that are awaiting review or approval by the
+		user.
+
+	Search page now allows user to search for documents pending review or
+	approval. Search results display overall document status.
+
+- Admin user cannot be deleted, and admin privilege cannot be removed from
+	the admin user. Previously, both actions were possible.
+
+- Users can be assigned administrative privileges in the User Manager.
+
+- Deleting document revisions or the document itself notifies all affected
+	users by email, deletes entries from all status logs.
+
+
+-------------------------------------------------------------------
+                     Changes in version 1.5.1
+-------------------------------------------------------------------		     
+
+- Fixed a bug in the keyword editing code which was preventing users from
+  adding default keywords into global keyword categories.
+
+-------------------------------------------------------------------
+                     Changes in version 1.5.0
+-------------------------------------------------------------------		     
+
+- Optimised search. Improved the performance of the search function by
+  placing more of the work on the database and by applying indexes to some of
+  the tables. Sub-folder searches are also dramatically improved due to the
+  incorporation of a folderList field in the tblDocuments table.
+
+- Optimised display. New compact theme significantly reduces the page load
+  times. This is the default theme. The original is still available as a
+  selection.
+
+- Changed file download headers such that downloading works with IE over SSL.
+
+- Changed all instances of $HTTP_COOKIES_VARS, which has been deprecated, to
+  $_COOKIE.
+
+- Replaced all short open tags (<?) with <?php tags, including <?= tags.
+
+- Removed the dependency upon register_globals.
+
+- Database: removed the id column from tblDocumentContent. Changed the
+  primary key to be (document, version) with the auto_increment on the
+  version field. This enables the database to automatically assign the next
+  appropriate version number to any new row inserted into the table without
+  having to explicitly look up the existing version value, increment the
+  result and store that as part of the insert statement. It guarantees that
+  there will be no conflicts or duplication of version numbers by
+  simultaneous inserts. The id field was not required as it was not used
+  anywhere except as a convenient identifier. It was easily replaced by
+  (document id, version).
+
+- Database: Moved the lock field into a separate table for managing locks.
+  Fixes a problem where it was possible, although unlikely, for two people to
+  simultaneously request a lock on a document.
+
+- The settings file, inc/inc.Settings.php, is renamed in the distribution to
+  inc/inc.Settings-sample.php. This is to avoid any existing settings being
+  deleted during an upgrade. To use MyDMS for the first time, users must now
+  copy (or move) this file to inc/inc.Settings.php and edit before
+  using MyDMS.
+
+
+-------------------------------------------------------------------
+                     Changes in version 1.4.4
+-------------------------------------------------------------------		     
+
+- All files released as GPL as license recommends.
+
+
+-------------------------------------------------------------------
+                     Changes in Version 1.4.3
+-------------------------------------------------------------------
+
+- Downloading document: fixed security bug 
+
+-------------------------------------------------------------------
+                     Changes in Version 1.4.2
+-------------------------------------------------------------------
+
+- SQL injection bug fixed
+
+
+-------------------------------------------------------------------
+                     Changes in Version 1.4.1
+-------------------------------------------------------------------
+
+- Security Bug fixed that allowed unauthorized users to view
+  documents
+
+
+-------------------------------------------------------------------
+                     Changes in Version 1.4
+-------------------------------------------------------------------
+
+- New interface for user- and group-administration
+
+- Delete old revisions
+
+- Folder- and document-chooser now show a collapsed tree by default
+
+- You can now prepare both personal and global lists of keywords and
+  insert them easily for your documents
+
+
+-------------------------------------------------------------------
+                     Changes in Version 1.3.1
+-------------------------------------------------------------------
+
+- Choose language and theme
+  Users can now choose their preferred language and theme on the
+  login-screen.
+
+- Split of language file
+  inc.Language.php has been splitted so that every language is
+  provided in its own file.
+
+- Added ADOdb
+  Due to ADOdb MyDMS is no longer limited to MySQL. Every database
+  that is supported by ADOdb can be used together with MyDMS
+
+- Admin-Tool: Overview of folders and documents
+  A tool that shows a list of all folders and documents together 
+  with the ACLs has been added. The section "admin-tools" will
+  become bigger in the next versions (import files etc).
+
+
+-------------------------------------------------------------------
+                     Changes in Version 1.3.0
+-------------------------------------------------------------------
+
+- New feature: Auto-Conversion to HTML
+  When uploading files they are now converted to HTML automatically.
+  So you can now even view Winword-files online with your favourite
+  browser.
+
+- Integrated themes
+  Themes (again: thanks to Marcel van Groenigen), which were only
+  available by a seperate download so far, are now fully integrated
+  into MyDMS.
+  I'm looking forward to MacOS X Themes :-)
+
+- Fixed bug: Search function
+  An error occured if no folder had been chosen. This has been fixed.
+
+
+-------------------------------------------------------------------
+                     Changes in Version 1.2.1
+-------------------------------------------------------------------
+
+- Improved searching functionality
+  MyDMS now offers you a lot more options to help you find exactly
+  what you were looking for.
+  This is only the first stop of improvement: Look forward to an
+  even more powerful search engine in the next versions :-)
+
+- Security-Bug: Session-ID
+  One could guess the session-id very easily, since it was only a
+  two digit number. This has been corrected so that it should now
+  be impossible to get illegal access this way.
+  Tip: Empty tblSessions once a day (by a cron-job for example).
+
+
+-------------------------------------------------------------------
+                     Changes in Version 1.2.0
+-------------------------------------------------------------------
+- Move documents and folders
+  If you have put folders or documents to the wrong place or just
+  want to re-organize the structure you can now easily move
+  documents and folders.
+
+- New languages
+  A Russian (thanks to Dmitri) and a Durch version (thanks to André
+  Koot) are now available, too.
+
+- Upload-Bug
+  With certain configurations moving the temporary file of on upload
+  caused problems. MyDMS now uses the built-in move_uploaded_file()
+  function to prevent this error.
+
+
+-------------------------------------------------------------------
+                         Changes in Version 1.1.2
+-------------------------------------------------------------------
+
+- Sequence of Documents and Folders
+  One of the most wanted features has been realized: The user has
+  now full control of the sequence in which documents and folders
+  appear in the system.
+
+- Related Documents
+  Every documents now has a list of link to related documents.
+  There are two kinds of links: public and private ones; public
+  links can be seen by anyone, while private ones are only visible
+  to the user that created them.
+  Users with read-only access can only add private links, while
+  users with at least read-write access can decide which type of
+  link they want to add.
+  Private links can only be deleted by the user that has created
+  them while public links - no matter who created them - can be
+  deleted by all users with read-write access.
+
+- Fixed Bug: Delete documents
+  When deleting documents they were removed only from the database.
+  The files in the content-directory were kept.
+
+- Fixed Bug: View and download documents.
+  Very ling filenames (more than 70 characters) caused problems
+  with viewing and downloading of documents. By runnning the
+  db-update filenames with up to 150 characters are now possible.
+
+
+-------------------------------------------------------------------
+                         Changes in Version 1.1.1
+-------------------------------------------------------------------
+
+- Spanish translation
+  Eugenio Ramajo has completely translated MyDMS to Spanish
+
+- Disable guest-login
+  You can now disable the guest-login introduced in Version 1.1.0
+  by setting $_enableGuestLogin to false.
+
+- Confirmation for deletion
+  When deleting documents or folders you now have to confirm this
+  action to prevent you from accidentaly deleting important data.
+
+- Security improved
+  By manually changing the folder-ID in the URL it was possible to
+  "illegaly" show folders or documents (but downloading or viewing
+  the actual content was not possible).
+
+
+-------------------------------------------------------------------
+                         Changes in Version 1.1.0
+-------------------------------------------------------------------
+
+- Guest-Login
+  You can now choose to log-in as guest so that you can access your
+  documents more quickly. The guest user cannot be added to the ACLs.
+  So take care that the default access is at least "read" if you wish
+  to have access with the guest-user.
+  You cannot edit the guest-users's account.
+
+- Download documents more quickly
+  If you want to download the current version (or view it online) there
+  is no more need to scroll to the end of the document's page: Now there
+  is a button just on top of the site for downloading the current version.
+
+- Icons for Mime-Types
+  According to the document's MIME-type an additional icon is show.
+  (Icons from KDE3).
+
+- Correct filename when downloading
+  When downloading a file it was named data.[extension] up to know. This has
+  been replaced by the original filename.
+
+
+-------------------------------------------------------------------
+                        Changes in Version 1.0.1
+-------------------------------------------------------------------
+
+- if you had the GNU test-package installed on your machine, the function
+  getText() caused a fatal error. The problem was solved by renaming the
+  function.

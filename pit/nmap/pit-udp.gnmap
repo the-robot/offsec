@@ -1,0 +1,4 @@
+# Nmap 7.93 scan initiated Mon Oct 24 14:17:03 2022 as: nmap -sU -oA nmap/pit-udp 10.10.10.241
+Host: 10.10.10.241 (dms-pit.htb)	Status: Up
+Host: 10.10.10.241 (dms-pit.htb)	Ports: 161/open/udp//snmp///	Ignored State: filtered (999)
+# Nmap done at Mon Oct 24 14:34:48 2022 -- 1 IP address (1 host up) scanned in 1064.98 seconds

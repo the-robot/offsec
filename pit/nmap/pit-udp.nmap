@@ -1,0 +1,8 @@
+# Nmap 7.93 scan initiated Mon Oct 24 14:17:03 2022 as: nmap -sU -oA nmap/pit-udp 10.10.10.241
+Nmap scan report for dms-pit.htb (10.10.10.241)
+Host is up (0.39s latency).
+Not shown: 999 filtered udp ports (admin-prohibited)
+PORT    STATE SERVICE
+161/udp open  snmp
+
+# Nmap done at Mon Oct 24 14:34:48 2022 -- 1 IP address (1 host up) scanned in 1064.98 seconds
