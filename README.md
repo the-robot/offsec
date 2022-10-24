@@ -3,6 +3,7 @@
 ## Useful Links
 
 - [ippsec.rocks](https://ippsec.rocks/)
+- [revshells](https://www.revshells.com/) - generate reverse shells easily
 
 ## Linux Boxes 
 
@@ -56,3 +57,7 @@
 - [x] Forge
 - [x] Horizontall
 - [x] Shibboleth
+
+## For Fun (not from tj null)
+
+- [x] Photobomb
