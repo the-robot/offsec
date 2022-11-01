@@ -1,0 +1,41 @@
+403      GET        8l       22w      207c http://10.10.10.233/.html
+301      GET        7l       20w      237c http://10.10.10.233/includes => http://10.10.10.233/includes/
+200      GET      156l      407w     7440c http://10.10.10.233/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.233/includes (Apache)
+403      GET        8l       22w      206c http://10.10.10.233/.htm
+301      GET        7l       20w      236c http://10.10.10.233/scripts => http://10.10.10.233/scripts/
+301      GET        7l       20w      237c http://10.10.10.233/profiles => http://10.10.10.233/profiles/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.233/scripts (Apache)
+301      GET        7l       20w      234c http://10.10.10.233/sites => http://10.10.10.233/sites/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.233/profiles (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.233/sites (Apache)
+301      GET        7l       20w      235c http://10.10.10.233/themes => http://10.10.10.233/themes/
+403      GET        8l       22w      211c http://10.10.10.233/.htaccess
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.233/themes (Apache)
+403      GET        8l       22w      206c http://10.10.10.233/.htc
+403      GET        8l       22w      214c http://10.10.10.233/.html_var_DE
+403      GET        8l       22w      211c http://10.10.10.233/.htpasswd
+403      GET        8l       22w      208c http://10.10.10.233/.html.
+403      GET        8l       22w      212c http://10.10.10.233/.html.html
+403      GET        8l       22w      212c http://10.10.10.233/.htpasswds
+403      GET        8l       22w      207c http://10.10.10.233/.htm.
+403      GET        8l       22w      208c http://10.10.10.233/.htmll
+403      GET        8l       22w      211c http://10.10.10.233/.html.old
+403      GET        8l       22w      205c http://10.10.10.233/.ht
+403      GET        8l       22w      211c http://10.10.10.233/.html.bak
+403      GET        8l       22w      210c http://10.10.10.233/.htm.htm
+200      GET        6l       19w      174c http://10.10.10.233/.gitignore
+403      GET        8l       22w      206c http://10.10.10.233/.hta
+403      GET        8l       22w      210c http://10.10.10.233/.htgroup
+403      GET        8l       22w      208c http://10.10.10.233/.html1
+403      GET        8l       22w      211c http://10.10.10.233/.html.LCK
+403      GET        8l       22w      217c http://10.10.10.233/.html.printable
+403      GET        8l       22w      210c http://10.10.10.233/.htm.LCK
+403      GET        8l       22w      211c http://10.10.10.233/.html.php
+403      GET        8l       22w      215c http://10.10.10.233/.htaccess.bak
+403      GET        8l       22w      208c http://10.10.10.233/.htmls
+403      GET        8l       22w      206c http://10.10.10.233/.htx
+403      GET        8l       22w      207c http://10.10.10.233/.htm2
+403      GET        8l       22w      209c http://10.10.10.233/.htuser
+403      GET        8l       22w      207c http://10.10.10.233/.htlm
+403      GET        8l       22w      208c http://10.10.10.233/.html-

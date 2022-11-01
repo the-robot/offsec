@@ -49,7 +49,7 @@
 - [ ] Delivery
 - [ ] Ophiuchi
 - [ ] ScriptKiddie
-- [ ] Armageddon
+- [x] Armageddon
 - [x] Knife
 - [x] Pit
 - [x] Seal
