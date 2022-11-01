@@ -50,7 +50,7 @@
 - [ ] Ophiuchi
 - [ ] ScriptKiddie
 - [ ] Armageddon
-- [ ] Knife
+- [x] Knife
 - [x] Pit
 - [x] Seal
 - [x] Previse
@@ -62,3 +62,4 @@
 
 - [x] Photobomb
 - [x] Shoppy
+- [ ] RedPanda
