@@ -48,7 +48,7 @@
 - [ ] Ready
 - [ ] Delivery
 - [ ] Ophiuchi
-- [ ] ScriptKiddie
+- [x] ScriptKiddie
 - [x] Armageddon
 - [x] Knife
 - [x] Pit
