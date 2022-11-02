@@ -47,7 +47,7 @@
 - [ ] Time
 - [ ] Ready
 - [ ] Delivery
-- [ ] Ophiuchi
+- [x] Ophiuchi
 - [x] ScriptKiddie
 - [x] Armageddon
 - [x] Knife

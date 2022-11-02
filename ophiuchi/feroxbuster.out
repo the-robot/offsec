@@ -1,0 +1,12 @@
+200      GET      297l      587w     8042c http://10.10.10.227:8080/
+302      GET        0l        0w        0c http://10.10.10.227:8080/test => /test/
+302      GET        0l        0w        0c http://10.10.10.227:8080/manager => /manager/
+302      GET        0l        0w        0c http://10.10.10.227:8080/manager/images => /manager/images/
+302      GET        0l        0w        0c http://10.10.10.227:8080/manager/css => /manager/css/
+401      GET       63l      291w     2499c http://10.10.10.227:8080/manager/html
+302      GET        0l        0w        0c http://10.10.10.227:8080/manager/ => /manager/html
+401      GET       63l      291w     2499c http://10.10.10.227:8080/manager/text
+401      GET       63l      291w     2499c http://10.10.10.227:8080/manager/status
+302      GET        0l        0w        0c http://10.10.10.227:8080/yaml => /yaml/
+302      GET        0l        0w        0c http://10.10.10.227:8080/yaml/test => /yaml/test/
+200      GET      297l      587w     8042c http://10.10.10.227:8080/yaml/
