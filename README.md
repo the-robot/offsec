@@ -46,7 +46,7 @@
 - [ ] Luanne
 - [ ] Time
 - [ ] Ready
-- [ ] Delivery
+- [x] Delivery
 - [x] Ophiuchi
 - [x] ScriptKiddie
 - [x] Armageddon
