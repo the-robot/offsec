@@ -45,7 +45,7 @@
 - [ ] Passage
 - [ ] Luanne
 - [ ] Time
-- [ ] Ready
+- [x] Ready
 - [x] Delivery
 - [x] Ophiuchi
 - [x] ScriptKiddie
