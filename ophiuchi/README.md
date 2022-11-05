@@ -274,7 +274,9 @@ So in go code, if the function output is not equal to `1` it will shows `not rea
 
 So I modified the code as below and compile back to `wasm` with the following website.
 
-```bash
+https://webassembly.github.io/wabt/demo/wat2wasm/
+
+```wat
 (module
   (type $t0 (func (result i32)))
   (func $info (export "info") (type $t0) (result i32)
