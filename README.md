@@ -29,7 +29,7 @@
 - [ ] jarvis
 - [ ] Mirai
 - [ ] Popcorn
-- [ ] Haircut
+- [x] Haircut
 - [ ] Blocky
 - [ ] Frolic
 - [ ] Postman

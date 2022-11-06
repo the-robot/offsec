@@ -1,0 +1,10 @@
+200      GET        7l       15w      144c http://10.10.10.24/
+301      GET        7l       13w      194c http://10.10.10.24/uploads => http://10.10.10.24/uploads/
+403      GET        7l       11w      178c http://10.10.10.24/uploads/
+200      GET        7l       15w      144c http://10.10.10.24/
+301      GET        7l       13w      194c http://10.10.10.24/uploads => http://10.10.10.24/uploads/
+403      GET        7l       11w      178c http://10.10.10.24/uploads/
+200      GET        7l       15w      144c http://10.10.10.24/
+301      GET        7l       13w      194c http://10.10.10.24/uploads => http://10.10.10.24/uploads/
+403      GET        7l       11w      178c http://10.10.10.24/uploads/
+200      GET       19l       41w        0c http://10.10.10.24/exposed.php
