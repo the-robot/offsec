@@ -1,0 +1,41 @@
+[*] Found SSH service on 10.10.10.111:22
+   [*] Bruteforcing
+      [=] medusa -u root -P /usr/share/wordlists/rockyou.txt -e ns -h 10.10.10.111 - 22 -M ssh
+      [=] hydra -f -V -t 1 -l root -P /usr/share/wordlists/rockyou.txt -s 22 10.10.10.111 ssh
+      [=] ncrack -vv -p 22 --user root -P PASS_LIST 10.10.10.111
+   [*] Use nmap to automate banner grabbing and key fingerprints, e.g.
+      [=] nmap 10.10.10.111 -p 22 -sV --script=ssh-hostkey -oA './10.10.10.111/scans/10.10.10.111_22_ssh-hostkey'
+
+[*] Found NetBIOS service on 10.10.10.111:139
+   [*] Enumeration
+      [=] nmblookup -A 10.10.10.111
+      [=] smbclient //MOUNT/share -I 10.10.10.111 N
+      [=] smbclient -L //10.10.10.111
+      [=] enum4linux -a 10.10.10.111
+      [=] rpcclient -U "" 10.10.10.111
+
+[*] Found NetBIOS service on 10.10.10.111:445
+   [*] Enumeration
+      [=] nmblookup -A 10.10.10.111
+      [=] smbclient //MOUNT/share -I 10.10.10.111 N
+      [=] smbclient -L //10.10.10.111
+      [=] enum4linux -a 10.10.10.111
+      [=] rpcclient -U "" 10.10.10.111
+
+[*] Found HTTP/S service on 10.10.10.111:9999
+   [*] Enumeration
+      [=] nikto -h 10.10.10.111 -p 9999 -output ./10.10.10.111/scans/10.10.10.111_9999_nikto.txt
+      [=] curl -i 10.10.10.111:9999
+      [=] w3m -dump 10.10.10.111/robots.txt | tee ./10.10.10.111/scans/10.10.10.111_9999_robots.txt
+      [=] VHostScan -t 10.10.10.111 -oN ./10.10.10.111/scans/10.10.10.111_9999_vhosts.txt
+
+[*] Found HTTP service on 10.10.10.111:9999
+   [*] Enumeration
+      [=] dirb http://10.10.10.111:9999/ -o ./10.10.10.111/scans/10.10.10.111_9999_dirb.txt
+      [=] dirbuster -H -u http://10.10.10.111:9999/ -l /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -t 20 -s / -v -r ./10.10.10.111/scans/10.10.10.111_9999_dirbuster_medium.txt
+      [=] gobuster -w /usr/share/seclists/Discovery/Web-Content/common.txt -u http://10.10.10.111:9999/ -s '200,204,301,302,307,403,500' -e | tee './10.10.10.111/scans/10.10.10.111_9999_gobuster_common.txt'
+      [=] gobuster -w /usr/share/seclists/Discovery/Web-Content/CGIs.txt -u http://10.10.10.111:9999/ -s '200,204,301,307,403,500' -e | tee './10.10.10.111/scans/10.10.10.111_9999_gobuster_cgis.txt'
+
+
+
+[*] Always remember to manually go over the portscan report and carefully read between the lines ;)
