@@ -30,7 +30,7 @@
 - [ ] Mirai
 - [ ] Popcorn
 - [x] Haircut
-- [ ] Blocky
+- [x] Blocky
 - [ ] Frolic
 - [ ] Postman
 - [ ] Mango

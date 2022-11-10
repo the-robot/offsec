@@ -1,0 +1,131 @@
+WLD      GET        9l       26w      278c Got 302 for http://10.10.10.37/e0139769de384bc2bc15c30942280020 (url length: 32)
+WLD         -         -         - http://10.10.10.37/e0139769de384bc2bc15c30942280020 => http://blocky.htb
+WLD      GET        9l       26w      278c Got 302 for http://10.10.10.37/6b3ebbb8eb2042b2af23cc32ef60ff844b51f186a0ec4825bb8266e4136f535e308b261414a64d93aabb277555e202b7 (url length: 96)
+WLD         -         -         - http://10.10.10.37/6b3ebbb8eb2042b2af23cc32ef60ff844b51f186a0ec4825bb8266e4136f535e308b261414a64d93aabb277555e202b7 => http://blocky.htb
+403      GET       11l       32w      289c http://blocky.htb/.php
+403      GET       11l       32w      290c http://blocky.htb/.html
+301      GET        9l       28w      310c http://blocky.htb/plugins => http://blocky.htb/plugins/
+301      GET        9l       28w      311c http://blocky.htb/wp-admin => http://blocky.htb/wp-admin/
+301      GET        9l       28w      313c http://blocky.htb/wp-content => http://blocky.htb/wp-content/
+301      GET        9l       28w      314c http://blocky.htb/wp-includes => http://blocky.htb/wp-includes/
+403      GET       11l       32w      289c http://blocky.htb/.htm
+403      GET       11l       32w      301c http://blocky.htb/wp-content/.html
+301      GET        9l       28w      321c http://blocky.htb/wp-content/plugins => http://blocky.htb/wp-content/plugins/
+403      GET       11l       32w      300c http://blocky.htb/wp-content/.htm
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://blocky.htb/wp-includes (Apache)
+301      GET        9l       28w      321c http://blocky.htb/wp-content/uploads => http://blocky.htb/wp-content/uploads/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://blocky.htb/wp-content/uploads (Apache)
+200      GET      313l     3592w        0c http://blocky.htb/
+403      GET       11l       32w      300c http://blocky.htb/wp-content/.php
+301      GET        9l       28w      320c http://blocky.htb/wp-content/themes => http://blocky.htb/wp-content/themes/
+301      GET        9l       28w      307c http://blocky.htb/wiki => http://blocky.htb/wiki/
+301      GET        9l       28w      313c http://blocky.htb/phpmyadmin => http://blocky.htb/phpmyadmin/
+403      GET       11l       32w      297c http://blocky.htb/plugins/.php
+403      GET       11l       32w      298c http://blocky.htb/plugins/.html
+403      GET       11l       32w      297c http://blocky.htb/plugins/.htm
+301      GET        9l       28w      320c http://blocky.htb/wp-admin/includes => http://blocky.htb/wp-admin/includes/
+403      GET       11l       32w      299c http://blocky.htb/wp-admin/.html
+403      GET       11l       32w      298c http://blocky.htb/wp-admin/.htm
+301      GET        9l       28w      315c http://blocky.htb/wp-admin/css => http://blocky.htb/wp-admin/css/
+403      GET       11l       32w      298c http://blocky.htb/wp-admin/.php
+200      GET        0l        0w        0c http://blocky.htb/wp-content/
+301      GET        9l       28w      316c http://blocky.htb/plugins/files => http://blocky.htb/plugins/files/
+301      GET        9l       28w      313c http://blocky.htb/javascript => http://blocky.htb/javascript/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://blocky.htb/wp-admin/includes (Apache)
+403      GET       11l       32w      294c http://blocky.htb/.htaccess
+403      GET       11l       32w      309c http://blocky.htb/wp-content/plugins/.html
+403      GET       11l       32w      308c http://blocky.htb/wp-content/plugins/.php
+403      GET       11l       32w      308c http://blocky.htb/wp-content/plugins/.htm
+403      GET       11l       32w      300c http://blocky.htb/phpmyadmin/.php
+301      GET        9l       28w      323c http://blocky.htb/phpmyadmin/templates => http://blocky.htb/phpmyadmin/templates/
+301      GET        9l       28w      320c http://blocky.htb/phpmyadmin/themes => http://blocky.htb/phpmyadmin/themes/
+301      GET        9l       28w      316c http://blocky.htb/phpmyadmin/js => http://blocky.htb/phpmyadmin/js/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://blocky.htb/wp-admin/css (Apache)
+403      GET       11l       32w      301c http://blocky.htb/phpmyadmin/.html
+403      GET       11l       32w      305c http://blocky.htb/phpmyadmin/libraries
+403      GET       11l       32w      300c http://blocky.htb/phpmyadmin/.htm
+403      GET       11l       32w      307c http://blocky.htb/wp-content/themes/.php
+403      GET       11l       32w      308c http://blocky.htb/wp-content/themes/.html
+403      GET       11l       32w      307c http://blocky.htb/wp-content/themes/.htm
+403      GET       11l       32w      300c http://blocky.htb/javascript/.php
+403      GET       11l       32w      301c http://blocky.htb/javascript/.html
+403      GET       11l       32w      300c http://blocky.htb/javascript/.htm
+301      GET        9l       28w      317c http://blocky.htb/plugins/assets => http://blocky.htb/plugins/assets/
+403      GET       11l       32w      304c http://blocky.htb/phpmyadmin/js/.html
+403      GET       11l       32w      303c http://blocky.htb/phpmyadmin/js/.php
+403      GET       11l       32w      303c http://blocky.htb/phpmyadmin/js/.htm
+403      GET       11l       32w      310c http://blocky.htb/phpmyadmin/templates/.php
+403      GET       11l       32w      307c http://blocky.htb/phpmyadmin/themes/.php
+403      GET       11l       32w      311c http://blocky.htb/phpmyadmin/templates/.html
+403      GET       11l       32w      308c http://blocky.htb/phpmyadmin/themes/.html
+403      GET       11l       32w      307c http://blocky.htb/phpmyadmin/themes/.htm
+403      GET       11l       32w      310c http://blocky.htb/phpmyadmin/templates/.htm
+301      GET        9l       28w      334c http://blocky.htb/phpmyadmin/templates/components => http://blocky.htb/phpmyadmin/templates/components/
+301      GET        9l       28w      328c http://blocky.htb/phpmyadmin/templates/test => http://blocky.htb/phpmyadmin/templates/test/
+403      GET       11l       32w      305c http://blocky.htb/wp-content/.htaccess
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://blocky.htb/plugins/assets (Apache)
+301      GET        9l       28w      329c http://blocky.htb/phpmyadmin/templates/error => http://blocky.htb/phpmyadmin/templates/error/
+301      GET        9l       28w      332c http://blocky.htb/phpmyadmin/templates/database => http://blocky.htb/phpmyadmin/templates/database/
+403      GET       11l       32w      322c http://blocky.htb/phpmyadmin/templates/components/.html
+403      GET       11l       32w      321c http://blocky.htb/phpmyadmin/templates/components/.php
+403      GET       11l       32w      321c http://blocky.htb/phpmyadmin/templates/components/.htm
+403      GET       11l       32w      315c http://blocky.htb/phpmyadmin/templates/test/.php
+403      GET       11l       32w      316c http://blocky.htb/phpmyadmin/templates/test/.html
+403      GET       11l       32w      315c http://blocky.htb/phpmyadmin/templates/test/.htm
+301      GET        9l       28w      334c http://blocky.htb/phpmyadmin/templates/javascript => http://blocky.htb/phpmyadmin/templates/javascript/
+403      GET       11l       32w      316c http://blocky.htb/phpmyadmin/templates/error/.php
+403      GET       11l       32w      317c http://blocky.htb/phpmyadmin/templates/error/.html
+403      GET       11l       32w      316c http://blocky.htb/phpmyadmin/templates/error/.htm
+301      GET        9l       28w      317c http://blocky.htb/phpmyadmin/doc => http://blocky.htb/phpmyadmin/doc/
+403      GET       11l       32w      296c http://blocky.htb/javascript/
+200      GET        0l        0w        0c http://blocky.htb/wp-content/plugins/
+403      GET       11l       32w      319c http://blocky.htb/phpmyadmin/templates/database/.php
+403      GET       11l       32w      320c http://blocky.htb/phpmyadmin/templates/database/.html
+403      GET       11l       32w      319c http://blocky.htb/phpmyadmin/templates/database/.htm
+403      GET       11l       32w      303c http://blocky.htb/plugins/files/.php
+403      GET       11l       32w      304c http://blocky.htb/plugins/files/.html
+403      GET       11l       32w      303c http://blocky.htb/plugins/files/.htm
+403      GET       11l       32w      294c http://blocky.htb/wiki/.php
+403      GET       11l       32w      295c http://blocky.htb/wiki/.html
+403      GET       11l       32w      294c http://blocky.htb/wiki/.htm
+403      GET       11l       32w      321c http://blocky.htb/phpmyadmin/templates/javascript/.php
+403      GET       11l       32w      322c http://blocky.htb/phpmyadmin/templates/javascript/.html
+403      GET       11l       32w      321c http://blocky.htb/phpmyadmin/templates/javascript/.htm
+200      GET       26l      347w        0c http://blocky.htb/phpmyadmin/
+301      GET        9l       28w      328c http://blocky.htb/phpmyadmin/templates/list => http://blocky.htb/phpmyadmin/templates/list/
+302      GET        0l        0w        0c http://blocky.htb/wp-admin/ => http://blocky.htb/wp-login.php?redirect_to=http%3A%2F%2Fblocky.htb%2Fwp-admin%2F&reauth=1
+200      GET        0l        0w        0c http://blocky.htb/wp-content/themes/
+403      GET       11l       32w      299c http://blocky.htb/phpmyadmin/js/
+403      GET       11l       32w      306c http://blocky.htb/phpmyadmin/templates/
+403      GET       11l       32w      303c http://blocky.htb/phpmyadmin/themes/
+403      GET       11l       32w      290c http://blocky.htb/.php3
+403      GET       11l       32w      304c http://blocky.htb/phpmyadmin/doc/.php
+403      GET       11l       32w      305c http://blocky.htb/phpmyadmin/doc/.html
+403      GET       11l       32w      304c http://blocky.htb/phpmyadmin/doc/.htm
+200      GET       37l       61w      745c http://blocky.htb/plugins/
+301      GET        9l       28w      317c http://blocky.htb/phpmyadmin/sql => http://blocky.htb/phpmyadmin/sql/
+403      GET       11l       32w      303c http://blocky.htb/phpmyadmin/js/.htc
+403      GET       11l       32w      304c http://blocky.htb/phpmyadmin/js/.htm.
+403      GET       11l       32w      305c http://blocky.htb/phpmyadmin/sql/.htm.
+403      GET       11l       32w      306c http://blocky.htb/phpmyadmin/themes/.ht
+403      GET       11l       32w      300c http://blocky.htb/javascript/.hta
+403      GET       11l       32w      304c http://blocky.htb/javascript/.htgroup
+403      GET       11l       32w      305c http://blocky.htb/javascript/.html.php
+403      GET       11l       32w      296c http://blocky.htb/.html_files
+403      GET       11l       32w      306c http://blocky.htb/javascript/.html.orig
+403      GET       11l       32w      294c http://blocky.htb/wiki/.php
+301      GET        9l       28w      307c http://blocky.htb/wiki => http://blocky.htb/wiki/
+403      GET       11l       32w      294c http://blocky.htb/wiki/.htm
+403      GET       11l       32w      295c http://blocky.htb/wiki/.html
+200      GET       10l       51w      380c http://blocky.htb/wiki/
+403      GET       11l       32w      299c http://blocky.htb/wiki/.htaccess
+403      GET       11l       32w      295c http://blocky.htb/wiki/.php3
+403      GET       11l       32w      296c http://blocky.htb/wiki/.phtml
+403      GET       11l       32w      294c http://blocky.htb/wiki/.htc
+403      GET       11l       32w      295c http://blocky.htb/wiki/.php5
+403      GET       11l       32w      302c http://blocky.htb/wiki/.html_var_DE
+403      GET       11l       32w      295c http://blocky.htb/wiki/.php4
+403      GET       11l       32w      299c http://blocky.htb/wiki/.htpasswd
+403      GET       11l       32w      296c http://blocky.htb/wiki/.html.
+403      GET       11l       32w      300c http://blocky.htb/wiki/.html.html
+403      GET       11l       32w      300c http://blocky.htb/wiki/.htpasswds

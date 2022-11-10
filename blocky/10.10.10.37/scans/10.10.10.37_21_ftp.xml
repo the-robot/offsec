@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.93 scan initiated Fri Nov 11 00:39:20 2022 as: nmap -sV -Pn -vv -p21 -&#45;script=ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-syst,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221 -oA /home/ghost/Documents/hacking/tj-null-boxes/blocky/10.10.10.37/scans/10.10.10.37_21_ftp 10.10.10.37 -->
+<nmaprun scanner="nmap" args="nmap -sV -Pn -vv -p21 -&#45;script=ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-syst,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221 -oA /home/ghost/Documents/hacking/tj-null-boxes/blocky/10.10.10.37/scans/10.10.10.37_21_ftp 10.10.10.37" start="1668098360" startstr="Fri Nov 11 00:39:20 2022" version="7.93" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="1" services="21"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1668098360"/>
+<taskend task="NSE" time="1668098360"/>
+<taskbegin task="NSE" time="1668098360"/>
+<taskend task="NSE" time="1668098360"/>
+<taskbegin task="Connect Scan" time="1668098360"/>
+<taskend task="Connect Scan" time="1668098361" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1668098361"/>
+<taskend task="Service scan" time="1668098362" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1668098362"/>
+<taskend task="NSE" time="1668098363"/>
+<taskbegin task="NSE" time="1668098363"/>
+<taskend task="NSE" time="1668098363"/>
+<host starttime="1668098360" endtime="1668098363"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.10.10.37" addrtype="ipv4"/>
+<hostnames>
+<hostname name="blocky.htb" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="21"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ftp" product="ProFTPD" version="1.3.5a" ostype="Unix" method="probed" conf="10"><cpe>cpe:/a:proftpd:proftpd:1.3.5a</cpe></service></port>
+</ports>
+<times srtt="475541" rttvar="475541" to="2377705"/>
+</host>
+<taskbegin task="NSE" time="1668098363"/>
+<taskend task="NSE" time="1668098363"/>
+<taskbegin task="NSE" time="1668098363"/>
+<taskend task="NSE" time="1668098363"/>
+<runstats><finished time="1668098363" timestr="Fri Nov 11 00:39:23 2022" summary="Nmap done at Fri Nov 11 00:39:23 2022; 1 IP address (1 host up) scanned in 3.60 seconds" elapsed="3.60" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
