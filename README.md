@@ -8,7 +8,7 @@
 ## Linux Boxes 
 
 - [x] Lame
-- [ ] brainfuck
+- [ ] ~~brainfuck~~
 - [x] shocker
 - [x] bashed
 - [x] nibbles
