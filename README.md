@@ -31,7 +31,7 @@
 - [ ] Popcorn
 - [x] Haircut
 - [x] Blocky
-- [ ] Frolic
+- [x] Frolic
 - [ ] Postman
 - [ ] Mango
 - [ ] Traverxec
