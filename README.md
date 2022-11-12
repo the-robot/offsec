@@ -33,7 +33,7 @@
 - [x] Blocky
 - [x] Frolic
 - [x] Postman
-- [ ] Mango
+- [x] Mango
 - [ ] Traverxec
 - [ ] OpenAdmin
 - [ ] Magic
