@@ -1,0 +1,4 @@
+# Nmap 7.93 scan initiated Sat Nov 12 17:34:53 2022 as: nmap -sC -sV -Pn --disable-arp-ping -oA ./10.10.10.162/scans/10.10.10.162.quick 10.10.10.162
+Host: 10.10.10.162 (mango.htb)	Status: Up
+Host: 10.10.10.162 (mango.htb)	Ports: 22/open/tcp//ssh//OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.29/, 443/open/tcp//ssl|http//Apache httpd 2.4.29 ((Ubuntu))/	Ignored State: closed (997)
+# Nmap done at Sat Nov 12 17:35:56 2022 -- 1 IP address (1 host up) scanned in 63.24 seconds

@@ -1,0 +1,5 @@
+200      GET      209l      403w     4022c http://staging-order.mango.htb/
+301      GET        9l       28w      335c http://staging-order.mango.htb/vendor => http://staging-order.mango.htb/vendor/
+301      GET        9l       28w      344c http://staging-order.mango.htb/vendor/composer => http://staging-order.mango.htb/vendor/composer/
+200      GET       56l      398w     2918c http://staging-order.mango.htb/vendor/composer/LICENSE
+403      GET        9l       28w      288c http://staging-order.mango.htb/server-status
