@@ -1,0 +1,56 @@
+200      GET       91l      253w     3844c http://postman/
+403      GET       11l       32w      287c http://postman/.html
+301      GET        9l       28w      299c http://postman/js => http://postman/js/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://postman/js (Apache)
+301      GET        9l       28w      303c http://postman/upload => http://postman/upload/
+301      GET        9l       28w      303c http://postman/images => http://postman/images/
+403      GET       11l       32w      286c http://postman/.htm
+301      GET        9l       28w      300c http://postman/css => http://postman/css/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://postman/css (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://postman/upload (Apache)
+403      GET       11l       32w      286c http://postman/.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://postman/images (Apache)
+301      GET        9l       28w      302c http://postman/fonts => http://postman/fonts/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://postman/fonts (Apache)
+403      GET       11l       32w      291c http://postman/.htaccess
+403      GET       11l       32w      288c http://postman/.phtml
+403      GET       11l       32w      286c http://postman/.htc
+403      GET       11l       32w      294c http://postman/.html_var_DE
+403      GET       11l       32w      295c http://postman/server-status
+403      GET       11l       32w      291c http://postman/.htpasswd
+403      GET       11l       32w      288c http://postman/.html.
+403      GET       11l       32w      292c http://postman/.html.html
+403      GET       11l       32w      292c http://postman/.htpasswds
+403      GET       11l       32w      287c http://postman/.htm.
+403      GET       11l       32w      288c http://postman/.htmll
+403      GET       11l       32w      287c http://postman/.phps
+403      GET       11l       32w      291c http://postman/.html.old
+403      GET       11l       32w      291c http://postman/.html.bak
+403      GET       11l       32w      285c http://postman/.ht
+403      GET       11l       32w      290c http://postman/.htm.htm
+403      GET       11l       32w      288c http://postman/.html1
+403      GET       11l       32w      290c http://postman/.htgroup
+403      GET       11l       32w      286c http://postman/.hta
+403      GET       11l       32w      297c http://postman/.html.printable
+403      GET       11l       32w      291c http://postman/.html.LCK
+403      GET       11l       32w      290c http://postman/.htm.LCK
+403      GET       11l       32w      295c http://postman/.htaccess.bak
+403      GET       11l       32w      291c http://postman/.html.php
+403      GET       11l       32w      288c http://postman/.htmls
+403      GET       11l       32w      286c http://postman/.htx
+403      GET       11l       32w      287c http://postman/.htm2
+403      GET       11l       32w      287c http://postman/.htlm
+403      GET       11l       32w      288c http://postman/.html-
+403      GET       11l       32w      289c http://postman/.htuser
+403      GET       11l       32w      290c http://postman/.htacess
+403      GET       11l       32w      291c http://postman/.htm.html
+403      GET       11l       32w      288c http://postman/.htm.d
+403      GET       11l       32w      293c http://postman/.html_files
+403      GET       11l       32w      292c http://postman/.html.orig
+403      GET       11l       32w      290c http://postman/.htm.old
+403      GET       11l       32w      286c http://postman/.hts
+403      GET       11l       32w      292c http://postman/.htmlprint
+403      GET       11l       32w      291c http://postman/.html.sav
+403      GET       11l       32w      288c http://postman/.html_
+403      GET       11l       32w      290c http://postman/.htmlpar
+403      GET       11l       32w      289c http://postman/.html-1

@@ -1,0 +1,4 @@
+# Nmap 7.93 scan initiated Fri Nov 11 14:55:34 2022 as: nmap -sC -sV -Pn --disable-arp-ping -oA ./10.10.10.160/scans/10.10.10.160.quick 10.10.10.160
+Host: 10.10.10.160 ()	Status: Up
+Host: 10.10.10.160 ()	Ports: 22/open/tcp//ssh//OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.29 ((Ubuntu))/, 10000/open/tcp//http//MiniServ 1.910 (Webmin httpd)/	Ignored State: closed (997)
+# Nmap done at Fri Nov 11 14:56:48 2022 -- 1 IP address (1 host up) scanned in 73.84 seconds

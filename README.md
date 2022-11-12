@@ -32,7 +32,7 @@
 - [x] Haircut
 - [x] Blocky
 - [x] Frolic
-- [ ] Postman
+- [x] Postman
 - [ ] Mango
 - [ ] Traverxec
 - [ ] OpenAdmin
