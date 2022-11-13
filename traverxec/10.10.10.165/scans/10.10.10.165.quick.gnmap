@@ -1,0 +1,4 @@
+# Nmap 7.93 scan initiated Sun Nov 13 11:05:27 2022 as: nmap -sC -sV -Pn --disable-arp-ping -oA ./10.10.10.165/scans/10.10.10.165.quick 10.10.10.165
+Host: 10.10.10.165 ()	Status: Up
+Host: 10.10.10.165 ()	Ports: 22/open/tcp//ssh//OpenSSH 7.9p1 Debian 10+deb10u1 (protocol 2.0)/, 80/open/tcp//http//nostromo 1.9.6/	Ignored State: filtered (998)
+# Nmap done at Sun Nov 13 11:05:59 2022 -- 1 IP address (1 host up) scanned in 31.91 seconds

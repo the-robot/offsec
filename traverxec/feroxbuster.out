@@ -1,0 +1,7 @@
+301      GET       14l       30w        0c http://10.10.10.165/img => http://10.10.10.165/img/
+200      GET      400l     1177w    15674c http://10.10.10.165/
+301      GET       14l       30w        0c http://10.10.10.165/icons => http://10.10.10.165/icons/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.165/img (Apache)
+301      GET       14l       30w        0c http://10.10.10.165/css => http://10.10.10.165/css/
+301      GET       14l       30w        0c http://10.10.10.165/js => http://10.10.10.165/js/
+301      GET       14l       30w        0c http://10.10.10.165/~david => http://10.10.10.165/~david/

@@ -34,7 +34,7 @@
 - [x] Frolic
 - [x] Postman
 - [x] Mango
-- [ ] Traverxec
+- [x] Traverxec
 - [ ] OpenAdmin
 - [ ] Magic
 - [ ] Admirer
