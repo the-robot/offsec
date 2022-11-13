@@ -1,0 +1,17 @@
+# Nmap 7.93 scan initiated Sun Nov 13 16:45:26 2022 as: nmap -sC -sV -Pn --disable-arp-ping -oA ./10.10.10.171/scans/10.10.10.171.quick 10.10.10.171
+Nmap scan report for 10.10.10.171
+Host is up (0.26s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 4b98df85d17ef03dda48cdbc9200b754 (RSA)
+|   256 dceb3dc944d118b122b4cfdebd6c7a54 (ECDSA)
+|_  256 dcadca3c11315b6fe6a489347c9be550 (ED25519)
+80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_http-title: Apache2 Ubuntu Default Page: It works
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Nov 13 16:45:46 2022 -- 1 IP address (1 host up) scanned in 19.64 seconds

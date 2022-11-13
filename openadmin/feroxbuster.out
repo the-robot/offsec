@@ -1,0 +1,28 @@
+200      GET      375l      964w    10918c http://10.10.10.171/
+301      GET        9l       28w      312c http://10.10.10.171/music => http://10.10.10.171/music/
+301      GET        9l       28w      316c http://10.10.10.171/music/img => http://10.10.10.171/music/img/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.171/music/img (Apache)
+301      GET        9l       28w      316c http://10.10.10.171/music/css => http://10.10.10.171/music/css/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.171/music/css (Apache)
+301      GET        9l       28w      315c http://10.10.10.171/music/js => http://10.10.10.171/music/js/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.171/music/js (Apache)
+301      GET        9l       28w      314c http://10.10.10.171/artwork => http://10.10.10.171/artwork/
+301      GET        9l       28w      321c http://10.10.10.171/artwork/images => http://10.10.10.171/artwork/images/
+301      GET        9l       28w      318c http://10.10.10.171/artwork/css => http://10.10.10.171/artwork/css/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.171/artwork/css (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.171/artwork/images (Apache)
+301      GET        9l       28w      317c http://10.10.10.171/artwork/js => http://10.10.10.171/artwork/js/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.171/artwork/js (Apache)
+301      GET        9l       28w      320c http://10.10.10.171/artwork/fonts => http://10.10.10.171/artwork/fonts/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.171/artwork/fonts (Apache)
+301      GET        9l       28w      319c http://10.10.10.171/music/Source => http://10.10.10.171/music/Source/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.171/music/Source (Apache)
+301      GET        9l       28w      313c http://10.10.10.171/sierra => http://10.10.10.171/sierra/
+301      GET        9l       28w      317c http://10.10.10.171/sierra/css => http://10.10.10.171/sierra/css/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.171/sierra/css (Apache)
+301      GET        9l       28w      316c http://10.10.10.171/sierra/js => http://10.10.10.171/sierra/js/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.171/sierra/js (Apache)
+301      GET        9l       28w      319c http://10.10.10.171/sierra/fonts => http://10.10.10.171/sierra/fonts/
+301      GET        9l       28w      321c http://10.10.10.171/sierra/vendors => http://10.10.10.171/sierra/vendors/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.171/sierra/vendors (Apache)
+403      GET        9l       28w      277c http://10.10.10.171/server-status

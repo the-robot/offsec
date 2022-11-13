@@ -35,7 +35,7 @@
 - [x] Postman
 - [x] Mango
 - [x] Traverxec
-- [ ] OpenAdmin
+- [x] OpenAdmin
 - [ ] Magic
 - [ ] Admirer
 - [ ] Blunder
