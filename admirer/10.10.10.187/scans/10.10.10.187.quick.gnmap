@@ -1,0 +1,4 @@
+# Nmap 7.93 scan initiated Wed Nov 16 02:08:46 2022 as: nmap -sC -sV -Pn --disable-arp-ping -oA ./10.10.10.187/scans/10.10.10.187.quick 10.10.10.187
+Host: 10.10.10.187 ()	Status: Up
+Host: 10.10.10.187 ()	Ports: 21/open/tcp//ftp//vsftpd 3.0.3/, 22/open/tcp//ssh//OpenSSH 7.4p1 Debian 10+deb9u7 (protocol 2.0)/, 80/filtered/tcp//http///	Ignored State: closed (997)
+# Nmap done at Wed Nov 16 02:09:06 2022 -- 1 IP address (1 host up) scanned in 19.35 seconds

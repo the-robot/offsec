@@ -1,0 +1,16 @@
+301      GET        9l       28w      313c http://10.10.10.187/images => http://10.10.10.187/images/
+200      GET      153l      529w     6051c http://10.10.10.187/
+403      GET        9l       28w      277c http://10.10.10.187/.php
+200      GET      153l      529w     6051c http://10.10.10.187/index.php
+301      GET        9l       28w      313c http://10.10.10.187/assets => http://10.10.10.187/assets/
+301      GET        9l       28w      320c http://10.10.10.187/images/thumbs => http://10.10.10.187/images/thumbs/
+301      GET        9l       28w      317c http://10.10.10.187/assets/css => http://10.10.10.187/assets/css/
+403      GET        9l       28w      277c http://10.10.10.187/images/.php
+301      GET        9l       28w      324c http://10.10.10.187/assets/css/images => http://10.10.10.187/assets/css/images/
+301      GET        9l       28w      316c http://10.10.10.187/assets/js => http://10.10.10.187/assets/js/
+403      GET        9l       28w      277c http://10.10.10.187/assets/.php
+301      GET        9l       28w      316c http://10.10.10.187/admin-dir => http://10.10.10.187/admin-dir/
+403      GET        9l       28w      277c http://10.10.10.187/.php
+301      GET        9l       28w      316c http://10.10.10.187/admin-dir => http://10.10.10.187/admin-dir/
+200      GET       29l       39w      350c http://10.10.10.187/admin-dir/contacts.txt
+200      GET       11l       13w      136c http://10.10.10.187/admin-dir/credentials.txt

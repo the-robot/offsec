@@ -1,0 +1,16 @@
+# Nmap 7.93 scan initiated Wed Nov 16 02:08:46 2022 as: nmap -sC -sV -Pn --disable-arp-ping -oA ./10.10.10.187/scans/10.10.10.187.quick 10.10.10.187
+Nmap scan report for 10.10.10.187
+Host is up (0.27s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT   STATE    SERVICE VERSION
+21/tcp open     ftp     vsftpd 3.0.3
+22/tcp open     ssh     OpenSSH 7.4p1 Debian 10+deb9u7 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 4a71e92163699dcbdd84021a2397e1b9 (RSA)
+|   256 c595b6214d46a425557a873e19a8e702 (ECDSA)
+|_  256 d02dddd05c42f87b315abe57c4a9a756 (ED25519)
+80/tcp filtered http
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Nov 16 02:09:06 2022 -- 1 IP address (1 host up) scanned in 19.35 seconds

@@ -1,0 +1,16 @@
+[*] Found FTP service on 10.10.10.187:21
+   [*] Enumeration
+      [=] nmap -sV -Pn -vv -p21 --script=ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-syst,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221 -oA './10.10.10.187/scans/10.10.10.187_21_ftp' 10.10.10.187
+      [=] hydra -L USER_LIST -P PASS_LIST -f -o ./10.10.10.187/scans/10.10.10.187_21_ftphydra.txt -u 10.10.10.187 -s 21 ftp
+
+[*] Found SSH service on 10.10.10.187:22
+   [*] Bruteforcing
+      [=] medusa -u root -P /usr/share/wordlists/rockyou.txt -e ns -h 10.10.10.187 - 22 -M ssh
+      [=] hydra -f -V -t 1 -l root -P /usr/share/wordlists/rockyou.txt -s 22 10.10.10.187 ssh
+      [=] ncrack -vv -p 22 --user root -P PASS_LIST 10.10.10.187
+   [*] Use nmap to automate banner grabbing and key fingerprints, e.g.
+      [=] nmap 10.10.10.187 -p 22 -sV --script=ssh-hostkey -oA './10.10.10.187/scans/10.10.10.187_22_ssh-hostkey'
+
+
+
+[*] Always remember to manually go over the portscan report and carefully read between the lines ;)

@@ -1,0 +1,8 @@
+# Nmap 7.93 scan initiated Wed Nov 16 02:09:06 2022 as: nmap -sC -sV -sU -Pn --disable-arp-ping -oA ./10.10.10.187/scans/10.10.10.187-udp 10.10.10.187
+Nmap scan report for 10.10.10.187
+Host is up (0.27s latency).
+All 1000 scanned ports on 10.10.10.187 are in ignored states.
+Not shown: 1000 closed udp ports (port-unreach)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Nov 16 02:25:58 2022 -- 1 IP address (1 host up) scanned in 1011.86 seconds
