@@ -36,7 +36,7 @@
 - [x] Mango
 - [x] Traverxec
 - [x] OpenAdmin
-- [ ] Magic
+- [x] Magic
 - [ ] Admirer
 - [ ] Blunder
 - [ ] Tabby

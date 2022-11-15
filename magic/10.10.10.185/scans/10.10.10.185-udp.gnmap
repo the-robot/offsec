@@ -1,0 +1,4 @@
+# Nmap 7.93 scan initiated Tue Nov 15 23:45:50 2022 as: nmap -sC -sV -sU -Pn --disable-arp-ping -oA ./10.10.10.185/scans/10.10.10.185-udp 10.10.10.185
+Host: 10.10.10.185 ()	Status: Up
+Host: 10.10.10.185 ()	Ports: 631/open|filtered/udp//ipp///, 5353/open|filtered/udp//zeroconf///	Ignored State: closed (998)
+# Nmap done at Wed Nov 16 00:04:52 2022 -- 1 IP address (1 host up) scanned in 1142.88 seconds

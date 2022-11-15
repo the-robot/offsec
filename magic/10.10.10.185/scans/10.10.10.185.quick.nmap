@@ -1,0 +1,17 @@
+# Nmap 7.93 scan initiated Tue Nov 15 23:45:27 2022 as: nmap -sC -sV -Pn --disable-arp-ping -oA ./10.10.10.185/scans/10.10.10.185.quick 10.10.10.185
+Nmap scan report for 10.10.10.185
+Host is up (0.27s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 06d489bf51f7fc0cf9085e9763648dca (RSA)
+|   256 11a69298ce3540c729094f6c2d74aa66 (ECDSA)
+|_  256 7105991fa81b14d6038553f8788ecb88 (ED25519)
+80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_http-title: Magic Portfolio
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Nov 15 23:45:49 2022 -- 1 IP address (1 host up) scanned in 22.37 seconds

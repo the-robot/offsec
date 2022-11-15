@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.93 scan initiated Wed Nov 16 00:04:53 2022 as: nmap -vv -Pn -&#45;disable-arp-ping -sS -A -sC -p- -T 3 -script-args=unsafe=1 -oN ./10.10.10.185/scans/10.10.10.185.nmap -oX ./10.10.10.185/scans/10.10.10.185_nmap_scan_import.xml 10.10.10.185 -->
+<nmaprun scanner="nmap" args="nmap -vv -Pn -&#45;disable-arp-ping -sS -A -sC -p- -T 3 -script-args=unsafe=1 -oN ./10.10.10.185/scans/10.10.10.185.nmap -oX ./10.10.10.185/scans/10.10.10.185_nmap_scan_import.xml 10.10.10.185" start="1668528293" startstr="Wed Nov 16 00:04:53 2022" version="7.93" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1668528293"/>
+<taskend task="NSE" time="1668528293"/>
+<taskbegin task="NSE" time="1668528293"/>
+<taskend task="NSE" time="1668528293"/>
+<taskbegin task="NSE" time="1668528293"/>
+<taskend task="NSE" time="1668528293"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1668528293"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1668528293"/>
+<taskbegin task="SYN Stealth Scan" time="1668528293"/>
+<taskprogress task="SYN Stealth Scan" time="1668528324" percent="39.94" remaining="47" etc="1668528371"/>
+<taskprogress task="SYN Stealth Scan" time="1668528366" percent="53.59" remaining="64" etc="1668528429"/>
+<taskprogress task="SYN Stealth Scan" time="1668528396" percent="55.81" remaining="82" etc="1668528478"/>
+<taskprogress task="SYN Stealth Scan" time="1668528429" percent="58.31" remaining="98" etc="1668528526"/>
+<taskprogress task="SYN Stealth Scan" time="1668528471" percent="61.38" remaining="113" etc="1668528583"/>
+<taskprogress task="SYN Stealth Scan" time="1668528579" percent="69.59" remaining="125" etc="1668528704"/>
