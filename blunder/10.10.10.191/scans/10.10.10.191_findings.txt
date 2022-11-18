@@ -1,0 +1,3 @@
+
+
+[*] Always remember to manually go over the portscan report and carefully read between the lines ;)

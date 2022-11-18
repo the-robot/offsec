@@ -1,0 +1,4 @@
+# Nmap 7.93 scan initiated Fri Nov 18 23:25:37 2022 as: nmap -sC -sV -Pn --disable-arp-ping -oA ./10.10.10.191/scans/10.10.10.191.quick 10.10.10.191
+Host: 10.10.10.191 ()	Status: Up
+Host: 10.10.10.191 ()	Ports: 	Ignored State: filtered (1000)
+# Nmap done at Fri Nov 18 23:29:04 2022 -- 1 IP address (1 host up) scanned in 207.28 seconds
