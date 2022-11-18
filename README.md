@@ -37,7 +37,7 @@
 - [x] Traverxec
 - [x] OpenAdmin
 - [x] Magic
-- [ ] Admirer
+- [x] Admirer
 - [ ] Blunder
 - [ ] Tabby
 - [ ] Doctor
