@@ -38,7 +38,7 @@
 - [x] OpenAdmin
 - [x] Magic
 - [x] Admirer
-- [ ] Blunder
+- [x] Blunder
 - [ ] Tabby
 - [ ] Doctor
 - [ ] SneakyMailer
