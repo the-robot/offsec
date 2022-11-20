@@ -62,4 +62,5 @@
 
 - [x] Photobomb
 - [x] Shoppy
-- [ ] RedPanda
+- [x] RedPanda
+- [ ] MetaTwo
