@@ -1,2 +1,8 @@
 **/key
 **/key.pub
+
+# active boxes
+**/photobomb/*
+**/redpanda/*
+**/metatwo/*
+**/shoppy/*
