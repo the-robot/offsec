@@ -8,25 +8,25 @@
 ## Linux Boxes 
 
 - [x] Lame
-- [ ] ~~brainfuck~~
+- [x] brainfuck
 - [x] shocker
 - [x] bashed
 - [x] nibbles
-- [ ] beep
-- [ ] cronos
-- [ ] nineveh
-- [ ] sense
-- [ ] solidstate
-- [ ] node
-- [ ] valentine
-- [ ] poison
-- [ ] sunday
-- [ ] tartarsauce
+- [x] beep
+- [x] cronos
+- [x] nineveh
+- [x] sense
+- [x] solidstate
+- [x] node
+- [x] valentine
+- [x] poison
+- [x] sunday
+- [x] tartarsauce
 - [ ] lrked
-- [ ] Friendzone
-- [ ] Swagshop
-- [ ] Networked
-- [ ] jarvis
+- [x] Friendzone
+- [x] Swagshop
+- [x] Networked
+- [x] jarvis
 - [ ] Mirai
 - [ ] Popcorn
 - [x] Haircut
@@ -39,7 +39,7 @@
 - [x] Magic
 - [x] Admirer
 - [x] Blunder
-- [ ] Tabby
+- [x] Tabby
 - [x] Doctor
 - [ ] SneakyMailer
 - [ ] Passage
