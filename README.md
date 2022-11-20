@@ -63,9 +63,9 @@
 - [x] Horizontall
 - [x] Shibboleth
 
-## For Fun (not from tj null)
+## Other boxes
 
 - [x] Photobomb
 - [x] Shoppy
 - [x] RedPanda
-- [ ] MetaTwo
+- [x] MetaTwo
