@@ -1,0 +1,76 @@
+301      GET        9l       28w      313c http://10.10.10.209/images => http://10.10.10.209/images/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/images (Apache)
+200      GET      503l     1287w    19848c http://10.10.10.209/
+301      GET        9l       28w      310c http://10.10.10.209/css => http://10.10.10.209/css/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/css (Apache)
+301      GET        9l       28w      309c http://10.10.10.209/js => http://10.10.10.209/js/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/js (Apache)
+301      GET        9l       28w      313c http://10.10.10.209/images => http://10.10.10.209/images/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/images (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/css/ (Apache)
+200      GET      654l     2076w    21738c http://10.10.10.209/css/jquery-ui.css
+200      GET        2l      220w    25983c http://10.10.10.209/css/aos.css
+200      GET      709l     3918w   181164c http://10.10.10.209/images/person_3.jpg
+200      GET      503l     1287w    19848c http://10.10.10.209/services.html
+200      GET      471l     1605w    17144c http://10.10.10.209/css/bootstrap-datepicker.css
+200      GET      503l     1287w    19848c http://10.10.10.209/about.html
+200      GET        1l      150w    12795c http://10.10.10.209/css/jquery.fancybox.min.css
+301      GET        9l       28w      310c http://10.10.10.209/css => http://10.10.10.209/css/
+200      GET        1l      750w    23647c http://10.10.10.209/css/style.css
+200      GET        2l     1283w    86926c http://10.10.10.209/js/jquery-3.3.1.min.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/css (Apache)
+200      GET       15l       51w      965c http://10.10.10.209/css/owl.theme.default.min.css
+200      GET     1209l     8082w   426558c http://10.10.10.209/images/hero_1.jpg
+200      GET      503l     1287w    19848c http://10.10.10.209/contact.html
+200      GET        6l       64w     2936c http://10.10.10.209/css/owl.carousel.min.css
+200      GET      503l     1287w    19848c http://10.10.10.209/index.html
+200      GET      528l     2361w   104297c http://10.10.10.209/images/img_2.jpg
+200      GET        2l      284w    14244c http://10.10.10.209/js/aos.js
+301      GET        9l       28w      309c http://10.10.10.209/js => http://10.10.10.209/js/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/fonts/ (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/fonts/flaticon/ (Apache)
+200      GET     8135l    21642w   218336c http://10.10.10.209/css/bootstrap.min.css
+200      GET      503l     1287w    19848c http://10.10.10.209/departments.html
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/js (Apache)
+200      GET      213l     1313w    49020c http://10.10.10.209/images/img_3.jpg
+200      GET      344l     2195w    91645c http://10.10.10.209/images/person_2.jpg
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/fonts/icomoon/ (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/fonts/icomoon (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/fonts/flaticon/font (Apache)
+200      GET      288l      914w    10084c http://10.10.10.209/js/jquery.sticky.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/fonts/flaticon (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/fonts/flaticon/font/ (Apache)
+200      GET       12l      557w    35445c http://10.10.10.209/js/isotope.pkgd.min.js
+200      GET       45l      108w     1432c http://10.10.10.209/fonts/flaticon/font/flaticon.css
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/js/ (Apache)
+200      GET       15l       74w     2720c http://10.10.10.209/fonts/flaticon/font/Flaticon.woff
+200      GET      343l      667w     8047c http://10.10.10.209/js/main.js
+200      GET        1l     1341w    99564c http://10.10.10.209/images/lab-1.svg
+200      GET     4919l     8218w    79820c http://10.10.10.209/fonts/icomoon/style.css
+200      GET       33l      134w     4034c http://10.10.10.209/fonts/flaticon/font/Flaticon.eot
+200      GET       33l      131w     3856c http://10.10.10.209/fonts/flaticon/font/Flaticon.ttf
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/images/ (Apache)
+200      GET        8l       60w     2140c http://10.10.10.209/fonts/flaticon/font/Flaticon.woff2
+200      GET       13l      852w    68196c http://10.10.10.209/js/jquery.fancybox.min.js
+200      GET        7l      662w    58072c http://10.10.10.209/js/bootstrap.min.js
+200      GET       33l      134w     4034c http://10.10.10.209/fonts/flaticon/font/Flaticon.eot%3f
+200      GET       22l      253w     5339c http://10.10.10.209/js/jquery.countdown.min.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/fonts/icomoon/fonts (Apache)
+200      GET      205l     1368w     8111c http://10.10.10.209/js/jquery.easing.1.3.js
+200      GET        1l     1155w    52738c http://10.10.10.209/images/lab-2.svg
+200      GET      110l     1664w    17828c http://10.10.10.209/fonts/flaticon/font/Flaticon.svg
+200      GET     1735l     6360w    45799c http://10.10.10.209/js/jquery-ui.js
+200      GET      555l     2347w   105630c http://10.10.10.209/images/img_1.jpg
+200      GET        7l      279w    42766c http://10.10.10.209/js/owl.carousel.min.js
+200      GET        5l      363w    20336c http://10.10.10.209/js/popper.min.js
+200      GET     2522l    10327w   307244c http://10.10.10.209/fonts/icomoon/fonts/icomoon.woff%3f10si43
+200      GET      574l     3628w   180034c http://10.10.10.209/images/person_1.jpg
+200      GET     1418l     8844w   385576c http://10.10.10.209/images/about.png
+200      GET       93l      506w    24883c http://10.10.10.209/images/patient_1.jpg
+200      GET      503l     1287w    19848c http://10.10.10.209/blog.html
+200      GET      503l     1287w    19848c http://10.10.10.209/
+301      GET        9l       28w      312c http://10.10.10.209/fonts => http://10.10.10.209/fonts/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://10.10.10.209/fonts (Apache)
+200      GET     2522l    10325w   307332c http://10.10.10.209/fonts/icomoon/fonts/icomoon.eot%3f10si43
+200      GET     1530l    71755w   935341c http://10.10.10.209/fonts/icomoon/fonts/icomoon.svg%3f10si43
+200      GET     2522l    10324w   307168c http://10.10.10.209/fonts/icomoon/fonts/icomoon.ttf%3f10si43

@@ -40,7 +40,7 @@
 - [x] Admirer
 - [x] Blunder
 - [ ] Tabby
-- [ ] Doctor
+- [x] Doctor
 - [ ] SneakyMailer
 - [ ] Passage
 - [ ] Luanne
