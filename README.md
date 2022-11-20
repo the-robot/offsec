@@ -1,7 +1,9 @@
 # HackTheBox writeups
 
-![](https://geps.dev/progress/85)  
-**46/54** done. 
+![](https://geps.dev/progress/87)  
+**47/54** done. 
+
+**Active boxes are password protected. Duh!**
 
 <br/>
 
