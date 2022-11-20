@@ -1,11 +1,11 @@
-# tj-null-writeups
+# HackTheBox writeups
 
 ## Useful Links
 
 - [ippsec.rocks](https://ippsec.rocks/)
 - [revshells](https://www.revshells.com/) - generate reverse shells easily
 
-## Linux Boxes 
+## tjnull Linux boxes
 
 - [x] Lame
 - [x] brainfuck
