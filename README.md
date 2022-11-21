@@ -67,7 +67,8 @@
 
 ## Other boxes
 
-- [x] Photobomb
-- [x] Shoppy
-- [x] RedPanda
+- [ ] Ambassador
 - [x] MetaTwo
+- [x] Photobomb
+- [x] RedPanda
+- [x] Shoppy
