@@ -1,5 +1,6 @@
 **/key
 **/key.pub
+**/__pycache__/*
 
 # active boxes
 **/photobomb/*
