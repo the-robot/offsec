@@ -1,7 +1,7 @@
 # HackTheBox writeups
 
 ![](https://geps.dev/progress/87)  
-**47/54** done. 
+**48/55** done. 
 
 **Active boxes are password protected. Duh!**
 
@@ -67,8 +67,9 @@
 
 ## Other boxes
 
-- [ ] Ambassador
+- [x] Ambassador
 - [x] MetaTwo
 - [x] Photobomb
 - [x] RedPanda
 - [x] Shoppy
+- [ ] UpDown

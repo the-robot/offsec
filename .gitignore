@@ -3,7 +3,9 @@
 **/__pycache__/*
 
 # active boxes
+**/ambassador/*
+**/metatwo/*
 **/photobomb/*
 **/redpanda/*
-**/metatwo/*
 **/shoppy/*
+**/updown/*
