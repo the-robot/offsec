@@ -73,6 +73,42 @@
 - [x] Horizontall
 - [x] Shibboleth
 
+## tjnull Window boxes
+
+- [ ] legacy
+- [ ] Blue
+- [ ] Devel
+- [ ] Optimum
+- [ ] Bastard
+- [ ] granny
+- [ ] Arctic
+- [ ] grandpa
+- [ ] silo
+- [ ] bounty
+- [ ] jerry
+- [ ] conceal
+- [ ] chatterbox
+- [ ] Forest
+- [ ] BankRobber
+- [ ] secnotes
+- [ ] Bastion
+- [ ] Buff
+- [ ] Servmon
+- [ ] Active
+- [ ] Remote
+- [ ] Fuse
+- [ ] Omni
+- [ ] Worker
+- [ ] Love
+- [ ] Intelligence
+- [ ] APT
+- [ ] Object
+- [ ] Support
+- [ ] Acute
+- [ ] Timelapse
+- [ ] StreamIO
+- [ ] Scrambled
+
 ## Other boxes
 
 - [x] Ambassador
