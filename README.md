@@ -1,7 +1,7 @@
 # HackTheBox writeups
 
-![](https://geps.dev/progress/87)  
-**48/55** done. 
+![](https://geps.dev/progress/89)  
+**49/55** done. 
 
 **Active boxes are password protected. Duh!**
 
@@ -72,4 +72,4 @@
 - [x] Photobomb
 - [x] RedPanda
 - [x] Shoppy
-- [ ] UpDown
+- [x] UpDown
