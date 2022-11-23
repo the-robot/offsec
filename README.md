@@ -3,7 +3,7 @@
 ![](https://geps.dev/progress/89)  
 **49/55** done. 
 
-**Active boxes are password protected. Duh!**
+**Active boxes are password protected.**
 
 <br/>
 
@@ -11,6 +11,13 @@
 
 - [ippsec.rocks](https://ippsec.rocks/)
 - [revshells](https://www.revshells.com/) - generate reverse shells easily
+- [OSCP preperation notes](https://oscpnotes.infosecsanyam.in/My_OSCP_Preparation_Notes.html) - super useful list of commands in case you forgot how to run
+- [Windows cheetsheet](https://0xsp.com/offensive/red-team-cheatsheet/)
+
+### Some good articles to read for OSCP preperation
+
+- [OSCP — CRACKING THE NEW PATTERN](https://jaiguptanick.github.io/Blog/blog/OSCP_Cracking_New_Pattern_Walkthrough/)
+- [OSCP 2022 — Tips To Help You Pass: K.I.S.S.](https://medium.com/@0xP/oscp-2022-tips-to-help-you-pass-dddd3563967e)
 
 ## tjnull Linux boxes
 
