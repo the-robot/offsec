@@ -107,7 +107,7 @@
 - [ ] Acute
 - [ ] Timelapse
 - [ ] StreamIO
-- [ ] Scrambled
+- [x] Scrambled (Active Directory)
 
 ## Other boxes
 

@@ -1,0 +1,112 @@
+Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation
+
+KERB_VALIDATION_INFO 
+LogonTime:                      
+    dwLowDateTime:                   2925765348 
+    dwHighDateTime:                  30998751 
+LogoffTime:                     
+    dwLowDateTime:                   4294967295 
+    dwHighDateTime:                  2147483647 
+KickOffTime:                    
+    dwLowDateTime:                   4294967295 
+    dwHighDateTime:                  2147483647 
+PasswordLastSet:                
+    dwLowDateTime:                   2585823167 
+    dwHighDateTime:                  30921784 
+PasswordCanChange:              
+    dwLowDateTime:                   3297396671 
+    dwHighDateTime:                  30921985 
+PasswordMustChange:             
+    dwLowDateTime:                   4294967295 
+    dwHighDateTime:                  2147483647 
+EffectiveName:                   'administrator' 
+FullName:                        '' 
+LogonScript:                     '' 
+ProfilePath:                     '' 
+HomeDirectory:                   '' 
+HomeDirectoryDrive:              '' 
+LogonCount:                      252 
+BadPasswordCount:                0 
+UserId:                          500 
+PrimaryGroupId:                  513 
+GroupCount:                      5 
+GroupIds:                       
+    [
+         
+        RelativeId:                      513 
+        Attributes:                      7 ,
+         
+        RelativeId:                      512 
+        Attributes:                      7 ,
+         
+        RelativeId:                      520 
+        Attributes:                      7 ,
+         
+        RelativeId:                      518 
+        Attributes:                      7 ,
+         
+        RelativeId:                      519 
+        Attributes:                      7 ,
+    ] 
+UserFlags:                       544 
+UserSessionKey:                 
+    Data:                            b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' 
+LogonServer:                     'DC1' 
+LogonDomainName:                 'SCRM' 
+LogonDomainId:                  
+    Revision:                        1 
+    SubAuthorityCount:               4 
+    IdentifierAuthority:             b'\x00\x00\x00\x00\x00\x05' 
+    SubAuthority:                   
+        [
+             21,
+             2743207045,
+             1827831105,
+             2542523200,
+        ] 
+LMKey:                           b'\x00\x00\x00\x00\x00\x00\x00\x00' 
+UserAccountControl:              16912 
+SubAuthStatus:                   0 
+LastSuccessfulILogon:           
+    dwLowDateTime:                   0 
+    dwHighDateTime:                  0 
+LastFailedILogon:               
+    dwLowDateTime:                   0 
+    dwHighDateTime:                  0 
+FailedILogonCount:               0 
+Reserved3:                       0 
+SidCount:                        1 
+ExtraSids:                      
+    [
+         
+        Sid:                            
+            Revision:                        1 
+            SubAuthorityCount:               1 
+            IdentifierAuthority:             b'\x00\x00\x00\x00\x00\x12' 
+            SubAuthority:                   
+                [
+                     2,
+                ] 
+        Attributes:                      7 ,
+    ] 
+ResourceGroupDomainSid:         
+    Revision:                        1 
+    SubAuthorityCount:               4 
+    IdentifierAuthority:             b'\x00\x00\x00\x00\x00\x05' 
+    SubAuthority:                   
+        [
+             21,
+             2743207045,
+             1827831105,
+             2542523200,
+        ] 
+ResourceGroupCount:              1 
+ResourceGroupIds:               
+    [
+         
+        RelativeId:                      572 
+        Attributes:                      536870919 ,
+    ] 
+Domain SID: S-1-5-21-2743207045-1827831105-2542523200
+
+ 0000   10 00 00 00 21 A1 B7 01  26 32 1B 30 B5 EA 62 EA   ....!...&2.0..b.
