@@ -76,7 +76,7 @@
 ## tjnull Window boxes
 
 - [x] legacy
-- [ ] Blue
+- [x] Blue
 - [ ] Devel
 - [ ] Optimum
 - [ ] Bastard

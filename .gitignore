@@ -1,6 +1,7 @@
 **/key
 **/key.pub
 **/__pycache__/*
+**/.DS_Store
 
 # active boxes
 **/ambassador/*
