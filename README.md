@@ -106,7 +106,7 @@
 - [ ] Support
 - [ ] Acute
 - [ ] Timelapse
-- [ ] StreamIO
+- [x] StreamIO (Active Directory)
 - [x] Scrambled (Active Directory)
 
 ## Other boxes

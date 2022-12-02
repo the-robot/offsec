@@ -1,0 +1,50 @@
+301      GET        2l       10w      151c https://streamio.htb/images => https://streamio.htb/images/
+200      GET      395l      915w    13497c https://streamio.htb/
+200      GET      206l      430w     6434c https://streamio.htb/contact.php
+200      GET      231l      571w     7825c https://streamio.htb/about.php
+200      GET      395l      915w    13497c https://streamio.htb/index.php
+200      GET      111l      269w     4145c https://streamio.htb/login.php
+200      GET      121l      291w     4500c https://streamio.htb/register.php
+301      GET        2l       10w      151c https://streamio.htb/Images => https://streamio.htb/Images/
+301      GET        2l       10w      150c https://streamio.htb/admin => https://streamio.htb/admin/
+301      GET        2l       10w      157c https://streamio.htb/admin/images => https://streamio.htb/admin/images/
+403      GET        1l        1w       18c https://streamio.htb/admin/index.php
+301      GET        2l       10w      157c https://streamio.htb/admin/Images => https://streamio.htb/admin/Images/
+301      GET        2l       10w      148c https://streamio.htb/css => https://streamio.htb/css/
+200      GET      206l      430w     6434c https://streamio.htb/Contact.php
+200      GET      231l      571w     7825c https://streamio.htb/About.php
+200      GET      395l      915w    13497c https://streamio.htb/Index.php
+200      GET      111l      269w     4145c https://streamio.htb/Login.php
+301      GET        2l       10w      154c https://streamio.htb/admin/css => https://streamio.htb/admin/css/
+301      GET        2l       10w      147c https://streamio.htb/js => https://streamio.htb/js/
+403      GET        1l        1w       18c https://streamio.htb/admin/Index.php
+302      GET        0l        0w        0c https://streamio.htb/logout.php => https://streamio.htb/
+301      GET        2l       10w      153c https://streamio.htb/admin/js => https://streamio.htb/admin/js/
+200      GET      121l      291w     4500c https://streamio.htb/Register.php
+301      GET        2l       10w      150c https://streamio.htb/fonts => https://streamio.htb/fonts/
+200      GET        2l        6w       58c https://streamio.htb/admin/master.php
+301      GET        2l       10w      156c https://streamio.htb/admin/fonts => https://streamio.htb/admin/fonts/
+301      GET        2l       10w      151c https://streamio.htb/IMAGES => https://streamio.htb/IMAGES/
+301      GET        2l       10w      157c https://streamio.htb/admin/IMAGES => https://streamio.htb/admin/IMAGES/
+200      GET      395l      915w    13497c https://streamio.htb/INDEX.php
+403      GET        1l        1w       18c https://streamio.htb/admin/INDEX.php
+301      GET        2l       10w      150c https://streamio.htb/Fonts => https://streamio.htb/Fonts/
+301      GET        2l       10w      156c https://streamio.htb/admin/Fonts => https://streamio.htb/admin/Fonts/
+301      GET        2l       10w      150c https://streamio.htb/Admin => https://streamio.htb/Admin/
+301      GET        2l       10w      157c https://streamio.htb/Admin/images => https://streamio.htb/Admin/images/
+403      GET        1l        1w       18c https://streamio.htb/Admin/index.php
+301      GET        2l       10w      157c https://streamio.htb/Admin/Images => https://streamio.htb/Admin/Images/
+200      GET       78l      245w     2829c https://watch.streamio.htb/
+200      GET       78l      245w     2829c https://watch.streamio.htb/index.php
+200      GET     7193l    19558w   253887c https://watch.streamio.htb/search.php
+301      GET        2l       10w      157c https://watch.streamio.htb/static => https://watch.streamio.htb/static/
+200      GET     7193l    19558w   253887c https://watch.streamio.htb/Search.php
+200      GET       78l      245w     2829c https://watch.streamio.htb/Index.php
+301      GET        2l       10w      161c https://watch.streamio.htb/static/css => https://watch.streamio.htb/static/css/
+301      GET        2l       10w      160c https://watch.streamio.htb/static/js => https://watch.streamio.htb/static/js/
+200      GET       78l      245w     2829c https://watch.streamio.htb/INDEX.php
+301      GET        2l       10w      161c https://watch.streamio.htb/static/CSS => https://watch.streamio.htb/static/CSS/
+301      GET        2l       10w      160c https://watch.streamio.htb/static/JS => https://watch.streamio.htb/static/JS/
+200      GET       20l       47w      677c https://watch.streamio.htb/blocked.php
+200      GET     7193l    19558w   253887c https://watch.streamio.htb/SEARCH.php
+301      GET        2l       10w      157c https://watch.streamio.htb/Static => https://watch.streamio.htb/Static/

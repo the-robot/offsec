@@ -1,0 +1,10 @@
+Target: https://streamio.htb/
+Total requests: 4989
+==================================================================
+ID    Response   Lines      Word         Chars          Request    
+==================================================================
+
+Total time: 0
+Processed Requests: 1347
+Filtered Requests: 1347
+Requests/sec.: 0

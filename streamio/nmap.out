@@ -1,0 +1,89 @@
+# Nmap 7.93 scan initiated Fri Dec  2 00:37:04 2022 as: nmap -vvv -p 53,80,88,135,139,389,443,445,464,593,636,3268,3269,5985,9389,49667,49674,49673,49704 -sC -sV -oA . 10.10.11.158
+Nmap scan report for 10.10.11.158
+Host is up, received syn-ack (0.48s latency).
+Scanned at 2022-12-02 00:37:05 +08 for 110s
+
+PORT      STATE SERVICE       REASON  VERSION
+53/tcp    open  domain        syn-ack Simple DNS Plus
+80/tcp    open  http          syn-ack Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-title: IIS Windows Server
+88/tcp    open  kerberos-sec  syn-ack Microsoft Windows Kerberos (server time: 2022-12-01 23:37:12Z)
+135/tcp   open  msrpc         syn-ack Microsoft Windows RPC
+139/tcp   open  netbios-ssn   syn-ack Microsoft Windows netbios-ssn
+389/tcp   open  ldap          syn-ack Microsoft Windows Active Directory LDAP (Domain: streamIO.htb0., Site: Default-First-Site-Name)
+443/tcp   open  ssl/http      syn-ack Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+| tls-alpn: 
+|_  http/1.1
+| ssl-cert: Subject: commonName=streamIO/countryName=EU
+| Subject Alternative Name: DNS:streamIO.htb, DNS:watch.streamIO.htb
+| Issuer: commonName=streamIO/countryName=EU
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2022-02-22T07:03:28
+| Not valid after:  2022-03-24T07:03:28
+| MD5:   b99a2c8da0b8b10aeefabe204abdecaf
+| SHA-1: 6c6a3f5c753661d52da60e6675c056ce56e4656d
+| -----BEGIN CERTIFICATE-----
+| MIIDYjCCAkqgAwIBAgIUbdDRZxR55nbfMxJzBHWVXcH83kQwDQYJKoZIhvcNAQEL
+| BQAwIDELMAkGA1UEBhMCRVUxETAPBgNVBAMMCHN0cmVhbUlPMB4XDTIyMDIyMjA3
+| MDMyOFoXDTIyMDMyNDA3MDMyOFowIDELMAkGA1UEBhMCRVUxETAPBgNVBAMMCHN0
+| cmVhbUlPMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2QSO8noWDU+A
+| MYuhSMrB2mA+V7W2gwMdTHxYK0ausnBHdfQ4yGgAs7SdyYKXf8fA502x4LvYwgmd
+| 67QtQdYtsTSv63SlnEW3zjJyu/dRW0cwMfBCqyiLgAScrxb/6HOhpnOAzk0DdBWE
+| 2vobsSSAh+cDHVSuSbEBLqJ0GEL4hcggHhQq6HLRmmrb0wGjL1WIwjQ8cCWcFzzw
+| 5Xe3gEe+aHK245qZKrZtHuXelFe72/nbF8VFiukkaBMgoh6VfpM66nMzy+KeLfhP
+| FkxBt6osGUHwSnocJknc7t+ySRVTACAMPjbbPGEl4hvNEcZpepep6jD6qgi4k7bL
+| 82Nu2AeSIQIDAQABo4GTMIGQMB0GA1UdDgQWBBRf0ALWCgvVfRgijR2I0KY0uRjY
+| djAfBgNVHSMEGDAWgBRf0ALWCgvVfRgijR2I0KY0uRjYdjAPBgNVHRMBAf8EBTAD
+| AQH/MCsGA1UdEQQkMCKCDHN0cmVhbUlPLmh0YoISd2F0Y2guc3RyZWFtSU8uaHRi
+| MBAGA1UdIAQJMAcwBQYDKgMEMA0GCSqGSIb3DQEBCwUAA4IBAQCCAFvDk/XXswL4
+| cP6nH8MEkdEU7yvMOIPp+6kpgujJsb/Pj66v37w4f3us53dcoixgunFfRO/qAjtY
+| PNWjebXttLHER+fet53Mu/U8bVQO5QD6ErSYUrzW/l3PNUFHIewpNg09gmkY4gXt
+| oZzGN7kvjuKHm+lG0MunVzcJzJ3WcLHQUcwEWAdSGeAyKTfGNy882YTUiAC3p7HT
+| 61PwCI+lO/OU52VlgnItRHH+yexBTLRB+Oa2UhB7GnntQOR1S5g497Cs3yAciST2
+| JaKhcCnBY1cWqUSAm56QK3mz55BNPcOUHLhrFLjIaWRVx8Ro8QOCWcxkTfVcKcR+
+| DSJTOJH8
+|_-----END CERTIFICATE-----
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_ssl-date: 2022-12-01T23:38:46+00:00; +6h59m59s from scanner time.
+|_http-title: Not Found
+445/tcp   open  microsoft-ds? syn-ack
+464/tcp   open  kpasswd5?     syn-ack
+593/tcp   open  ncacn_http    syn-ack Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped    syn-ack
+3268/tcp  open  ldap          syn-ack Microsoft Windows Active Directory LDAP (Domain: streamIO.htb0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped    syn-ack
+5985/tcp  open  http          syn-ack Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        syn-ack .NET Message Framing
+49667/tcp open  msrpc         syn-ack Microsoft Windows RPC
+49673/tcp open  ncacn_http    syn-ack Microsoft Windows RPC over HTTP 1.0
+49674/tcp open  msrpc         syn-ack Microsoft Windows RPC
+49704/tcp open  msrpc         syn-ack Microsoft Windows RPC
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| p2p-conficker: 
+|   Checking for Conficker.C or higher...
+|   Check 1 (port 18376/tcp): CLEAN (Timeout)
+|   Check 2 (port 49301/tcp): CLEAN (Timeout)
+|   Check 3 (port 60672/udp): CLEAN (Timeout)
+|   Check 4 (port 25119/udp): CLEAN (Timeout)
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+| smb2-time: 
+|   date: 2022-12-01T23:38:11
+|_  start_date: N/A
+|_clock-skew: mean: 6h59m58s, deviation: 0s, median: 6h59m57s
+| smb2-security-mode: 
+|   311: 
+|_    Message signing enabled and required
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Dec  2 00:38:55 2022 -- 1 IP address (1 host up) scanned in 111.85 seconds

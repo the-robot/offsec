@@ -1,0 +1,71 @@
+[*] Found HTTP/S service on 10.10.11.158:80
+   [*] Enumeration
+      [=] nikto -h 10.10.11.158 -p 80 -output ./10.10.11.158/scans/10.10.11.158_80_nikto.txt
+      [=] curl -i 10.10.11.158:80
+      [=] w3m -dump 10.10.11.158/robots.txt | tee ./10.10.11.158/scans/10.10.11.158_80_robots.txt
+      [=] VHostScan -t 10.10.11.158 -oN ./10.10.11.158/scans/10.10.11.158_80_vhosts.txt
+
+[*] Found HTTP service on 10.10.11.158:80
+   [*] Enumeration
+      [=] dirb http://10.10.11.158:80/ -o ./10.10.11.158/scans/10.10.11.158_80_dirb.txt
+      [=] dirbuster -H -u http://10.10.11.158:80/ -l /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -t 20 -s / -v -r ./10.10.11.158/scans/10.10.11.158_80_dirbuster_medium.txt
+      [=] gobuster -w /usr/share/seclists/Discovery/Web-Content/common.txt -u http://10.10.11.158:80/ -s '200,204,301,302,307,403,500' -e | tee './10.10.11.158/scans/10.10.11.158_80_gobuster_common.txt'
+      [=] gobuster -w /usr/share/seclists/Discovery/Web-Content/CGIs.txt -u http://10.10.11.158:80/ -s '200,204,301,307,403,500' -e | tee './10.10.11.158/scans/10.10.11.158_80_gobuster_cgis.txt'
+
+[*] Found Kerberos service on 10.10.11.158:88
+   [*] Enumeration
+      [=] nmap -p88 --script=krb5-enum-users --script-args krb5-enum-users.realm='CHANGEME.local',userdb=/usr/share/seclists/Usernames/Names/names.txt -oA './10.10.11.158/scans/10.10.11.158_88_kerberos' 10.10.11.158
+
+[*] Found MSRPC service on 10.10.11.158:135
+   [*] Enumeration
+      [=] rpcclient -U "" 10.10.11.158
+   [*] Bruteforce
+      [=] rpcclient -U "" 10.10.11.158
+
+[*] Found NetBIOS service on 10.10.11.158:139
+   [*] Enumeration
+      [=] nmblookup -A 10.10.11.158
+      [=] smbclient //MOUNT/share -I 10.10.11.158 N
+      [=] smbclient -L //10.10.11.158
+      [=] enum4linux -a 10.10.11.158
+      [=] rpcclient -U "" 10.10.11.158
+
+[*] Found LDAP service on 10.10.11.158:389
+   [*] Find public exploits
+      [=] searchsploit ldap
+
+[*] Found LDAP service on 10.10.11.158:3268
+   [*] Find public exploits
+      [=] searchsploit ldap
+
+[*] Found HTTP/S service on 10.10.11.158:443
+   [*] Enumeration
+      [=] nikto -h 10.10.11.158 -p 443 -output ./10.10.11.158/scans/10.10.11.158_443_nikto.txt
+      [=] curl -i 10.10.11.158:443
+      [=] w3m -dump 10.10.11.158/robots.txt | tee ./10.10.11.158/scans/10.10.11.158_443_robots.txt
+      [=] VHostScan -t 10.10.11.158 -oN ./10.10.11.158/scans/10.10.11.158_443_vhosts.txt
+
+[*] Found HTTP service on 10.10.11.158:443
+   [*] Enumeration
+      [=] dirb http://10.10.11.158:443/ -o ./10.10.11.158/scans/10.10.11.158_443_dirb.txt
+      [=] dirbuster -H -u http://10.10.11.158:443/ -l /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -t 20 -s / -v -r ./10.10.11.158/scans/10.10.11.158_443_dirbuster_medium.txt
+      [=] gobuster -w /usr/share/seclists/Discovery/Web-Content/common.txt -u http://10.10.11.158:443/ -s '200,204,301,302,307,403,500' -e | tee './10.10.11.158/scans/10.10.11.158_443_gobuster_common.txt'
+      [=] gobuster -w /usr/share/seclists/Discovery/Web-Content/CGIs.txt -u http://10.10.11.158:443/ -s '200,204,301,307,403,500' -e | tee './10.10.11.158/scans/10.10.11.158_443_gobuster_cgis.txt'
+
+[*] Found HTTPS service on 10.10.11.158:443
+   [*] Enumeration
+      [=] dirb https://10.10.11.158:443/ -o ./10.10.11.158/scans/10.10.11.158_443_dirb.txt
+      [=] dirbuster -H -u https://10.10.11.158:443/ -l /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -t 20 -s / -v -r ./10.10.11.158/scans/10.10.11.158_443_dirbuster_medium.txt
+      [=] gobuster dir -w /usr/share/seclists/Discovery/Web-Content/common.txt -u https://10.10.11.158:443/ -s '200,204,301,302,307,403,500' -e | tee './10.10.11.158/scans/10.10.11.158_443_gobuster_common.txt'
+      [=] gobuster dir -w /usr/share/seclists/Discovery/Web-Content/CGIs.txt -u https://10.10.11.158:443/ -s '200,204,301,307,403,500' -e | tee './10.10.11.158/scans/10.10.11.158_443_gobuster_cgis.txt'
+
+[*] Found HTTP service on 10.10.11.158:593
+   [*] Enumeration
+      [=] dirb http://10.10.11.158:593/ -o ./10.10.11.158/scans/10.10.11.158_593_dirb.txt
+      [=] dirbuster -H -u http://10.10.11.158:593/ -l /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -t 20 -s / -v -r ./10.10.11.158/scans/10.10.11.158_593_dirbuster_medium.txt
+      [=] gobuster -w /usr/share/seclists/Discovery/Web-Content/common.txt -u http://10.10.11.158:593/ -s '200,204,301,302,307,403,500' -e | tee './10.10.11.158/scans/10.10.11.158_593_gobuster_common.txt'
+      [=] gobuster -w /usr/share/seclists/Discovery/Web-Content/CGIs.txt -u http://10.10.11.158:593/ -s '200,204,301,307,403,500' -e | tee './10.10.11.158/scans/10.10.11.158_593_gobuster_cgis.txt'
+
+
+
+[*] Always remember to manually go over the portscan report and carefully read between the lines ;)
