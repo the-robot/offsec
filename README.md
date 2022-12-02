@@ -88,13 +88,13 @@
 - [x] jerry
 - [x] conceal
 - [x] chatterbox
-- [ ] Forest
+- [ ] Forest (Active Directory)
 - [ ] BankRobber
 - [ ] secnotes
 - [ ] Bastion
 - [ ] Buff
 - [ ] Servmon
-- [ ] Active
+- [ ] Active (Active Directory)
 - [ ] Remote
 - [ ] Fuse
 - [ ] Omni
