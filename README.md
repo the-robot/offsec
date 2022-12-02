@@ -117,3 +117,7 @@
 - [x] RedPanda
 - [x] Shoppy
 - [x] UpDown
+
+## Active Directory practice
+
+- [ ] [THM: Attacktive Directory](https://tryhackme.com/room/attacktivedirectory)
