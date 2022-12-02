@@ -100,12 +100,12 @@
 - [ ] Omni
 - [ ] Worker
 - [ ] Love
-- [ ] Intelligence
+- [ ] Intelligence (Active Directory)
 - [ ] APT
-- [ ] Object
+- [ ] Object (Active Directory)
 - [ ] Support
-- [ ] Acute
-- [ ] Timelapse
+- [ ] Acute (Active Directory)
+- [ ] Timelapse (Active Directory)
 - [x] StreamIO (Active Directory)
 - [x] Scrambled (Active Directory)
 
