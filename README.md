@@ -77,17 +77,17 @@
 
 - [x] legacy
 - [x] Blue
-- [ ] Devel
-- [ ] Optimum
-- [ ] Bastard
-- [ ] granny
-- [ ] Arctic
-- [ ] grandpa
-- [ ] silo
-- [ ] bounty
-- [ ] jerry
-- [ ] conceal
-- [ ] chatterbox
+- [x] Devel
+- [x] Optimum
+- [x] Bastard
+- [x] granny
+- [x] Arctic
+- [x] grandpa
+- [x] silo
+- [x] bounty
+- [x] jerry
+- [x] conceal
+- [x] chatterbox
 - [ ] Forest
 - [ ] BankRobber
 - [ ] secnotes

