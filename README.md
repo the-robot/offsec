@@ -120,7 +120,7 @@
 
 ## Active Directory practice
 
-- [ ] [THM: Attacktive Directory](https://tryhackme.com/room/attacktivedirectory)
+- [x] [THM: Attacktive Directory](https://tryhackme.com/room/attacktivedirectory)
 
 <br/>
 
