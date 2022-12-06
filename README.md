@@ -121,3 +121,11 @@
 ## Active Directory practice
 
 - [ ] [THM: Attacktive Directory](https://tryhackme.com/room/attacktivedirectory)
+
+<br/>
+
+## Scripts
+
+#### Privilege escalation
+
+- [jailbreak-rbash](https://github.com/the-robot/hackthebox/blob/master/scripts/pe/jailbreak-rbash.sh) - command to find out what commands are available that has a potential of spawning a proper shell, commands are taken from [GTFOBins with +Shell](https://gtfobins.github.io/#+Shell) 
