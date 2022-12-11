@@ -14,6 +14,7 @@
 - [OSCP preperation notes](https://oscpnotes.infosecsanyam.in/My_OSCP_Preparation_Notes.html) - super useful list of commands in case you forgot how to run
 - [Windows cheetsheet](https://0xsp.com/offensive/red-team-cheatsheet/)
 - [Active Directory cheetsheet](https://medium.com/@kuwaitison/active-directory-cheat-sheet-94e0bb9bed2)
+- [Windows file transfer methods](https://academy.hackthebox.com/course/preview/file-transfers/windows-file-transfer-methods)
 
 ### Some good articles to read for OSCP preperation
 
