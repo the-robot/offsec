@@ -15,6 +15,7 @@
 - [Windows cheetsheet](https://0xsp.com/offensive/red-team-cheatsheet/)
 - [Active Directory cheetsheet](https://medium.com/@kuwaitison/active-directory-cheat-sheet-94e0bb9bed2)
 - [Windows file transfer methods](https://academy.hackthebox.com/course/preview/file-transfers/windows-file-transfer-methods)
+- [PowerView tips and tricks](https://gist.github.com/the-robot/c0396e87dd2bab8c4ca0ac80e70c95b4)
 
 ### Some good articles to read for OSCP preperation
 
