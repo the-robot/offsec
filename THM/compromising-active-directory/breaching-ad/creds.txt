@@ -1,0 +1,16 @@
+// AD normal user
+hollie.powell:Changeme123
+heather.smith:Changeme123
+gordon.stevens:Changeme123
+georgina.edwards:Changeme123
+
+// LDAP credential
+svcLDAP:tryhackmeldappass1@
+
+ZA\svcFileCopy:FPassword1
+
+// PXE
+ZA\svcMDT:PXEBootSecure1@
+
+// Mcafee
+ZA\svcAV:MyStrongPassword*
