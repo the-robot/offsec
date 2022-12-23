@@ -123,6 +123,7 @@
 ## Active Directory practice
 
 - [x] [THM: Attacktive Directory](https://tryhackme.com/room/attacktivedirectory)
+- [ ] [THM: Hacking Active Directory](https://tryhackme.com/module/hacking-active-directory)
 
 <br/>
 
