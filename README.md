@@ -127,7 +127,8 @@
 ## Active Directory practice
 
 - [x] [THM: Attacktive Directory](https://tryhackme.com/room/attacktivedirectory)
-- [ ] [THM: Hacking Active Directory](https://tryhackme.com/module/hacking-active-directory)
+- [x] [THM: Hacking Active Directory](https://tryhackme.com/module/hacking-active-directory)
+    - [draw.io diagram to understand the AD attack easier](https://github.com/the-robot/hackthebox/blob/master/THM/compromising-active-directory/THM%20-%20Hacking%20AD.pdf)
 
 <br/>
 
