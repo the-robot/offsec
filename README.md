@@ -10,6 +10,7 @@
 ## Useful Links
 
 - [ippsec.rocks](https://ippsec.rocks/)
+- [kashz-jewel](https://kashz.gitbook.io/kashz-jewels/) - like Hacktricks
 - [revshells](https://www.revshells.com/) - generate reverse shells easily
 - [OSCP preperation notes](https://oscpnotes.infosecsanyam.in/My_OSCP_Preparation_Notes.html) - super useful list of commands in case you forgot how to run
 - [Windows cheetsheet](https://0xsp.com/offensive/red-team-cheatsheet/)
