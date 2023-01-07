@@ -111,9 +111,10 @@
 - [ ] Object (Active Directory)
 - [ ] Support
 - [ ] Acute (Active Directory)
-- [ ] Timelapse (Active Directory)
+- [x] Timelapse (Active Directory)
 - [x] StreamIO (Active Directory)
 - [x] Scrambled (Active Directory)
+
 
 ## Other boxes
 

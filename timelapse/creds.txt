@@ -1,0 +1,4 @@
+supremelegacy                           // winrm_backup.zip password
+thuglegacy                              // legacyy_dev_auth.pfx password
+svc_deploy:E3R$Q62^12p7PLlC%KWaxuaV     // system user
+administrator:Vau61&O,[Xm915%WU;P6x7gl  // system user
