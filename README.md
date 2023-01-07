@@ -97,7 +97,7 @@
 - [x] chatterbox
 - [ ] Forest (Active Directory)
 - [ ] BankRobber
-- [ ] secnotes
+- [x] secnotes
 - [ ] Bastion
 - [ ] Buff
 - [ ] Servmon

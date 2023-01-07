@@ -1,0 +1,1276 @@
+ANSI color bit for Windows is not set. If you are execcuting this from a Windows terminal inside the host you should run 'REG ADD HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+Long paths are disabled, so the maximum length of a path supported is 260chars (this may cause false negatives when looking for files). If you are admin, you can enable it with 'REG ADD HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v VirtualTerminalLevel /t REG_DWORD /d 1' and then start a new CMD
+[34m     
+               [1;32m((((((((((((((((((((((((((((((((
+        [1;32m(((((((((((((((((((((((((((((((((((((((((((
+      [1;32m(((((((((((((([34m**********/[1;32m##########[1;32m(((((((((((((   
+    [1;32m(((((((((((([34m********************/[1;32m#######[1;32m(((((((((((
+    [1;32m(((((((([34m******************[0m/@@@@@/[1;32m[34m****[1;32m######[1;32m((((((((((
+    [1;32m(((((([34m********************[0m@@@@@@@@@@/[1;32m[34m***,[1;32m####[1;32m((((((((((
+    [1;32m((((([34m********************[0m/@@@@@%@@@@/[1;32m[34m********[1;32m##[1;32m(((((((((
+    [1;32m((([1;32m############[34m*********[0m/%@@@@@@@@@/[1;32m[34m************[1;32m((((((((
+    [1;32m(([1;32m##################(/[34m******[0m/@@@@@/[1;32m[34m***************[1;32m((((((
+    [1;32m(([1;32m#########################(/[34m**********************[1;32m(((((
+    [1;32m(([1;32m##############################(/[34m*****************[1;32m(((((
+    [1;32m(([1;32m###################################(/[34m************[1;32m(((((
+    [1;32m(([1;32m#######################################([34m*********[1;32m(((((
+    [1;32m(([1;32m#######(,.***.,(###################(..***.[34m*******[1;32m(((((
+    [1;32m(([1;32m#######*(#####((##################((######/([34m*****[1;32m(((((
+    [1;32m(([1;32m###################(/***********(##############([1;32m)(((((
+    [1;32m((([1;32m#####################/*******(################[1;32m)((((((
+    [1;32m(((([1;32m############################################[1;32m)((((((
+    [1;32m((((([1;32m##########################################[1;32m)(((((((
+    [1;32m(((((([1;32m########################################[1;32m)(((((((
+    [1;32m(((((((([1;32m####################################[1;32m)((((((((
+    [1;32m((((((((([1;32m#################################[1;32m)(((((((((
+        [1;32m(((((((((([1;32m##########################[1;32m)(((((((((
+              [1;32m((((((((((((((((((((((((((((((((((((((
+                 [1;32m(((((((((((((((((((((((((((((([0m
+
+[1;33mADVISORY: [34mwinpeas should be used for authorized penetration testing and/or educational purposes only.Any misuse of this software will not be the responsibility of the author or of any other collaborator. Use it at your own devices and/or with the device owner's permission.
+
+[33m  WinPEAS-ng[0m[33m by @carlospolopm[0m
+[1;32m
+       /---------------------------------------------------------------------------------\
+       |                             [34mDo you like PEASS?[1;32m                                  |
+       |---------------------------------------------------------------------------------| 
+       |         [33mGet the latest version[1;32m    :     [1;31mhttps://github.com/sponsors/carlospolop[1;32m |
+       |         [33mFollow on Twitter[1;32m         :     [1;31m@carlospolopm[1;32m                           |
+       |         [33mRespect on HTB[1;32m            :     [1;31mSirBroccoli            [1;32m                 |
+       |---------------------------------------------------------------------------------|
+       |                                 [34mThank you![1;32m                                      |
+       \---------------------------------------------------------------------------------/
+[0m
+[33m  [+] [1;32mLegend:[0m
+[1;31m         Red[1;37m                Indicates a special privilege over an object or something is misconfigured[0m
+[1;32m         Green[1;37m              Indicates that some protection is enabled or something is well configured[0m
+[36m         Cyan[1;37m               Indicates active users[0m
+[34m         Blue[1;37m               Indicates disabled users[0m
+[1;33m         LightYellow[1;37m        Indicates links[0m
+
+[34m You can find a Windows local PE Checklist here: [33mhttps://book.hacktricks.xyz/windows-hardening/checklist-windows-privilege-escalation
+[1;90m   Creating Dynamic lists, this could take a while, please wait...[0m
+[1;90m   - Loading sensitive_files yaml definitions file...[0m
+[1;90m   - Loading regexes yaml definitions file...[0m
+[1;90m   - Checking if domain...[0m
+[1;90m   - Getting Win32_UserAccount info...[0m
+[1;90mError while getting Win32_UserAccount info: System.Management.ManagementException: Access denied 
+   at System.Management.ThreadDispatch.Start()
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winPEAS.Checks.Checks.CreateDynamicLists()[0m
+[1;90m   - Creating current user groups list...[0m
+[1;90m   - Creating active users list (local only)...[0m
+[1;90m  [X] Exception: Object reference not set to an instance of an object.[0m
+[1;90m   - Creating disabled users list...[0m
+[1;90m  [X] Exception: Object reference not set to an instance of an object.[0m
+[1;90m   - Admin users list...[0m
+[1;90m  [X] Exception: Object reference not set to an instance of an object.[0m
+[1;90m   - Creating AppLocker bypass list...[0m
+[1;90m   - Creating files/directories list for search...[0m
+
+
+[1;36m�����������������������������������͹ [1;32mSystem Information[1;36m �������������������������������������[0m
+
+[1;36m����������͹ [1;32mBasic System Information[0m
+[1;36m� [1;34mCheck if the Windows versions is vulnerable to some known exploit [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#kernel-exploits[0m
+[1;90m  [X] Exception: Access denied [0m
+[1;90m  [X] Exception: Access denied [0m
+[1;90m  [X] Exception: The given key was not present in the dictionary.[0m
+
+[1;36m����������͹ [1;32mShowing All Microsoft Updates[0m
+[1;90m  [X] Exception: Creating an instance of the COM component with CLSID {B699E5E8-67FF-4177-88B0-3684A3388BFB} from the IClassFactory failed due to the following error: 80070005 Access is denied. (Exception from HRESULT: 0x80070005 (E_ACCESSDENIED)).[0m
+
+[1;36m����������͹ [1;32mSystem Last Shutdown Date/time (from Registry)
+[0m
+    Last Shutdown Date/time        :    8/2/2021 3:40:06 AM
+
+[1;36m����������͹ [1;32mUser Environment Variables[0m
+[1;36m� [1;34mCheck for some passwords or keys in the env variables [1;33m[0m
+[1;37m    COMPUTER[0m[1;31mNAME[0m: [0mSECNOTES
+[1;37m    PUBLIC: [0mC:\Users\Public
+[1;37m    LOCALAPPDATA: [0mC:\WINDOWS\system32\config\systemprofile\AppData\Local
+[1;37m    PSModulePath: [0mC:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\
+[1;37m    PROCESSOR_ARCHITECTURE: [0mAMD64
+[1;37m    Path: [0mC:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps
+[1;37m    CommonProgramFiles(x86): [0mC:\Program Files (x86)\Common Files
+[1;37m    ProgramFiles(x86): [0mC:\Program Files (x86)
+[1;37m    PROCESSOR_LEVEL: [0m6
+[1;37m    _FCGI_X_PIPE_: [0m\\.\pipe\IISFCGI-30069ab2-d1fd-4c3d-a61d-1551d03c8452
+[1;37m    PATHEXT: [0m.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+[1;37m    USERPROFILE: [0mC:\WINDOWS\system32\config\systemprofile
+[1;37m    SystemRoot: [0mC:\WINDOWS
+[1;37m    APP_POOL_ID: [0mnewsite
+[1;37m    ALLUSERSPROFILE: [0mC:\ProgramData
+[1;37m    DriverData: [0mC:\Windows\System32\Drivers\DriverData
+[1;37m    APP_POOL_CONFIG: [0mC:\inetpub\temp\apppools\newsite\newsite.config
+[1;37m    PROCESSOR_REVISION: [0m5507
+[1;37m    USER[0m[1;31mNAME[0m: [0mSECNOTES$
+[1;37m    CommonProgramW6432: [0mC:\Program Files\Common Files
+[1;37m    CommonProgramFiles: [0mC:\Program Files\Common Files
+[1;37m    OS: [0mWindows_NT
+[1;37m    PROCESSOR_IDENTIFIER: [0mIntel64 Family 6 Model 85 Stepping 7, GenuineIntel
+[1;37m    ComSpec: [0mC:\WINDOWS\system32\cmd.exe
+[1;37m    PROMPT: [0m$P$G
+[1;37m    SystemDrive: [0mC:
+[1;37m    TEMP: [0mC:\WINDOWS\TEMP
+[1;37m    ProgramFiles: [0mC:\Program Files
+[1;37m    NUMBER_OF_PROCESSORS: [0m2
+[1;37m    APPDATA: [0mC:\WINDOWS\system32\config\systemprofile\AppData\Roaming
+[1;37m    TMP: [0mC:\WINDOWS\TEMP
+[1;37m    ProgramData: [0mC:\ProgramData
+[1;37m    ProgramW6432: [0mC:\Program Files
+[1;37m    windir: [0mC:\WINDOWS
+[1;37m    USERDOMAIN: [0mHTB
+
+[1;36m����������͹ [1;32mSystem Environment Variables[0m
+[1;36m� [1;34mCheck for some passwords or keys in the env variables [1;33m[0m
+[1;37m    ComSpec: [0mC:\WINDOWS\system32\cmd.exe
+[1;37m    DriverData: [0mC:\Windows\System32\Drivers\DriverData
+[1;37m    OS: [0mWindows_NT
+[1;37m    Path: [0mC:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\
+[1;37m    PATHEXT: [0m.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+[1;37m    PROCESSOR_ARCHITECTURE: [0mAMD64
+[1;37m    TEMP: [0mC:\WINDOWS\TEMP
+[1;37m    TMP: [0mC:\WINDOWS\TEMP
+[1;37m    USER[0m[1;31mNAME[0m: [0mSYSTEM
+[1;37m    windir: [0mC:\WINDOWS
+[1;37m    PSModulePath: [0mC:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\
+[1;37m    NUMBER_OF_PROCESSORS: [0m2
+[1;37m    PROCESSOR_LEVEL: [0m6
+[1;37m    PROCESSOR_IDENTIFIER: [0mIntel64 Family 6 Model 85 Stepping 7, GenuineIntel
+[1;37m    PROCESSOR_REVISION: [0m5507
+
+[1;36m����������͹ [1;32mAudit Settings[0m
+[1;36m� [1;34mCheck what is being logged [1;33m[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mAudit Policy Settings - Classic & Advanced[0m
+
+[1;36m����������͹ [1;32mWEF Settings[0m
+[1;36m� [1;34mWindows Event Forwarding, is interesting to know were are sent the logs [1;33m[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mLAPS Settings[0m
+[1;36m� [1;34mIf installed, local administrator password is changed frequently and is restricted by ACL [1;33m[0m
+[1;37m    LAPS Enabled: [0m[0m[1;31mLAPS not installed[0m
+
+[1;36m����������͹ [1;32mWdigest[0m
+[1;36m� [1;34mIf enabled, plain-text crds could be stored in LSASS [1;33mhttps://book.hacktricks.xyz/windows-hardening/stealing-credentials/credentials-protections#wdigest[0m
+[1;32m    Wdigest is not enabled[0m
+
+[1;36m����������͹ [1;32mLSA Protection[0m
+[1;36m� [1;34mIf enabled, a driver is needed to read LSASS memory (If Secure Boot or UEFI, RunAsPPL cannot be disabled by deleting the registry key) [1;33mhttps://book.hacktricks.xyz/windows-hardening/stealing-credentials/credentials-protections#lsa-protection[0m
+[1;31m    LSA Protection is not enabled[0m
+
+[1;36m����������͹ [1;32mCredentials Guard[0m
+[1;36m� [1;34mIf enabled, a driver is needed to read LSASS memory [1;33mhttps://book.hacktricks.xyz/windows-hardening/stealing-credentials/credentials-protections#credential-guard[0m
+[1;31m    CredentialGuard is not enabled[0m
+
+[1;36m����������͹ [1;32mCached Creds[0m
+[1;36m� [1;34mIf > 0, credentials will be cached in the registry and accessible by SYSTEM user [1;33mhttps://book.hacktricks.xyz/windows-hardening/stealing-credentials/credentials-protections#cached-credentials[0m
+[1;31m    cachedlogonscount is 10[0m
+
+[1;36m����������͹ [1;32mEnumerating saved credentials in Registry (CurrentPass)[0m
+
+[1;36m����������͹ [1;32mAV Information[0m
+[1;90m  [X] Exception: Access denied [0m
+[1;31m    No AV was detected!![0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mWindows Defender configuration[0m
+[1;34m  Local Settings[0m
+[1;34m  Group Policy Settings[0m
+
+[1;36m����������͹ [1;32mUAC Status[0m
+[1;36m� [1;34mIf you are in the Administrators group check how to bypass the UAC [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#basic-uac-bypass-full-file-system-access[0m
+[1;37m    ConsentPromptBehaviorAdmin: [0m5 - [0m[1;31mPromptForNonWindowsBinaries[0m
+[1;37m    EnableLUA: [0m1
+[1;37m    LocalAccountTokenFilterPolicy: [0m
+[1;37m    FilterAdministratorToken: [0m0
+[1;32m      [*] LocalAccountTokenFilterPolicy set to 0 and FilterAdministratorToken != 1.
+      [-] Only the RID-500 local admin account can be used for lateral movement.[0m
+
+[1;36m����������͹ [1;32mPowerShell Settings[0m
+[1;37m    PowerShell v2 Version: [0m2.0
+[1;37m    PowerShell v5 Version: [0m5.1.17134.1
+[1;37m    PowerShell Core Version: [0m
+[1;37m    Transcription Settings: [0m
+[1;37m    Module Logging Settings: [0m
+[1;37m    Scriptblock Logging Settings: [0m
+[1;37m    [0m[1;31mPS history file: [0m[0m
+[1;37m    [0m[1;31mPS history size: [0m[0m
+
+[1;36m����������͹ [1;32mEnumerating PowerShell Session Settings using the registry[0m
+      You must be an administrator to run this check
+
+[1;36m����������͹ [1;32mPS default transcripts history[0m
+[1;36m� [1;34mRead the PS history inside these files (if any)[0m
+
+[1;36m����������͹ [1;32mHKCU Internet Settings[0m
+[1;37m    DisableCachingOfSSLPages: [0m0
+[1;37m    IE5_UA_Backup_Flag: [0m5.0
+[1;37m    PrivacyAdvanced: [0m1
+[1;37m    SecureProtocols: [0m2688
+[1;37m    CertificateRevocation: [0m1
+[1;37m    User Agent: [0mMozilla/4.0 (compatible; MSIE 8.0; Win32)
+[1;37m    ZonesSecurityUpgrade: [0mSystem.Byte[]
+[1;37m    WarnonZoneCrossing: [0m0
+[1;37m    EnableNegotiate: [0m1
+[1;37m    MigrateProxy: [0m1
+[1;37m    ProxyEnable: [0m0
+[1;37m    LockDatabase: [0m131797017165925220
+
+[1;36m����������͹ [1;32mHKLM Internet Settings[0m
+[1;37m    ActiveXCache: [0mC:\Windows\Downloaded Program Files
+[1;37m    CodeBaseSearchPath: [0mCODEBASE
+[1;37m    EnablePunycode: [0m1
+[1;37m    MinorVersion: [0m0
+[1;37m    WarnOnIntranet: [0m1
+
+[1;36m����������͹ [1;32mDrives Information[0m
+[1;36m� [1;34mRemember that you should search more info inside the other drives [1;33m[0m
+    C:\ (Type: Fixed)(Filesystem: NTFS)(Available space: 12 GB)([0m[1;31mPermissions: Authenticated Users [AppendData/CreateDirectories])[0m
+
+[1;36m����������͹ [1;32mChecking WSUS[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#wsus[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mChecking KrbRelayUp[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#krbrelayup[0m
+[1;32m  The system isn't inside a domain, so it isn't vulnerable[0m
+
+[1;36m����������͹ [1;32mChecking If Inside Container[0m
+[1;36m� [1;34mIf the binary cexecsvc.exe or associated service exists, you are inside Docker [1;33m[0m
+[1;32mYou are NOT inside a container[0m
+
+[1;36m����������͹ [1;32mChecking AlwaysInstallElevated[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#alwaysinstallelevated[0m
+[1;32m    AlwaysInstallElevated isn't available[0m
+
+[1;36m����������͹ [1;32mEnumerate LSA settings - auth packages included
+[0m
+    auditbasedirectories                 :       0
+    auditbaseobjects                     :       0
+    Bounds                               :       00-30-00-00-00-20-00-00
+    crashonauditfail                     :       0
+    LimitBlankPasswordUse                :       1
+    NoLmHash                             :       1
+    Security Packages                    :       ""
+    Notification Packages                :       scecli
+    Authentication Packages              :       msv1_0,SshdPinAuthLsa
+    disabledomaincreds                   :       0
+    everyoneincludesanonymous            :       0
+    forceguest                           :       0
+    fullprivilegeauditing                :       80
+    LsaCfgFlags                          :       0
+    LsaPid                               :       632
+    ProductType                          :       4
+    restrictanonymous                    :       0
+    restrictanonymoussam                 :       1
+    SecureBoot                           :       1
+    LsaCfgFlagsDefault                   :       0
+
+[1;36m����������͹ [1;32mEnumerating NTLM Settings[0m
+[1;31m  LanmanCompatibilityLevel    :  (Send NTLMv2 response only - Win7+ default)
+[0m
+[1;34m
+  NTLM Signing Settings[0m
+      ClientRequireSigning    : [0m[1;31mFalse[0m
+      ClientNegotiateSigning  : [0m[1;32mTrue[0m
+      ServerRequireSigning    : [0m[1;31mFalse[0m
+      ServerNegotiateSigning  : [0m[1;31mFalse[0m
+      LdapSigning             : [0m[33m[0m[33mNegotiate signing[0m[0m ([0m[33m[0m[33mNegotiate signing[0m[0m)
+[1;34m
+  Session Security[0m
+[1;32m      NTLMMinClientSec        : 536870912 (Require 128-bit encryption)[0m
+[1;32m      NTLMMinServerSec        : 536870912 (Require 128-bit encryption)
+[0m
+[1;34m
+  NTLM Auditing and Restrictions[0m
+      InboundRestrictions     :  (Not defined)
+[1;31m      OutboundRestrictions    :  (Not defined)[0m
+      InboundAuditing         :  (Not defined)
+      OutboundExceptions      : 
+
+[1;36m����������͹ [1;32mDisplay Local Group Policy settings - local users/machine[0m
+
+[1;36m����������͹ [1;32mChecking AppLocker effective policy[0m
+   AppLockerPolicy version: 1
+   listing rules:
+
+
+
+[1;36m����������͹ [1;32mEnumerating Printers (WMI)[0m
+
+[1;36m����������͹ [1;32mEnumerating Named Pipes[0m
+  Name                                                                                                 CurrentUserPerms                                                       Sddl
+
+  eventlog                                                                                             [0m[1;31mEveryone [WriteData/CreateFiles][0m                                       O:LSG:LSD:P(A;;0x12019b;;;WD)(A;;CC;;;OW)(A;;0x12008f;;;S-1-5-80-880578595-1860270145-482643319-2788375705-1540778122)
+
+  ROUTER                                                                                               [0m[1;31mEveryone [WriteData/CreateFiles][0m                                       O:SYG:SYD:P(A;;0x12019b;;;WD)(A;;0x12019b;;;AN)(A;;FA;;;SY)
+
+  vgauth-service                                                                                       [0m[1;31mEveryone [WriteData/CreateFiles][0m                                       O:BAG:SYD:P(A;;0x12019f;;;WD)(A;;FA;;;SY)(A;;FA;;;BA)
+
+
+[1;36m����������͹ [1;32mEnumerating AMSI registered providers[0m
+    Provider:       {2781761E-28E0-4109-99FE-B9D127C57AFE}
+    Path:           "C:\ProgramData\Microsoft\Windows Defender\platform\4.18.1807.18075-0\MpOav.dll"
+
+[1;90m   =================================================================================================[0m
+
+
+[1;36m����������͹ [1;32mEnumerating Sysmon configuration[0m
+      You must be an administrator to run this check
+
+[1;36m����������͹ [1;32mEnumerating Sysmon process creation logs (1)[0m
+      You must be an administrator to run this check
+
+[1;36m����������͹ [1;32mInstalled .NET versions
+[0m
+
+
+[1;36m�����������������������������������͹ [1;32mInteresting Events information[1;36m �������������������������������������[0m
+
+[1;36m����������͹ [1;32mPrinting Explicit Credential Events (4648) for last 30 days - A process logged on using plaintext credentials
+[0m
+      You must be an administrator to run this check
+
+[1;36m����������͹ [1;32mPrinting Account Logon Events (4624) for the last 10 days.
+[0m
+      You must be an administrator to run this check
+
+[1;36m����������͹ [1;32mProcess creation events - searching logs (EID 4688) for sensitive data.
+[0m
+      You must be an administrator to run this check
+
+[1;36m����������͹ [1;32mPowerShell events - script block logs (EID 4104) - searching for sensitive data.
+[0m
+[1;90m  [X] Exception: Attempted to perform an unauthorized operation.[0m
+
+[1;36m����������͹ [1;32mDisplaying Power off/on events for last 5 days
+[0m
+System.UnauthorizedAccessException: Attempted to perform an unauthorized operation.
+   at System.Diagnostics.Eventing.Reader.EventLogException.Throw(Int32 errorCode)
+   at System.Diagnostics.Eventing.Reader.NativeWrapper.EvtQuery(EventLogHandle session, String path, String query, Int32 flags)
+   at System.Diagnostics.Eventing.Reader.EventLogReader..ctor(EventLogQuery eventQuery, EventBookmark bookmark)
+   at winPEAS.Helpers.MyUtils.GetEventLogReader(String path, String query, String computerName)
+   at winPEAS.Info.EventsInfo.Power.Power.<GetPowerEventInfos>d__0.MoveNext()
+   at winPEAS.Checks.EventsInfo.PowerOnEvents()
+
+
+[1;36m�����������������������������������͹ [1;32mUsers Information[1;36m �������������������������������������[0m
+
+[1;36m����������͹ [1;32mUsers[0m
+[1;36m� [1;34mCheck if you have some admin equivalent privileges [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#users-and-groups[0m
+[1;90m  [X] Exception: Object reference not set to an instance of an object.[0m
+  Current user: [0m[1;35mtyler[0m
+  Current groups: Domain Users, Everyone, Users, Network, Authenticated Users, This Organization, Local account, NTLM Authentication
+[1;90m   =================================================================================================[0m
+
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mCurrent User Idle Time[0m
+   Current User   :     SECNOTES\tyler
+   Idle Time      :     00h:37m:08s:578ms
+
+[1;36m����������͹ [1;32mDisplay Tenant information (DsRegCmd.exe /status)[0m
+   Tenant is NOT Azure AD Joined.
+
+[1;36m����������͹ [1;32mCurrent Token privileges[0m
+[1;36m� [1;34mCheck if you can escalate privilege using some enabled token [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#token-manipulation[0m
+[1;37m    SeShutdownPrivilege: [0mSE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+[1;37m    SeChangeNotifyPrivilege: [0mSE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+[1;37m    SeUndockPrivilege: [0mSE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+[1;37m    SeIncreaseWorkingSetPrivilege: [0mSE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+[1;37m    SeTimeZonePrivilege: [0mSE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED
+
+[1;36m����������͹ [1;32mClipboard text[0m
+
+[1;36m����������͹ [1;32mLogged users[0m
+[1;90m  [X] Exception: Access denied [0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mDisplay information about local users[0m
+   Computer Name           :   SECNOTES
+   User Name               :   [0m[1;31mAdministrator[0m
+   User Id                 :   500
+   Is Enabled              :   [0m[1;31mTrue[0m
+   User Type               :   [0m[1;31mAdministrator[0m
+   Comment                 :   Built-in account for administering the computer/domain
+   Last Logon              :   1/7/2023 2:00:24 AM
+   Logons Count            :   55
+   Password Last Set       :   6/21/2018 11:59:29 AM
+
+[1;90m   =================================================================================================[0m
+
+   Computer Name           :   SECNOTES
+   User Name               :   DefaultAccount
+   User Id                 :   503
+   Is Enabled              :   [0m[1;32mFalse[0m
+   User Type               :   [0m[33mGuest[0m
+   Comment                 :   A user account managed by the system.
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   1/1/1970 12:00:00 AM
+
+[1;90m   =================================================================================================[0m
+
+   Computer Name           :   SECNOTES
+   User Name               :   [0m[33mGuest[0m
+   User Id                 :   501
+   Is Enabled              :   [0m[1;32mFalse[0m
+   User Type               :   [0m[33mGuest[0m
+   Comment                 :   Built-in account for guest access to the computer/domain
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   1/1/1970 12:00:00 AM
+
+[1;90m   =================================================================================================[0m
+
+   Computer Name           :   SECNOTES
+   User Name               :   tyler
+   User Id                 :   1002
+   Is Enabled              :   [0m[1;31mTrue[0m
+   User Type               :   User
+   Comment                 :   
+   Last Logon              :   1/7/2023 2:24:59 AM
+   Logons Count            :   76
+   Password Last Set       :   6/21/2018 11:58:00 AM
+
+[1;90m   =================================================================================================[0m
+
+   Computer Name           :   SECNOTES
+   User Name               :   WDAGUtilityAccount
+   User Id                 :   504
+   Is Enabled              :   [0m[1;32mFalse[0m
+   User Type               :   [0m[33mGuest[0m
+   Comment                 :   A user account managed and used by the system for Windows Defender Application Guard scenarios.
+   Last Logon              :   1/1/1970 12:00:00 AM
+   Logons Count            :   0
+   Password Last Set       :   6/21/2018 4:47:42 PM
+
+[1;90m   =================================================================================================[0m
+
+
+[1;36m����������͹ [1;32mRDP Sessions[0m
+[1;90m    SessID    pSessionName   pUserName      pDomainName              State     SourceIP[0m
+    1         Console        [0m[1;35mtyler[0m          [0m[1;35mSECNOTES[0m                 Active    
+
+[1;36m����������͹ [1;32mEver logged users[0m
+[1;90m  [X] Exception: Access denied [0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mHome folders found[0m
+[1;32m    C:\Users\Administrator[0m
+[1;32m    C:\Users\All Users[0m
+[1;32m    C:\Users\Default[0m
+[1;32m    C:\Users\Default User[0m
+[1;32m    C:\Users\DefaultAppPool[0m
+[1;32m    C:\Users\new[0m
+[1;32m    C:\Users\newsite[0m
+[1;32m    C:\Users\Public[0m
+[1;31m    C:\Users\tyler : tyler [AllAccess][0m
+[1;32m    C:\Users\wayne[0m
+
+[1;36m����������͹ [1;32mLooking for AutoLogon credentials[0m
+[1;31m    Some AutoLogon credentials were found[0m
+    DefaultDomainName             :  [0m[1;35mSECNOTES[0m
+    DefaultUserName               :  [0m[1;35mtyler[0m
+
+[1;36m����������͹ [1;32mPassword Policies[0m
+[1;36m� [1;34mCheck for a possible brute-force [1;33m[0m
+[1;37m    Domain: [0mBuiltin
+[1;37m    SID: [0mS-1-5-32
+[1;37m    MaxPasswordAge: [0m42.22:47:31.7437440
+[1;37m    MinPasswordAge: [0m00:00:00
+[1;37m    MinPasswordLength: [0m0
+[1;37m    PasswordHistoryLength: [0m0
+[1;37m    PasswordProperties: [0m0
+[1;90m   =================================================================================================[0m
+
+[1;37m    Domain: [0m[0m[1;35mSECNOTES[0m
+[1;37m    SID: [0mS-1-5-21-1791094074-1363918840-4199337083
+[1;37m    MaxPasswordAge: [0m42.00:00:00
+[1;37m    MinPasswordAge: [0m00:00:00
+[1;37m    MinPasswordLength: [0m0
+[1;37m    PasswordHistoryLength: [0m0
+[1;37m    PasswordProperties: [0m0
+[1;90m   =================================================================================================[0m
+
+
+[1;36m����������͹ [1;32mPrint Logon Sessions[0m
+
+
+[1;36m�����������������������������������͹ [1;32mProcesses Information[1;36m �������������������������������������[0m
+
+[1;36m�����������������������������������͹ [1;32mServices Information[1;36m �������������������������������������[0m
+[1;90m  [X] Exception: Cannot open Service Control Manager on computer '.'. This operation might require other privileges.[0m
+
+[1;36m����������͹ [1;32mInteresting Services -non Microsoft-[0m
+[1;36m� [1;34mCheck if you can overwrite some service binary or perform a DLL hijacking, also check for unquoted paths [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#services[0m
+[1;90m  [X] Exception: Access denied [0m
+    @arcsas.inf,%arcsas_ServiceName%;Adaptec SAS/SATA-II RAID Storport's Miniport Driver(PMC-Sierra, Inc. - @arcsas.inf,%arcsas_ServiceName%;Adaptec SAS/SATA-II RAID Storport's Miniport Driver)[[0m[1;32mSystem32\drivers\arcsas.sys[0m] - Boot
+[1;90m   =================================================================================================[0m
+
+    @netbvbda.inf,%vbd_srv_desc%;QLogic Network Adapter VBD(QLogic Corporation - @netbvbda.inf,%vbd_srv_desc%;QLogic Network Adapter VBD)[[0m[1;32mSystem32\drivers\bxvbda.sys[0m] - Boot
+[1;90m   =================================================================================================[0m
+
+    @bcmfn2.inf,%bcmfn2.SVCDESC%;bcmfn2 Service(Windows (R) Win 7 DDK provider - @bcmfn2.inf,%bcmfn2.SVCDESC%;bcmfn2 Service)[[0m[1;32mC:\WINDOWS\System32\drivers\bcmfn2.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    @cht4vx64.inf,%cht4vbd.generic%;Chelsio Virtual Bus Driver(Chelsio Communications - @cht4vx64.inf,%cht4vbd.generic%;Chelsio Virtual Bus Driver)[[0m[1;32mC:\WINDOWS\System32\drivers\cht4vx64.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    @nete1g3e.inf,%e1000.Service.DispName%;Intel(R) PRO/1000 NDIS 6 Adapter Driver(Intel Corporation - @nete1g3e.inf,%e1000.Service.DispName%;Intel(R) PRO/1000 NDIS 6 Adapter Driver)[[0m[1;32mC:\WINDOWS\System32\drivers\E1G6032E.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    @net1ic64.inf,%e1iExpress.Service.DispName%;Intel(R) PRO/1000 PCI Express Network Connection Driver I(Intel Corporation - @net1ic64.inf,%e1iExpress.Service.DispName%;Intel(R) PRO/1000 PCI Express Network Connection Driver I)[[0m[1;32mC:\WINDOWS\System32\drivers\e1i63x64.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    @netevbda.inf,%vbd_srv_desc%;QLogic 10 Gigabit Ethernet Adapter VBD(QLogic Corporation - @netevbda.inf,%vbd_srv_desc%;QLogic 10 Gigabit Ethernet Adapter VBD)[[0m[1;32mSystem32\drivers\evbda.sys[0m] - Boot
+[1;90m   =================================================================================================[0m
+
+    @iagpio.inf,%iagpio.SVCDESC%;Intel Serial IO GPIO Controller Driver(Intel(R) Corporation - @iagpio.inf,%iagpio.SVCDESC%;Intel Serial IO GPIO Controller Driver)[[0m[1;32mC:\WINDOWS\System32\drivers\iagpio.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    @iai2c.inf,%iai2c.SVCDESC%;Intel(R) Serial IO I2C Host Controller(Intel(R) Corporation - @iai2c.inf,%iai2c.SVCDESC%;Intel(R) Serial IO I2C Host Controller)[[0m[1;32mC:\WINDOWS\System32\drivers\iai2c.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    @iaLPSS2i_GPIO2_SKL.inf,%iaLPSS2i_GPIO2.SVCDESC%;Intel(R) Serial IO GPIO Driver v2(Intel Corporation - @iaLPSS2i_GPIO2_SKL.inf,%iaLPSS2i_GPIO2.SVCDESC%;Intel(R) Serial IO GPIO Driver v2)[[0m[1;32mC:\WINDOWS\System32\drivers\iaLPSS2i_GPIO2.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    @iaLPSS2i_GPIO2_BXT_P.inf,%iaLPSS2i_GPIO2_BXT_P.SVCDESC%;Intel(R) Serial IO GPIO Driver v2(Intel Corporation - @iaLPSS2i_GPIO2_BXT_P.inf,%iaLPSS2i_GPIO2_BXT_P.SVCDESC%;Intel(R) Serial IO GPIO Driver v2)[[0m[1;32mC:\WINDOWS\System32\drivers\iaLPSS2i_GPIO2_BXT_P.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    @iaLPSS2i_I2C_SKL.inf,%iaLPSS2i_I2C.SVCDESC%;Intel(R) Serial IO I2C Driver v2(Intel Corporation - @iaLPSS2i_I2C_SKL.inf,%iaLPSS2i_I2C.SVCDESC%;Intel(R) Serial IO I2C Driver v2)[[0m[1;32mC:\WINDOWS\System32\drivers\iaLPSS2i_I2C.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    @iaLPSS2i_I2C_BXT_P.inf,%iaLPSS2i_I2C_BXT_P.SVCDESC%;Intel(R) Serial IO I2C Driver v2(Intel Corporation - @iaLPSS2i_I2C_BXT_P.inf,%iaLPSS2i_I2C_BXT_P.SVCDESC%;Intel(R) Serial IO I2C Driver v2)[[0m[1;32mC:\WINDOWS\System32\drivers\iaLPSS2i_I2C_BXT_P.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    @ialpssi_gpio.inf,%iaLPSSi_GPIO.SVCDESC%;Intel(R) Serial IO GPIO Controller Driver(Intel Corporation - @ialpssi_gpio.inf,%iaLPSSi_GPIO.SVCDESC%;Intel(R) Serial IO GPIO Controller Driver)[[0m[1;32mC:\WINDOWS\System32\drivers\iaLPSSi_GPIO.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    @ialpssi_i2c.inf,%iaLPSSi_I2C.SVCDESC%;Intel(R) Serial IO I2C Controller Driver(Intel Corporation - @ialpssi_i2c.inf,%iaLPSSi_I2C.SVCDESC%;Intel(R) Serial IO I2C Controller Driver)[[0m[1;32mC:\WINDOWS\System32\drivers\iaLPSSi_I2C.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    @iastorav.inf,%iaStorAVC.DeviceDesc%;Intel Chipset SATA RAID Controller(Intel Corporation - @iastorav.inf,%iaStorAVC.DeviceDesc%;Intel Chipset SATA RAID Controller)[[0m[1;32mSystem32\drivers\iaStorAVC.sys[0m] - Boot
+[1;90m   =================================================================================================[0m
+
+    @iastorv.inf,%*PNP0600.DeviceDesc%;Intel RAID Controller Windows 7(Intel Corporation - @iastorv.inf,%*PNP0600.DeviceDesc%;Intel RAID Controller Windows 7)[[0m[1;32mSystem32\drivers\iaStorV.sys[0m] - Boot
+[1;90m   =================================================================================================[0m
+
+    @mlx4_bus.inf,%Ibbus.ServiceDesc%;Mellanox InfiniBand Bus/AL (Filter Driver)(Mellanox - @mlx4_bus.inf,%Ibbus.ServiceDesc%;Mellanox InfiniBand Bus/AL (Filter Driver))[[0m[1;32mC:\WINDOWS\System32\drivers\ibbus.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    @mlx4_bus.inf,%MLX4BUS.ServiceDesc%;Mellanox ConnectX Bus Enumerator(Mellanox - @mlx4_bus.inf,%MLX4BUS.ServiceDesc%;Mellanox ConnectX Bus Enumerator)[[0m[1;32mC:\WINDOWS\System32\drivers\mlx4_bus.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    MySQL80(MySQL80)[[0m[1;32m"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe" --defaults-file="C:\ProgramData\MySQL\MySQL Server 8.0\my.ini" MySQL80[0m] - Autoload
+[1;90m   =================================================================================================[0m
+
+    @mlx4_bus.inf,%ndfltr.ServiceDesc%;NetworkDirect Service(Mellanox - @mlx4_bus.inf,%ndfltr.ServiceDesc%;NetworkDirect Service)[[0m[1;32mC:\WINDOWS\System32\drivers\ndfltr.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    OpenSSH Authentication Agent(OpenSSH Authentication Agent)[[0m[1;32mC:\WINDOWS\System32\OpenSSH\ssh-agent.exe[0m] - Manual
+    [1;37mAgent to hold private keys used for public key authentication.
+[1;90m   =================================================================================================[0m
+
+    OpenSSH SSH Server(OpenSSH SSH Server)[[0m[1;32mC:\WINDOWS\System32\OpenSSH\sshd.exe[0m] - System
+    [1;37mSSH protocol based service to provide secure encrypted communications between two untrusted hosts over an insecure network.
+[1;90m   =================================================================================================[0m
+
+    @usbstor.inf,%USBSTOR.SvcDesc%;USB Mass Storage Driver(@usbstor.inf,%USBSTOR.SvcDesc%;USB Mass Storage Driver)[[0m[1;32mC:\WINDOWS\System32\drivers\USBSTOR.SYS[0m] - System
+[1;90m   =================================================================================================[0m
+
+    @usbxhci.inf,%PCI\CC_0C0330.DeviceDesc%;USB xHCI Compliant Host Controller(@usbxhci.inf,%PCI\CC_0C0330.DeviceDesc%;USB xHCI Compliant Host Controller)[[0m[1;32mC:\WINDOWS\System32\drivers\USBXHCI.SYS[0m] - System
+[1;90m   =================================================================================================[0m
+
+    VMware Alias Manager and Ticket Service(VMware, Inc. - VMware Alias Manager and Ticket Service)[[0m[1;32m"C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe"[0m] - Autoload
+    [1;37mAlias Manager and Ticket Service
+[1;90m   =================================================================================================[0m
+
+    @oem7.inf,%VM3DSERVICE_DISPLAYNAME%;VMware SVGA Helper Service(VMware, Inc. - @oem7.inf,%VM3DSERVICE_DISPLAYNAME%;VMware SVGA Helper Service)[[0m[1;32mC:\WINDOWS\system32\vm3dservice.exe[0m] - Autoload
+    [1;37m@oem7.inf,%VM3DSERVICE_DESCRIPTION%;Helps VMware SVGA driver by collecting and conveying user mode information
+[1;90m   =================================================================================================[0m
+
+    @oem0.inf,%loc.vmciServiceDisplayName%;VMware VMCI Bus Driver(VMware, Inc. - @oem0.inf,%loc.vmciServiceDisplayName%;VMware VMCI Bus Driver)[[0m[1;32mSystem32\drivers\vmci.sys[0m] - Boot
+[1;90m   =================================================================================================[0m
+
+    Memory Control Driver(VMware, Inc. - Memory Control Driver)[[0m[1;32mC:\WINDOWS\system32\DRIVERS\vmmemctl.sys[0m] - Autoload
+    [1;37mDriver to provide enhanced memory management of this virtual machine.
+[1;90m   =================================================================================================[0m
+
+    @oem6.inf,%VMMouse.SvcDesc%;VMware Pointing Device(VMware, Inc. - @oem6.inf,%VMMouse.SvcDesc%;VMware Pointing Device)[[0m[1;32mC:\WINDOWS\System32\drivers\vmmouse.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    VMware Tools(VMware, Inc. - VMware Tools)[[0m[1;32m"C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"[0m] - Autoload
+    [1;37mProvides support for synchronizing objects between the host and guest operating systems.
+[1;90m   =================================================================================================[0m
+
+    @oem1.inf,%loc.vmxnet3.ndis6.DispName%;vmxnet3 NDIS 6 Ethernet Adapter Driver(VMware, Inc. - @oem1.inf,%loc.vmxnet3.ndis6.DispName%;vmxnet3 NDIS 6 Ethernet Adapter Driver)[[0m[1;32mC:\WINDOWS\System32\drivers\vmxnet3.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    vSockets Virtual Machine Communication Interface Sockets driver(VMware, Inc. - vSockets Virtual Machine Communication Interface Sockets driver)[[0m[1;32msystem32\DRIVERS\vsock.sys[0m] - Boot
+    [1;37mvSockets Driver
+[1;90m   =================================================================================================[0m
+
+    @vstxraid.inf,%Driver.DeviceDesc%;VIA StorX Storage RAID Controller Windows Driver(VIA Corporation - @vstxraid.inf,%Driver.DeviceDesc%;VIA StorX Storage RAID Controller Windows Driver)[[0m[1;32mSystem32\drivers\vstxraid.sys[0m] - Boot
+[1;90m   =================================================================================================[0m
+
+    @mlx4_bus.inf,%WinMad.ServiceDesc%;WinMad Service(Mellanox - @mlx4_bus.inf,%WinMad.ServiceDesc%;WinMad Service)[[0m[1;32mC:\WINDOWS\System32\drivers\winmad.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+    @winusb.inf,%WINUSB_SvcDesc%;WinUsb Driver(@winusb.inf,%WINUSB_SvcDesc%;WinUsb Driver)[[0m[1;32mC:\WINDOWS\System32\drivers\WinUSB.SYS[0m] - System
+[1;90m   =================================================================================================[0m
+
+    @mlx4_bus.inf,%WinVerbs.ServiceDesc%;WinVerbs Service(Mellanox - @mlx4_bus.inf,%WinVerbs.ServiceDesc%;WinVerbs Service)[[0m[1;32mC:\WINDOWS\System32\drivers\winverbs.sys[0m] - System
+[1;90m   =================================================================================================[0m
+
+
+[1;36m����������͹ [1;32mModifiable Services[0m
+[1;36m� [1;34mCheck if you can modify any service [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#services[0m
+[1;32m    You cannot modify any service[0m
+
+[1;36m����������͹ [1;32mLooking if you can modify any service registry[0m
+[1;36m� [1;34mCheck if you can modify the registry of a service [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#services-registry-permissions[0m
+[1;32m    [-] Looks like you cannot change the registry of any service...[0m
+
+[1;36m����������͹ [1;32mChecking write permissions in PATH folders (DLL Hijacking)[0m
+[1;36m� [1;34mCheck for DLL Hijacking in PATH folders [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#dll-hijacking[0m
+[1;32m    C:\WINDOWS\system32[0m
+[1;32m    C:\WINDOWS[0m
+[1;32m    C:\WINDOWS\System32\Wbem[0m
+[1;32m    C:\WINDOWS\System32\WindowsPowerShell\v1.0\[0m
+[1;32m    C:\WINDOWS\System32\OpenSSH\[0m
+
+
+[1;36m�����������������������������������͹ [1;32mApplications Information[1;36m �������������������������������������[0m
+
+[1;36m����������͹ [1;32mCurrent Active Window Application[0m
+[1;90m  [X] Exception: Object reference not set to an instance of an object.[0m
+
+[1;36m����������͹ [1;32mInstalled Applications --Via Program Files/Uninstall registry--[0m
+[1;36m� [1;34mCheck if you can modify installed software [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#software[0m
+[1;32m    C:\Program Files\Common Files[0m
+[1;32m    C:\Program Files\desktop.ini[0m
+[1;32m    C:\Program Files\internet explorer[0m
+[1;32m    C:\Program Files\MySQL[0m
+[1;32m    C:\Program Files\Oracle[0m
+[1;32m    C:\Program Files\Uninstall Information[0m
+[1;32m    C:\Program Files\UNP[0m
+[1;32m    C:\Program Files\VMware[0m
+[1;32m    C:\Program Files\Windows Defender[0m
+[1;32m    C:\Program Files\Windows Defender Advanced Threat Protection[0m
+[1;32m    C:\Program Files\Windows Mail[0m
+[1;32m    C:\Program Files\Windows Media Player[0m
+[1;32m    C:\Program Files\Windows Multimedia Platform[0m
+[1;32m    C:\Program Files\windows nt[0m
+[1;32m    C:\Program Files\Windows Photo Viewer[0m
+[1;32m    C:\Program Files\Windows Portable Devices[0m
+[1;32m    C:\Program Files\Windows Security[0m
+[1;32m    C:\Program Files\Windows Sidebar[0m
+[1;32m    C:\Program Files\WindowsApps[0m
+[1;32m    C:\Program Files\WindowsPowerShell[0m
+
+
+[1;36m����������͹ [1;32mScheduled Applications --Non Microsoft--[0m
+[1;36m� [1;34mCheck if you can modify other users scheduled binaries [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/privilege-escalation-with-autorun-binaries[0m
+
+[1;36m����������͹ [1;32mDevice Drivers --Non Microsoft--[0m
+[1;36m� [1;34mCheck 3rd party drivers for known vulnerabilities/rootkits. [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#vulnerable-drivers[0m
+    QLogic 10 GigE - 7.13.65.105 [QLogic Corporation]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\evbda.sys[0m
+    NVIDIA nForce(TM) RAID Driver - 10.6.0.23 [NVIDIA Corporation]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\nvraid.sys[0m
+    QLogic Gigabit Ethernet - 7.12.31.105 [QLogic Corporation]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\bxvbda.sys[0m
+    VMware vSockets Service - 9.8.16.0 build-14168184 [VMware, Inc.]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\system32\DRIVERS\vsock.sys[0m
+    VMware PCI VMCI Bus Device - 9.8.16.0 build-14168184 [VMware, Inc.]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\vmci.sys[0m
+    Intel Matrix Storage Manager driver - 8.6.2.1019 [Intel Corporation]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\iaStorV.sys[0m
+    VIA StorX RAID Controller Driver - 8.0.9200.8110 [VIA Corporation]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\vstxraid.sys[0m
+    LSI 3ware RAID Controller - WindowsBlue [LSI]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\3ware.sys[0m
+    AHCI 1.3 Device Driver - 1.1.3.277 [Advanced Micro Devices]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\amdsata.sys[0m
+    Storage Filter Driver - 1.1.3.277 [Advanced Micro Devices]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\amdxata.sys[0m
+    AMD Technology AHCI Compatible Controller - 3.7.1540.43 [AMD Technologies Inc.]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\amdsbs.sys[0m
+    Adaptec RAID Controller - 7.5.0.32048 [PMC-Sierra, Inc.]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\arcsas.sys[0m
+    Windows (R) Win 7 DDK driver - 10.0.10011.16384 [Avago Technologies]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\ItSas35i.sys[0m
+    LSI Fusion-MPT SAS Driver (StorPort) - 1.34.03.83 [LSI Corporation]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\lsi_sas.sys[0m
+    Windows (R) Win 7 DDK driver - 10.0.10011.16384 [LSI Corporation]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\lsi_sas2i.sys[0m
+    Windows (R) Win 7 DDK driver - 10.0.10011.16384 [Avago Technologies]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\lsi_sas3i.sys[0m
+    LSI SSS PCIe/Flash Driver (StorPort) - 2.10.61.81 [LSI Corporation]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\lsi_sss.sys[0m
+    MEGASAS RAID Controller Driver for Windows - 6.706.06.00 [Avago Technologies]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\megasas.sys[0m
+    MEGASAS RAID Controller Driver for Windows - 6.714.05.00 [Avago Technologies]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\MegaSas2i.sys[0m
+    MEGASAS RAID Controller Driver for Windows - 7.702.12.00 [Avago Technologies]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\megasas35i.sys[0m
+    MegaRAID Software RAID - 15.02.2013.0129 [LSI Corporation, Inc.]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\megasr.sys[0m
+    Marvell Flash Controller -  1.0.5.1016  [Marvell Semiconductor, Inc.]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\mvumis.sys[0m
+    NVIDIA nForce(TM) SATA Driver - 10.6.0.23 [NVIDIA Corporation]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\nvstor.sys[0m
+    MEGASAS RAID Controller Driver for Windows - 6.805.03.00 [Avago Technologies]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\percsas2i.sys[0m
+    MEGASAS RAID Controller Driver for Windows - 6.603.06.00 [Avago Technologies]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\percsas3i.sys[0m
+    Microsoftr Windowsr Operating System - 2.60.01 [Silicon Integrated Systems Corp.]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\SiSRaid2.sys[0m
+    Microsoftr Windowsr Operating System - 6.1.6918.0 [Silicon Integrated Systems]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\sisraid4.sys[0m
+     Promiser SuperTrak EX Series -  5.1.0000.10 [Promise Technology, Inc.]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\stexstor.sys[0m
+    Chelsio Communications iSCSI Controller - 10.0.10011.16384 [Chelsio Communications]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\cht4sx64.sys[0m
+    VIA RAID driver - 7.0.9600,6352 [VIA Technologies Inc.,Ltd]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\vsmraid.sys[0m
+    Intel(R) Rapid Storage Technology driver (inbox) - 15.44.0.1010 [Intel Corporation]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\iaStorAVC.sys[0m
+    PMC-Sierra HBA Controller - 1.3.0.10769 [PMC-Sierra]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\ADP80XX.SYS[0m
+    Smart Array SAS/SATA Controller Media Driver - 8.0.4.0 Build 1 Media Driver (x86-64) [Hewlett-Packard Company]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\HpSAMD.sys[0m
+    VMware Pointing PS/2 Device Driver - 12.5.10.0 build-14169150 [VMware, Inc.]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\vmmouse.sys[0m
+    VMware SVGA 3D - 8.16.07.0008 - build-16233244 [VMware, Inc.]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\system32\DRIVERS\vm3dmp_loader.sys[0m
+    VMware SVGA 3D - 8.16.07.0008 - build-16233244 [VMware, Inc.]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\system32\DRIVERS\vm3dmp.sys[0m
+    VMware PCIe Ethernet Adapter NDIS 6.30 (64-bit) - 1.8.16.0 build-14217867 [VMware, Inc.]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\System32\drivers\vmxnet3.sys[0m
+    VMware server memory controller - 7.5.5.0 build-14903665 [VMware, Inc.]: [0m[1;32m\\.\GLOBALROOT\SystemRoot\system32\DRIVERS\vmmemctl.sys[0m
+
+
+[1;36m�����������������������������������͹ [1;32mNetwork Information[1;36m �������������������������������������[0m
+
+[1;36m����������͹ [1;32mNetwork Shares[0m
+[1;90m  [X] Exception: Access denied [0m
+
+[1;36m����������͹ [1;32mEnumerate Network Mapped Drives (WMI)[0m
+
+[1;36m����������͹ [1;32mHost File[0m
+        127.0.0.1       localhost secnotes.htb
+        ::1             localhost
+
+[1;36m����������͹ [1;32mNetwork Ifaces and known hosts[0m
+[1;36m� [1;34mThe masks are only for the IPv4 addresses [1;33m[0m
+    Ethernet0 2[00:50:56:B9:1A:88]: 10.10.10.97, fe80::44e4:dc86:8f1e:f1e6%11, dead:beef::d04a:b7f2:a11f:14e1, dead:beef::44e4:dc86:8f1e:f1e6, dead:beef::d8 / 255.255.255.0
+        [1;37mGateways: [0m10.10.10.2, fe80::250:56ff:feb9:35eb%11
+        [1;37mDNSs: [0m1.1.1.1, 1.0.0.1
+        [1;37mKnown hosts:[0m
+          10.10.10.2            00-50-56-B9-35-EB     Dynamic
+          10.10.10.15           00-50-56-B9-3C-A7     Dynamic
+          10.10.10.255          FF-FF-FF-FF-FF-FF     Static
+          224.0.0.22            01-00-5E-00-00-16     Static
+          224.0.0.251           01-00-5E-00-00-FB     Static
+          224.0.0.252           01-00-5E-00-00-FC     Static
+          239.255.255.250       01-00-5E-7F-FF-FA     Static
+
+    Loopback Pseudo-Interface 1[]: 127.0.0.1, ::1 / 255.0.0.0
+        [1;37mDNSs: [0mfec0:0:0:ffff::1%1, fec0:0:0:ffff::2%1, fec0:0:0:ffff::3%1
+        [1;37mKnown hosts:[0m
+          224.0.0.22            00-00-00-00-00-00     Static
+          239.255.255.250       00-00-00-00-00-00     Static
+
+
+[1;36m����������͹ [1;32mCurrent TCP Listening Ports[0m
+[1;36m� [1;34mCheck for services restricted from the outside [1;33m[0m
+[1;34m  Enumerating IPv4 connections
+[0m
+  Protocol   Local Address         Local Port    Remote Address        Remote Port     State             Process ID      Process Name
+
+  TCP        0.0.0.0               80            0.0.0.0               0               Listening         4               System
+  TCP        0.0.0.0               135           0.0.0.0               0               Listening         872             svchost
+  TCP        0.0.0.0               445           0.0.0.0               0               Listening         4               System
+  TCP        0.0.0.0               3306          0.0.0.0               0               Listening         3084            mysqld
+  TCP        0.0.0.0               5040          0.0.0.0               0               Listening         6592            svchost
+  TCP        0.0.0.0               8808          0.0.0.0               0               Listening         4               System
+  TCP        0.0.0.0               33060         0.0.0.0               0               Listening         3084            mysqld
+  TCP        0.0.0.0               49664         0.0.0.0               0               Listening         508             wininit
+  TCP        0.0.0.0               49665         0.0.0.0               0               Listening         1100            svchost
+  TCP        0.0.0.0               49666         0.0.0.0               0               Listening         1424            svchost
+  TCP        0.0.0.0               49667         0.0.0.0               0               Listening         2084            spoolsv
+  TCP        0.0.0.0               49668         0.0.0.0               0               Listening         624             services
+  TCP        0.0.0.0               49669         0.0.0.0               0               Listening         632             lsass
+  TCP        10.10.10.97           80            10.10.10.97           49676           Established       4               System
+  TCP        10.10.10.97           139           0.0.0.0               0               Listening         4               System
+  TCP        10.10.10.97           49676         10.10.10.97           80              Established       7724            C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+  TCP        10.10.10.97           51134         10.10.14.6            80              Established       3512            C:\inetpub\new-site\ghost.exe
+  TCP        [0m[1;31m[0m[1;31m127.0.0.1[0m[0m             80            [0m[1;31m[0m[1;31m127.0.0.1[0m[0m             49674           Established       4               System
+  TCP        [0m[1;31m[0m[1;31m127.0.0.1[0m[0m             80            [0m[1;31m[0m[1;31m127.0.0.1[0m[0m             49686           Established       4               System
+  TCP        [0m[1;31m[0m[1;31m127.0.0.1[0m[0m             49670         [0m[1;31m[0m[1;31m127.0.0.1[0m[0m             49671           Established       3084            mysqld
+  TCP        [0m[1;31m[0m[1;31m127.0.0.1[0m[0m             49671         [0m[1;31m[0m[1;31m127.0.0.1[0m[0m             49670           Established       3084            mysqld
+  TCP        [0m[1;31m[0m[1;31m127.0.0.1[0m[0m             49674         [0m[1;31m[0m[1;31m127.0.0.1[0m[0m             80              Established       7724            C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+  TCP        [0m[1;31m[0m[1;31m127.0.0.1[0m[0m             49686         [0m[1;31m[0m[1;31m127.0.0.1[0m[0m             80              Established       7724            C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+[0m[0m
+[1;34m  Enumerating IPv6 connections
+[0m
+  Protocol   Local Address                               Local Port    Remote Address                              Remote Port     State             Process ID      Process Name
+
+  TCP        [0m[1;31m[0m[1;31m[::][0m[0m                                        80            [0m[1;31m[0m[1;31m[::][0m[0m                                        0               Listening         4               System
+  TCP        [0m[1;31m[0m[1;31m[::][0m[0m                                        135           [0m[1;31m[0m[1;31m[::][0m[0m                                        0               Listening         872             svchost
+  TCP        [0m[1;31m[0m[1;31m[::][0m[0m                                        445           [0m[1;31m[0m[1;31m[::][0m[0m                                        0               Listening         4               System
+  TCP        [0m[1;31m[0m[1;31m[::][0m[0m                                        3306          [0m[1;31m[0m[1;31m[::][0m[0m                                        0               Listening         3084            mysqld
+  TCP        [0m[1;31m[0m[1;31m[::][0m[0m                                        8808          [0m[1;31m[0m[1;31m[::][0m[0m                                        0               Listening         4               System
+  TCP        [0m[1;31m[0m[1;31m[::][0m[0m                                        33060         [0m[1;31m[0m[1;31m[::][0m[0m                                        0               Listening         3084            mysqld
+  TCP        [0m[1;31m[0m[1;31m[::][0m[0m                                        49664         [0m[1;31m[0m[1;31m[::][0m[0m                                        0               Listening         508             wininit
+  TCP        [0m[1;31m[0m[1;31m[::][0m[0m                                        49665         [0m[1;31m[0m[1;31m[::][0m[0m                                        0               Listening         1100            svchost
+  TCP        [0m[1;31m[0m[1;31m[::][0m[0m                                        49666         [0m[1;31m[0m[1;31m[::][0m[0m                                        0               Listening         1424            svchost
+  TCP        [0m[1;31m[0m[1;31m[::][0m[0m                                        49667         [0m[1;31m[0m[1;31m[::][0m[0m                                        0               Listening         2084            spoolsv
+  TCP        [0m[1;31m[0m[1;31m[::][0m[0m                                        49668         [0m[1;31m[0m[1;31m[::][0m[0m                                        0               Listening         624             services
+  TCP        [0m[1;31m[0m[1;31m[::][0m[0m                                        49669         [0m[1;31m[0m[1;31m[::][0m[0m                                        0               Listening         632             lsass
+  TCP        [0m[1;31m[0m[1;31m[::1][0m[0m                                       80            [0m[1;31m[0m[1;31m[::1][0m[0m                                       49691           Established       4               System
+
+[1;36m����������͹ [1;32mCurrent UDP Listening Ports[0m
+[1;36m� [1;34mCheck for services restricted from the outside [1;33m[0m
+[1;34m  Enumerating IPv4 connections
+[0m
+  Protocol   Local Address         Local Port    Remote Address:Remote Port     Process ID        Process Name
+
+  UDP        0.0.0.0               123           *:*                            8988              svchost
+  UDP        0.0.0.0               5050          *:*                            6592              svchost
+  UDP        0.0.0.0               5353          *:*                            1936              svchost
+  UDP        0.0.0.0               5355          *:*                            1936              svchost
+  UDP        10.10.10.97           137           *:*                            4                 System
+  UDP        10.10.10.97           138           *:*                            4                 System
+  UDP        10.10.10.97           1900          *:*                            6184              svchost
+  UDP        10.10.10.97           62131         *:*                            6184              svchost
+  UDP        [0m[1;31m127.0.0.1[0m             1900          *:*                            6184              svchost
+  UDP        [0m[1;31m127.0.0.1[0m             50361         *:*                            2868              svchost
+  UDP        [0m[1;31m127.0.0.1[0m             62132         *:*                            6184              svchost
+[0m[0m
+[1;34m  Enumerating IPv6 connections
+[0m
+  Protocol   Local Address                               Local Port    Remote Address:Remote Port     Process ID        Process Name
+
+  UDP        [0m[1;31m[::][0m                                        123           *:*                            8988              svchost
+  UDP        [0m[1;31m[::][0m                                        5353          *:*                            1936              svchost
+  UDP        [0m[1;31m[::][0m                                        5355          *:*                            1936              svchost
+  UDP        [0m[1;31m[::1][0m                                       1900          *:*                            6184              svchost
+  UDP        [0m[1;31m[::1][0m                                       62130         *:*                            6184              svchost
+  UDP        [fe80::44e4:dc86:8f1e:f1e6%11]              1900          *:*                            6184              svchost
+  UDP        [fe80::44e4:dc86:8f1e:f1e6%11]              62129         *:*                            6184              svchost
+
+[1;36m����������͹ [1;32mFirewall Rules[0m
+[1;36m� [1;34mShowing only DENY rules (too many ALLOW rules always) [1;33m[0m
+    Current Profiles: PUBLIC
+    FirewallEnabled (Domain):    [0m[1;32mTrue[0m
+    FirewallEnabled (Private):    [0m[1;32mTrue[0m
+    FirewallEnabled (Public):    [0m[1;32mTrue[0m
+[1;90m    DENY rules:[0m
+[1;90m  [X] Exception: Object reference not set to an instance of an object.[0m
+
+[1;36m����������͹ [1;32mDNS cached --limit 70--[0m
+[1;90m    Entry                                 Name                                  Data[0m
+[1;90m  [X] Exception: Access denied [0m
+
+[1;36m����������͹ [1;32mEnumerating Internet settings, zone and proxy configuration[0m
+[1;34m  General Settings[0m
+  Hive        Key                                       Value
+  HKCU        DisableCachingOfSSLPages                  0
+  HKCU        IE5_UA_Backup_Flag                        5.0
+  HKCU        PrivacyAdvanced                           1
+  HKCU        SecureProtocols                           2688
+  HKCU        CertificateRevocation                     1
+  HKCU        User Agent                                Mozilla/4.0 (compatible; MSIE 8.0; Win32)
+  HKCU        ZonesSecurityUpgrade                      System.Byte[]
+  HKCU        WarnonZoneCrossing                        0
+  HKCU        EnableNegotiate                           1
+  HKCU        MigrateProxy                              1
+  HKCU        ProxyEnable                               0
+  HKCU        LockDatabase                              131797017165925220
+  HKLM        ActiveXCache                              C:\Windows\Downloaded Program Files
+  HKLM        CodeBaseSearchPath                        CODEBASE
+  HKLM        EnablePunycode                            1
+  HKLM        MinorVersion                              0
+  HKLM        WarnOnIntranet                            1
+[1;34m
+  Zone Maps[0m
+  No URLs configured
+[1;34m
+  Zone Auth Settings[0m
+  No Zone Auth Settings
+
+
+[1;36m�����������������������������������͹ [1;32mWindows Credentials[1;36m �������������������������������������[0m
+
+[1;36m����������͹ [1;32mChecking Windows Vault[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-manager-windows-vault[0m
+Unable to enumerate vault items from the following vault: Windows Credentials. Error 0x1312
+    GUID: 4bf4c442-9b8a-41a0-b380-dd4a704ddb28
+    Type: Web [0m[1;31mCredentials[0m
+    [0m[1;31mResource: http://secnotes.htb/[0m
+    [0m[1;31mIdentity: q[0m
+    Last Modified: 6/22/2018 10:54:57 AM
+[1;90m   =================================================================================================[0m
+
+    GUID: 4bf4c442-9b8a-41a0-b380-dd4a704ddb28
+    Type: Web [0m[1;31mCredentials[0m
+    [0m[1;31mResource: http://127.0.0.1/[0m
+    [0m[1;31mIdentity: q[0m
+    Last Modified: 6/21/2018 8:09:46 PM
+[1;90m   =================================================================================================[0m
+
+
+[1;36m����������͹ [1;32mChecking Credential manager[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-manager-windows-vault[0m
+    [!] [0m[33mWarning:[0m if password contains non-printable characters, it will be printed as unicode base64 encoded string
+
+
+  [!] Unable to enumerate credentials automatically, error: 'Win32Exception: System.ComponentModel.Win32Exception (0x80004005): A specified logon session does not exist. It may already have been terminated'
+Please run: 
+[33mcmdkey /list[0m
+
+[1;36m����������͹ [1;32mSaved RDP connections[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mRemote Desktop Server/Client Settings[0m
+[1;34m  RDP Server Settings[0m
+    Network Level Authentication            :       
+    Block Clipboard Redirection             :       
+    Block COM Port Redirection              :       
+    Block Drive Redirection                 :       
+    Block LPT Port Redirection              :       
+    Block PnP Device Redirection            :       
+    Block Printer Redirection               :       
+    Allow Smart Card Redirection            :       
+[1;34m
+  RDP Client Settings[0m
+    Disable Password Saving                 :       True
+    Restricted Remote Administration        :       False
+
+[1;36m����������͹ [1;32mRecently run commands[0m
+[1;37m    a: [0mshell:common startup\1
+[1;37m    MRUList: [0ma
+
+[1;36m����������͹ [1;32mChecking for DPAPI Master Keys[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#dpapi[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mChecking for DPAPI Credential Files[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#dpapi[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mChecking for RDCMan Settings Files[0m
+[1;36m� [1;34mDump credentials from Remote Desktop Connection Manager [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#remote-desktop-credential-manager[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mLooking for Kerberos tickets[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/pentesting/pentesting-kerberos-88[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mLooking for saved Wifi credentials[0m
+[1;90m  [X] Exception: The service has not been started[0m
+Enumerating WLAN using wlanapi.dll failed, trying to enumerate using 'netsh'
+No saved Wifi credentials found
+
+[1;36m����������͹ [1;32mLooking AppCmd.exe[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#appcmd-exe[0m
+[1;31m    AppCmd.exe was found in C:\WINDOWS\system32\inetsrv\appcmd.exe[0m
+      You must be an administrator to run this check
+
+[1;36m����������͹ [1;32mLooking SSClient.exe[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#scclient-sccm[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mEnumerating SSCM - System Center Configuration Manager settings[0m
+
+[1;36m����������͹ [1;32mEnumerating Security Packages Credentials[0m
+[1;31m  Version: NetNTLMv2
+  Hash:    tyler::SECNOTES:1122334455667788:41424497a588a64158bbd305b6d974b0:01010000000000008ab33e058422d9012e50c1e653503c0500000000080030003000000000000000000000000020000009fbb3d869027ba8b07d207b1ad9ed85cd7d81123622e8c043af8cea67a14c5d0a00100000000000000000000000000000000000090000000000000000000000
+[0m
+[1;90m   =================================================================================================[0m
+
+
+
+[1;36m�����������������������������������͹ [1;32mBrowsers Information[1;36m �������������������������������������[0m
+
+[1;36m����������͹ [1;32mShowing saved credentials for Firefox[0m
+[33m    Info: if no credentials were listed, you might need to close the browser and try again.[0m
+
+[1;36m����������͹ [1;32mLooking for Firefox DBs[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mLooking for GET credentials in Firefox history[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mShowing saved credentials for Chrome[0m
+[33m    Info: if no credentials were listed, you might need to close the browser and try again.[0m
+
+[1;36m����������͹ [1;32mLooking for Chrome DBs[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mLooking for GET credentials in Chrome history[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mChrome bookmarks[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mShowing saved credentials for Opera[0m
+[33m    Info: if no credentials were listed, you might need to close the browser and try again.[0m
+
+[1;36m����������͹ [1;32mShowing saved credentials for Brave Browser[0m
+[33m    Info: if no credentials were listed, you might need to close the browser and try again.[0m
+
+[1;36m����������͹ [1;32mShowing saved credentials for Internet Explorer (unsupported)[0m
+[33m    Info: if no credentials were listed, you might need to close the browser and try again.[0m
+
+[1;36m����������͹ [1;32mCurrent IE tabs[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history[0m
+[1;90m  [X] Exception: System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.UnauthorizedAccessException: Access is denied. (Exception from HRESULT: 0x80070005 (E_ACCESSDENIED))
+   --- End of inner exception stack trace ---
+   at System.RuntimeType.InvokeDispMethod(String name, BindingFlags invokeAttr, Object target, Object[] args, Boolean[] byrefModifiers, Int32 culture, String[] namedParameters)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at winPEAS.KnownFileCreds.Browsers.InternetExplorer.GetCurrentIETabs()[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mLooking for GET credentials in IE history[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#browsers-history[0m
+[1;90m  [X] Exception: System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\WINDOWS\system32\config\systemprofile\Favorites'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileSystemEnumerableIterator`1.CommonInit()
+   at System.IO.FileSystemEnumerableIterator`1..ctor(String path, String originalUserPath, String searchPattern, SearchOption searchOption, SearchResultHandler`1 resultHandler, Boolean checkHost)
+   at System.IO.Directory.EnumerateFiles(String path, String searchPattern, SearchOption searchOption)
+   at winPEAS.KnownFileCreds.Browsers.InternetExplorer.GetIEHistFav()[0m
+
+[1;36m����������͹ [1;32mIE favorites[0m
+[1;90m    Not Found[0m
+
+
+[1;36m�����������������������������������͹ [1;32mInteresting files and registry[1;36m �������������������������������������[0m
+
+[1;36m����������͹ [1;32mPutty Sessions[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mPutty SSH Host keys[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mSSH keys in registry[0m
+[1;36m� [1;34mIf you find anything here, follow the link to learn how to decrypt the SSH keys [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#ssh-keys-in-registry[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mSuperPutty configuration files[0m
+
+[1;36m����������͹ [1;32mEnumerating Office 365 endpoints synced by OneDrive.
+[0m
+    SID: S-1-5-19
+[1;90m   =================================================================================================[0m
+
+    SID: S-1-5-20
+[1;90m   =================================================================================================[0m
+
+    SID: S-1-5-21-1791094074-1363918840-4199337083-1002
+      Name:  Personal
+        UserFolder                                 C:\Users\tyler\OneDrive
+[1;90m   =================================================================================================[0m
+
+    SID: S-1-5-82-3006700770-424185619-1745488364-794895919-4004696415
+[1;90m   =================================================================================================[0m
+
+    SID: S-1-5-82-3523083409-3166425197-2710686136-60676903-3732534694
+[1;90m   =================================================================================================[0m
+
+    SID: S-1-5-18
+[1;90m   =================================================================================================[0m
+
+
+[1;36m����������͹ [1;32mCloud Credentials[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-inside-files[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mUnattend Files[0m
+
+[1;36m����������͹ [1;32mLooking for common SAM & SYSTEM backups[0m
+
+[1;36m����������͹ [1;32mLooking for McAfee Sitelist.xml Files[0m
+
+[1;36m����������͹ [1;32mCached GPP Passwords[0m
+
+[1;36m����������͹ [1;32mLooking for possible regs with creds[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#inside-the-registry[0m
+[1;90m    Not Found[0m
+[1;90m    Not Found[0m
+[1;90m    Not Found[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mLooking for possible password files in users homes[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-inside-files[0m
+    C:\Users\All Users\Microsoft\UEV\InboxTemplates\Roaming[0m[1;31mCredential[0mSettings.xml
+    C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\var\lib\pam\[0m[1;31mpassword[0m
+    C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\usr\share\pam\common-[0m[1;31mpassword[0m
+    C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\usr\share\doc\git\contrib\[0m[1;31m[0m[1;31mcredential[0m[0m\netrc\git-[0m[1;31m[0m[1;31mcredential[0m[0m-netrc
+    C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\usr\lib\git-core\git-[0m[1;31mcredential[0m-store
+    C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\usr\lib\git-core\git-[0m[1;31mcredential[0m-cache--daemon
+    C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\usr\lib\git-core\git-[0m[1;31mcredential[0m-cache
+    C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\usr\lib\git-core\git-[0m[1;31mcredential[0m
+    C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\lib\systemd\systemd-reply-[0m[1;31mpassword[0m
+    C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\etc\pam.d\common-[0m[1;31mpassword[0m
+    C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\bin\systemd-tty-ask-[0m[1;31mpassword[0m-agent
+    C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\bin\systemd-ask-[0m[1;31mpassword[0m
+
+[1;36m����������͹ [1;32mSearching for Oracle SQL Developer config files
+[0m
+
+[1;36m����������͹ [1;32mSlack files & directories[0m
+[33m  note: check manually if something is found[0m
+
+[1;36m����������͹ [1;32mLooking for LOL Binaries and Scripts (can be slow)[0m
+[1;36m� [1;34m [1;33mhttps://lolbas-project.github.io/[0m
+[33m   [!] Check skipped, if you want to run it, please specify '-lolbas' argument[0m
+
+[1;36m����������͹ [1;32mEnumerating Outlook download files
+[0m
+
+[1;36m����������͹ [1;32mEnumerating machine and user certificate files
+[0m
+  Issuer             : CN=WMSvc-SHA2-SECNOTES
+  Subject            : CN=WMSvc-SHA2-SECNOTES
+  ValidDate          : 6/21/2018 5:50:14 PM
+  ExpiryDate         : 6/18/2028 5:50:14 PM
+  HasPrivateKey      : True
+  StoreLocation      : LocalMachine
+  KeyExportable      : True
+  Thumbprint         : 3A05A81B1A3882E174C855D7FFE8E4B4DFC5D4E8
+
+[1;34m  Enhanced Key Usages[0m
+       Server Authentication
+[1;90m   =================================================================================================[0m
+
+
+[1;36m����������͹ [1;32mSearching known files that can contain creds in home[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-inside-files[0m
+
+[1;36m����������͹ [1;32mLooking for documents --limit 100--[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mOffice Most Recent Files -- limit 50
+[0m
+[1;34m  Last Access Date           User                                           Application           Document[0m
+
+[1;36m����������͹ [1;32mRecent files --limit 70--[0m
+[1;90m  [X] Exception: System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\WINDOWS\system32\config\systemprofile\AppData\Roaming\Microsoft\Windows\Recent'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileSystemEnumerableIterator`1.CommonInit()
+   at System.IO.FileSystemEnumerableIterator`1..ctor(String path, String originalUserPath, String searchPattern, SearchOption searchOption, SearchResultHandler`1 resultHandler, Boolean checkHost)
+   at System.IO.Directory.EnumerateFiles(String path, String searchPattern, SearchOption searchOption)
+   at winPEAS.KnownFileCreds.KnownFileCredsInfo.GetRecentFiles()[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mLooking inside the Recycle Bin for creds files[0m
+[1;36m� [1;34m [1;33mhttps://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-inside-files[0m
+[1;90m    Not Found[0m
+
+[1;36m����������͹ [1;32mSearching hidden files or folders in C:\Users home (can be slow)
+[0m
+[1;31m     C:\Users\Default User[0m
+[1;31m     C:\Users\Default[0m
+[1;31m     C:\Users\All Users[0m
+[1;31m     C:\Users\tyler\AppData\Local\Packages\Windows.ContactSupport_cw5n1h2txyewy\Windows.ContactSupport_10.0.10240.16384_neutral_neutral_cw5n1h2txyewy\ActivationStore\ActivationStore.dat.LOG2[0m
+[1;31m     C:\Users\tyler\AppData\Local\Packages\Windows.ContactSupport_cw5n1h2txyewy\Windows.ContactSupport_10.0.10240.16384_neutral_neutral_cw5n1h2txyewy\ActivationStore\ActivationStore.dat.LOG1[0m
+
+[1;36m����������͹ [1;32mSearching interesting files in other users home directories (can be slow)
+[0m
+[1;90m  [X] Exception: Object reference not set to an instance of an object.[0m
+
+[1;36m����������͹ [1;32mSearching executable files in non-default folders with write (equivalent) permissions (can be slow)[0m
+[1;31m     File Permissions "C:\inetpub\new-site\ghost.exe": tyler [WriteData/CreateFiles AllAccess][0m
+[1;31m     File Permissions "C:\php7\phpdbg.exe": Authenticated Users [WriteData/CreateFiles][0m
+[1;31m     File Permissions "C:\php7\php.exe": Authenticated Users [WriteData/CreateFiles][0m
+[1;31m     File Permissions "C:\php7\php-win.exe": Authenticated Users [WriteData/CreateFiles][0m
+[1;31m     File Permissions "C:\php7\php-cgi.exe": Authenticated Users [WriteData/CreateFiles][0m
+[1;31m     File Permissions "C:\php7\deplister.exe": Authenticated Users [WriteData/CreateFiles][0m
+[1;31m     File Permissions "C:\Users\tyler\secnotes_contacts\check-messages.ps1": tyler [AllAccess][0m
+[1;31m     File Permissions "C:\Users\tyler\secnotes_contacts\check-messages-orig.ps1": tyler [AllAccess][0m
+[1;31m     File Permissions "C:\Users\tyler\Desktop\winpeas.exe": tyler [AllAccess][0m
+[1;31m     File Permissions "C:\Users\tyler\cleanup\cleanup.ps1": tyler [AllAccess][0m
+[1;31m     File Permissions "C:\Users\tyler\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\startup.cmd": tyler [AllAccess][0m
+[1;31m     File Permissions "C:\Users\tyler\AppData\Local\Microsoft\WindowsApps\ubuntu1804.exe": tyler [AllAccess][0m
+[1;31m     File Permissions "C:\Users\tyler\AppData\Local\Microsoft\WindowsApps\MicrosoftEdge.exe": tyler [AllAccess][0m
+[1;31m     File Permissions "C:\Users\tyler\AppData\Local\Microsoft\WindowsApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge.exe": tyler [AllAccess][0m
+[1;31m     File Permissions "C:\Users\tyler\AppData\Local\Microsoft\OneDrive\OneDriveStandaloneUpdater.exe": tyler [AllAccess][0m
+[1;31m     File Permissions "C:\Users\tyler\AppData\Local\Microsoft\OneDrive\OneDrive.exe": tyler [AllAccess][0m
+[1;31m     File Permissions "C:\Distros\Ubuntu\ubuntu.exe": Authenticated Users [WriteData/CreateFiles][0m
+[1;31m     File Permissions "C:\$Recycle.Bin\S-1-5-21-1791094074-1363918840-4199337083-1002\$RGSTCFH.ps1": Users [AppendData/CreateDirectories][0m
+[1;31m     File Permissions "C:\$Recycle.Bin\S-1-5-21-1791094074-1363918840-4199337083-1002\$IGSTCFH.ps1": Users [AppendData/CreateDirectories][0m
+
+[1;36m����������͹ [1;32mLooking for Linux shells/distributions - wsl.exe, bash.exe[0m
+[1;31m    C:\Windows\System32\wsl.exe[0m
+[1;31m    C:\Windows\System32\bash.exe[0m
+[1;31m[0m
+[1;31m    Found installed WSL distribution(s) - listed below[0m
+    Run [0m[1;31mlinpeas.sh[0m in your WSL distribution(s) home folder(s).
+
+    [0m[1;31mDistribution[0m:      "Ubuntu-18.04"
+    [0m[1;31mRoot directory[0m:    "C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs"
+    [0m[1;31mRun command[0m:       wsl.exe --distribution "Ubuntu-18.04"
+[1;90m   =================================================================================================[0m
+
+[1;34m  Running linpeas.sh in the default distribution
+  Using linpeas.sh URL: https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh[0m
+[33m   [!] Check skipped, if you want to run it, please specify '-linpeas=[url]' argument[0m
+
+
+[1;36m�����������������������������������͹ [1;32mFile Analysis[1;36m �������������������������������������[0m
+
+[1;36m����������͹ [1;32mFound MySQL Files[0m
+Folder: C:\Users\All Users\MySQL\MySQL Server 8.0\Data\[0m[1;31mmysql[0m
+Folder: C:\Users\All Users\[0m[1;31mMySQL[0m
+Folder: C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\usr\share\bash-completion\completions\[0m[1;31mmysql[0m
+Folder: C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\etc\apparmor.d\abstractions\[0m[1;31mmysql[0m
+Folder: C:\Program Files\MySQL\MySQL Server 8.0\include\[0m[1;31mmysql[0m
+Folder: C:\Program Files\[0m[1;31mMySQL[0m
+Folder: C:\Program Files (x86)\[0m[1;31mMySQL[0m
+
+[1;36m����������͹ [1;32mFound PHP_files Files[0m
+File: C:\inetpub\wwwroot\[0m[1;31mdb.php[0m
+
+[1;36m����������͹ [1;32mFound Rsync Files[0m
+File: C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\usr\share\doc\rsync\examples\[0m[1;31mrsyncd.conf[0m
+#	[0m[1;31mauth users =[0m 
+
+#	[0m[1;31msecrets file = /etc/rsyncd.secrets[0m
+
+
+[1;36m����������͹ [1;32mFound PAM Auth Files[0m
+File: C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\etc\pam.d\[0m[1;31msshd[0m
+[0m[1;31m
+[0m
+[0m[1;31m@include common-auth
+[0m
+[0m[1;31m
+[0m
+[0m[1;31maccount    required     pam_nologin.so
+[0m
+[0m[1;31m
+[0m
+[0m[1;31m
+[0m
+[0m[1;31m@include common-account
+[0m
+[0m[1;31m
+[0m
+[0m[1;31msession [success=ok ignore=ignore module_unknown=ignore default=bad]        pam_selinux.so close
+[0m
+[0m[1;31m
+[0m
+[0m[1;31msession    required     pam_loginuid.so
+[0m
+[0m[1;31m
+[0m
+[0m[1;31msession    optional     pam_keyinit.so force revoke
+[0m
+[0m[1;31m
+[0m
+[0m[1;31m@include common-session
+[0m
+[0m[1;31m
+[0m
+[0m[1;31msession    optional     pam_motd.so  motd=/run/motd.dynamic
+[0m
+[0m[1;31msession    optional     pam_motd.so noupdate
+[0m
+[0m[1;31m
+[0m
+[0m[1;31msession    optional     pam_mail.so standard noenv # [1]
+[0m
+[0m[1;31m
+[0m
+[0m[1;31msession    required     pam_limits.so
+[0m
+[0m[1;31m
+[0m
+[0m[1;31msession    required     pam_env.so # [1]
+[0m
+[0m[1;31msession    required     pam_env.so user_readenv=1 envfile=/etc/default/locale
+[0m
+[0m[1;31m
+[0m
+[0m[1;31msession [success=ok ignore=ignore module_unknown=ignore default=bad]        pam_selinux.so open
+[0m
+[0m[1;31m
+[0m
+[0m[1;31m@include common-password[0m
