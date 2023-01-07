@@ -1,0 +1,14 @@
+200      GET       32l       55w      703c http://10.10.10.203/
+301      GET        2l       10w      157c http://10.10.10.203/aspnet_client => http://10.10.10.203/aspnet_client/
+403      GET       29l       92w     1233c http://10.10.10.203/aspnet_client/
+301      GET        2l       10w      157c http://10.10.10.203/Aspnet_client => http://10.10.10.203/Aspnet_client/
+403      GET       29l       92w     1233c http://10.10.10.203/Aspnet_client/
+301      GET        2l       10w      168c http://10.10.10.203/aspnet_client/system_web => http://10.10.10.203/aspnet_client/system_web/
+403      GET       29l       92w     1233c http://10.10.10.203/aspnet_client/system_web/
+301      GET        2l       10w      157c http://10.10.10.203/aspnet_Client => http://10.10.10.203/aspnet_Client/
+403      GET       29l       92w     1233c http://10.10.10.203/aspnet_Client/
+301      GET        2l       10w      168c http://10.10.10.203/Aspnet_client/system_web => http://10.10.10.203/Aspnet_client/system_web/
+403      GET       29l       92w     1233c http://10.10.10.203/Aspnet_client/system_web/
+301      GET        2l       10w      157c http://10.10.10.203/ASPNET_CLIENT => http://10.10.10.203/ASPNET_CLIENT/
+301      GET        2l       10w      168c http://10.10.10.203/aspnet_Client/system_web => http://10.10.10.203/aspnet_Client/system_web/
+403      GET       29l       92w     1233c http://10.10.10.203/aspnet_Client/system_web/

@@ -1,0 +1,7 @@
+$user = "nathen" 
+# NOTE: We cant have my password here!!!
+$plain = ""
+$pwd = ($plain | ConvertTo-SecureString)
+$Credential = New-Object System.Management.Automation.PSCredential $user, $pwd
+$args = "Copy-Site.ps1"
+Start-Process powershell.exe -Credential $Credential -ArgumentList ("-file $args")

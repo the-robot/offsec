@@ -105,7 +105,7 @@
 - [ ] Remote
 - [ ] Fuse
 - [ ] Omni
-- [ ] Worker
+- [x] Worker
 - [ ] Love
 - [ ] Intelligence (Active Directory)
 - [ ] APT
