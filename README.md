@@ -117,7 +117,7 @@
 - [x] Timelapse (Active Directory)
 - [x] StreamIO (Active Directory)
 - [x] Scrambled (Active Directory)
-- [ ] Resolute (Active Directory)
+- [x] Resolute (Active Directory)
 - [ ] Cascade (Active Directory)
 
 ## Other boxes
