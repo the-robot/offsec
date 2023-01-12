@@ -16,6 +16,7 @@
 - [Windows cheetsheet](https://0xsp.com/offensive/red-team-cheatsheet/)
 - [Windows file transfer methods](https://academy.hackthebox.com/course/preview/file-transfers/windows-file-transfer-methods)
 - [PowerView tips and tricks](https://gist.github.com/the-robot/c0396e87dd2bab8c4ca0ac80e70c95b4)
+- [Exploitdb Bin Sploits](https://gitlab.com/exploit-database/exploitdb-bin-sploits) - pre-compiled list of exploitdb binaries
 
 ### Active Directory
 
