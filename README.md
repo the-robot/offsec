@@ -136,6 +136,7 @@
 - [x] [THM: Attacktive Directory](https://tryhackme.com/room/attacktivedirectory)
 - [x] [THM: Hacking Active Directory](https://tryhackme.com/module/hacking-active-directory)
     - [draw.io diagram to understand the AD attack easier](https://github.com/the-robot/hackthebox/blob/master/THM/compromising-active-directory/THM%20-%20Hacking%20AD.pdf)
+- [ ] [Active Directory 101 by HackTheBox](https://app.hackthebox.com/tracks/Active-Directory-101)
 
 ![AD attack diagram](https://raw.githubusercontent.com/the-robot/hackthebox/master/THM/compromising-active-directory/AD%20Privesc.svg)
 
