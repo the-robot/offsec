@@ -99,11 +99,11 @@
 - [x] Forest (Active Directory)
 - [ ] BankRobber
 - [x] secnotes
-- [ ] Suana (Active Directory)
+- [x] Suana (Active Directory)
 - [ ] Bastion
 - [ ] Buff
 - [ ] Servmon
-- [ ] Active (Active Directory)
+- [x] Active (Active Directory)
 - [ ] Remote
 - [ ] Fuse
 - [ ] Omni
@@ -113,11 +113,12 @@
 - [ ] APT
 - [ ] Object (Active Directory)
 - [ ] Support
-- [ ] Acute (Active Directory)
+- [ ] Acute
 - [x] Timelapse (Active Directory)
 - [x] StreamIO (Active Directory)
 - [x] Scrambled (Active Directory)
-
+- [ ] Resolute (Active Directory)
+- [ ] Cascade (Active Directory)
 
 ## Other boxes
 
