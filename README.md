@@ -95,9 +95,10 @@
 - [x] jerry
 - [x] conceal
 - [x] chatterbox
-- [ ] Forest (Active Directory)
+- [x] Forest (Active Directory)
 - [ ] BankRobber
 - [x] secnotes
+- [ ] Suana (Active Directory)
 - [ ] Bastion
 - [ ] Buff
 - [ ] Servmon
