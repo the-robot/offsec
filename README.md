@@ -118,7 +118,7 @@
 - [x] StreamIO (Active Directory)
 - [x] Scrambled (Active Directory)
 - [x] Resolute (Active Directory)
-- [ ] Cascade (Active Directory)
+- [x] Cascade (Active Directory)
 
 ## Other boxes
 
