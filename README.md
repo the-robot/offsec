@@ -80,6 +80,7 @@
 - [x] Forge
 - [x] Horizontall
 - [x] Shibboleth
+- [x] Paper
 
 ## tjnull Window boxes
 
