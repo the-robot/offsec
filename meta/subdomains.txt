@@ -1,0 +1,11 @@
+Target: http://artcorp.htb/
+Total requests: 4989
+==================================================================
+ID    Response   Lines      Word         Chars          Request    
+==================================================================
+01492:  C=200      9 L	      24 W	    247 Ch	  "dev01"
+
+Total time: 0
+Processed Requests: 4989
+Filtered Requests: 4988
+Requests/sec.: 0

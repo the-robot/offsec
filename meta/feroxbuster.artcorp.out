@@ -1,0 +1,11 @@
+200      GET       86l      263w     4427c http://artcorp.htb/
+301      GET        7l       20w      234c http://artcorp.htb/assets => http://artcorp.htb/assets/
+301      GET        7l       20w      231c http://artcorp.htb/css => http://artcorp.htb/css/
+301      GET        7l       20w      238c http://artcorp.htb/assets/img => http://artcorp.htb/assets/img/
+200      GET       86l      263w     4427c http://artcorp.htb/
+200      GET       86l      263w     4427c http://artcorp.htb/index.html
+403      GET        7l       20w      199c http://artcorp.htb/.html
+301      GET        7l       20w      234c http://artcorp.htb/assets => http://artcorp.htb/assets/
+301      GET        7l       20w      238c http://artcorp.htb/assets/img => http://artcorp.htb/assets/img/
+403      GET        7l       20w      199c http://artcorp.htb/assets/.html
+301      GET        7l       20w      231c http://artcorp.htb/css => http://artcorp.htb/css/
