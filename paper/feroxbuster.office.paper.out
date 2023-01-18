@@ -1,0 +1,41 @@
+200      GET      235l     1209w        0c http://office.paper/
+301      GET        1l        0w        0c http://office.paper/index.php => http://office.paper/
+301      GET        7l       20w      239c http://office.paper/wp-content => http://office.paper/wp-content/
+200      GET        0l        0w        0c http://office.paper/wp-content/index.php
+301      GET        7l       20w      246c http://office.paper/wp-content/themes => http://office.paper/wp-content/themes/
+301      GET        7l       20w      247c http://office.paper/wp-content/uploads => http://office.paper/wp-content/uploads/
+200      GET        0l        0w        0c http://office.paper/wp-content/themes/index.php
+200      GET       74l      225w        0c http://office.paper/wp-login.php
+301      GET        7l       20w      235c http://office.paper/manual => http://office.paper/manual/
+301      GET        7l       20w      247c http://office.paper/wp-content/plugins => http://office.paper/wp-content/plugins/
+301      GET        7l       20w      240c http://office.paper/wp-includes => http://office.paper/wp-includes/
+301      GET        7l       20w      242c http://office.paper/manual/images => http://office.paper/manual/images/
+301      GET        7l       20w      239c http://office.paper/manual/faq => http://office.paper/manual/faq/
+301      GET        7l       20w      240c http://office.paper/manual/misc => http://office.paper/manual/misc/
+301      GET        7l       20w      247c http://office.paper/wp-includes/images => http://office.paper/wp-includes/images/
+200      GET        0l        0w        0c http://office.paper/wp-content/plugins/index.php
+500      GET        0l        0w        0c http://office.paper/wp-includes/rss.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://office.paper/manual/images (Apache)
+200      GET        0l        0w        0c http://office.paper/wp-includes/category.php
+500      GET        0l        0w        0c http://office.paper/wp-includes/media.php
+200      GET        0l        0w        0c http://office.paper/wp-includes/user.php
+301      GET        7l       20w      244c http://office.paper/manual/programs => http://office.paper/manual/programs/
+301      GET        7l       20w      253c http://office.paper/wp-includes/images/media => http://office.paper/wp-includes/images/media/
+200      GET        0l        0w        0c http://office.paper/wp-includes/version.php
+200      GET        0l        0w        0c http://office.paper/wp-includes/comment.php
+301      GET        7l       20w      244c http://office.paper/wp-includes/css => http://office.paper/wp-includes/css/
+200      GET        0l        0w        0c http://office.paper/wp-includes/template.php
+200      GET        0l        0w        0c http://office.paper/wp-includes/date.php
+200      GET        0l        0w        0c http://office.paper/wp-includes/taxonomy.php
+200      GET        0l        0w        0c http://office.paper/wp-includes/theme.php
+301      GET        7l       20w      247c http://office.paper/wp-includes/blocks => http://office.paper/wp-includes/blocks/
+500      GET        0l        0w        0c http://office.paper/wp-includes/blocks/rss.php
+500      GET        0l        0w        0c http://office.paper/wp-includes/blocks/archives.php
+500      GET        0l        0w        0c http://office.paper/wp-includes/blocks/calendar.php
+500      GET        0l        0w        0c http://office.paper/wp-includes/blocks/categories.php
+301      GET        7l       20w      248c http://office.paper/wp-includes/widgets => http://office.paper/wp-includes/widgets/
+301      GET        7l       20w      239c http://office.paper/manual/mod => http://office.paper/manual/mod/
+200      GET        0l        0w        0c http://office.paper/wp-includes/cron.php
+200      GET      202l     1581w    11358c http://office.paper/manual/LICENSE
+500      GET        0l        0w        0c http://office.paper/wp-includes/blocks/block.php
+200      GET        6l       15w        0c http://office.paper/wp-trackback.php
