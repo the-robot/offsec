@@ -1,0 +1,27 @@
+# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
+if [ &#34;${PS1-}&#34; ]; then
+  if [ &#34;${BASH-}&#34; ] &amp;&amp; [ &#34;$BASH&#34; != &#34;/bin/sh&#34; ]; then
+    # The file bash.bashrc already sets the default PS1.
+    # PS1=&#39;\h:\w\$ &#39;
+    if [ -f /etc/bash.bashrc ]; then
+      . /etc/bash.bashrc
+    fi
+  else
+    if [ &#34;`id -u`&#34; -eq 0 ]; then
+      PS1=&#39;# &#39;
+    else
+      PS1=&#39;$ &#39;
+    fi
+  fi
+fi
+
+if [ -d /etc/profile.d ]; then
+  for i in /etc/profile.d/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi

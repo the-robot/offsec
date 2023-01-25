@@ -1,0 +1,12 @@
+NAME=&#34;Ubuntu&#34;
+VERSION=&#34;20.04.2 LTS (Focal Fossa)&#34;
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME=&#34;Ubuntu 20.04.2 LTS&#34;
+VERSION_ID=&#34;20.04&#34;
+HOME_URL=&#34;https://www.ubuntu.com/&#34;
+SUPPORT_URL=&#34;https://help.ubuntu.com/&#34;
+BUG_REPORT_URL=&#34;https://bugs.launchpad.net/ubuntu/&#34;
+PRIVACY_POLICY_URL=&#34;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&#34;
+VERSION_CODENAME=focal
+UBUNTU_CODENAME=focal

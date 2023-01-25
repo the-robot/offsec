@@ -1,0 +1,29 @@
+# The MariaDB configuration file
+#
+# The MariaDB/MySQL tools read configuration files in the following order:
+# 1. &#34;/etc/mysql/mariadb.cnf&#34; (this file) to set global defaults,
+# 2. &#34;/etc/mysql/conf.d/*.cnf&#34; to set global options.
+# 3. &#34;/etc/mysql/mariadb.conf.d/*.cnf&#34; to set MariaDB-only options.
+# 4. &#34;~/.my.cnf&#34; to set user-specific options.
+#
+# If the same option is defined multiple times, the last one will apply.
+#
+# One can use all long options that the program supports.
+# Run program with --help to get a list of available options and with
+# --print-defaults to see which it would actually understand and use.
+
+#
+# This group is read both both by the client and the server
+# use it for options that affect everything
+#
+[client-server]
+
+# Import all .cnf files from configuration directory
+!includedir /etc/mysql/conf.d/
+!includedir /etc/mysql/mariadb.conf.d/
+
+[client]
+database = dev
+user = djangouser
+password = DjangoSuperPassword
+default-character-set = utf8
