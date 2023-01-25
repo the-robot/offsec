@@ -1,4 +1,6 @@
-# HackTheBox writeups
+# Offsec
+
+It consists of machines I did for the OSCP exam preperation and also HackTheBox writeups.
 
 ![](https://geps.dev/progress/56)  
 **49/87** done. 
@@ -27,6 +29,10 @@
 
 - [OSCP — CRACKING THE NEW PATTERN](https://jaiguptanick.github.io/Blog/blog/OSCP_Cracking_New_Pattern_Walkthrough/)
 - [OSCP 2022 — Tips To Help You Pass: K.I.S.S.](https://medium.com/@0xP/oscp-2022-tips-to-help-you-pass-dddd3563967e)
+
+<br/>
+
+# HackTheBox writeups
 
 ## tjnull Linux boxes
 
@@ -130,6 +136,84 @@
 - [x] RedPanda
 - [x] Shoppy
 - [x] UpDown
+
+<br/>
+
+# Proving Grounds
+
+## Linux
+
+- [x] ClamAV
+- [x] Wombo
+- [ ] ~~Payday~~ (retried - [can read writeup here](https://medium.com/@vivek-kumar/offensive-security-proving-grounds-walk-through-payday-639f5128b0ca))
+- [x] Fail
+- [x] Nibbles
+- [x] Banzai
+- [x] Hunit
+- [x] Dibble
+- [x] Zino
+- [x] Hetemit
+- [x] Peppo
+- [ ] Postfish
+- [x] Malbec
+- [x] Sybaris
+- [ ] ~~Hawat~~ (retried - [can read writeup here](https://bing0o.github.io/posts/pg-hawat/))
+- [x] ZenPhoto
+- [x] Readys
+- [x] Nukem
+- [x] Sorcerer
+- [x] Pelican
+- [x] Snookums
+- [x] Exfiltrated
+- [x] Walla
+- [x] Voip
+- [x] ERP
+- [x] Depreciated
+- [x] Wheels
+
+## Windows
+
+- [x] Nickel
+- [x] Slort
+- [x] Authby
+- [x] Jacko
+- [x] MeatHead
+- [x] UT99
+- [x] MedJed
+- [ ] ~~Algeron~~ (retried - [can read writeup here](https://benheater.com/proving-grounds-algernon/))
+- [x] Billyboss
+- [ ] ~~Kevin~~ (retried - [can read writeup here](https://dylanrholloway.com/proving-grounds-kevin-write-up/))
+- [ ] ~~Metallus~~ (retried)
+- [x] Hutch (Active Directory)
+- [x] Heist (Active Directory)
+- [ ] Vault (Active Directory)
+- [x] Shenzi
+- [x] DVR4
+- [x] Craft
+- [ ] ~~Hepet~~ (retried)
+- [x] Squid
+- [ ] ~~compromised~~ (retried - [can read writeup here](https://viperone.gitbook.io/pentest-everything/writeups/pg-practice/windows/compromised))
+- [ ] ~~robust~~ (retried)
+- [x] resourced (Active Directory)
+- [x] Craft2
+- [x] Access (Active Directory)
+
+## Harder Boxes
+
+- [x] Bratarina - Linux
+- [x] Internal - Windows
+- [x] Clyde - Linux
+- [ ] Vector
+- [ ] Shifty
+- [x] XposedAPI - Linux
+- [x] Helpdesk - Windows
+- [x] Twiggy - Linux
+- [ ] ~~Pebbles~~ (retried - [can read writeup here](https://pentesting.zeyu2001.com/proving-grounds/warm-up/pebbles)) - Linux
+- [ ] ~~Panic~~ (retired - buffer overflow)
+- [ ] CookieCutter
+- [x] Tico - Linux
+- [ ] Zipper
+- [ ] Thor
 
 <br/>
 
