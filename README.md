@@ -229,6 +229,7 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 - [ ] [Active Directory 101 by HackTheBox](https://app.hackthebox.com/tracks/Active-Directory-101)
 
 ![AD attack diagram](https://raw.githubusercontent.com/the-robot/hackthebox/master/THM/compromising-active-directory/AD%20Privesc.svg)
+- [Pentesting Active Directory Cheatsheet](https://github.com/the-robot/offsec/blob/master/IMAGES/PentestingAD.png?raw=true)
 
 <br/>
 
