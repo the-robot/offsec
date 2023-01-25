@@ -93,6 +93,7 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 - [x] Paper
 - [x] Meta
 - [x] Stocker
+- [x] Soccer
 
 ## tjnull Window boxes
 
