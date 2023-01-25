@@ -238,4 +238,4 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 
 #### Privilege escalation
 
-- [jailbreak-rbash](https://github.com/the-robot/hackthebox/blob/master/scripts/pe/jailbreak-rbash.sh) - command to find out what commands are available that has a potential of spawning a proper shell, commands are taken from [GTFOBins with +Shell](https://gtfobins.github.io/#+Shell) 
+- [jailbreak-rbash](https://github.com/the-robot/hackthebox/blob/master/SCRIPTS/pe/jailbreak-rbash.sh) - command to find out what commands are available that has a potential of spawning a proper shell, commands are taken from [GTFOBins with +Shell](https://gtfobins.github.io/#+Shell) 
