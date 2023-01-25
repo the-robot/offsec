@@ -2,8 +2,8 @@
 
 It consists of machines I did for the OSCP exam preperation and also HackTheBox writeups.
 
-![](https://geps.dev/progress/56)  
-**49/87** done. 
+![](https://geps.dev/progress/77)  
+**122/160** done. 
 
 **Active boxes are password protected.**
 
