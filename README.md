@@ -92,6 +92,7 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 - [x] Shibboleth
 - [x] Paper
 - [x] Meta
+- [x] Stocker
 
 ## tjnull Window boxes
 
