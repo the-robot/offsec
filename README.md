@@ -30,6 +30,10 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 - [OSCP — CRACKING THE NEW PATTERN](https://jaiguptanick.github.io/Blog/blog/OSCP_Cracking_New_Pattern_Walkthrough/)
 - [OSCP 2022 — Tips To Help You Pass: K.I.S.S.](https://medium.com/@0xP/oscp-2022-tips-to-help-you-pass-dddd3563967e)
 
+### HTB Machine Summary and Mock Exam Generator
+
+- [Offsec Machine Summary](https://docs.google.com/spreadsheets/d/18r9XQZrtxxADBotsvSYpT6-hZJWvDBXLK5zufNaYlUU/edit?usp=sharing) - It can generate random machines to do as mock exam. Machines are from HackTheBox, Proving Grounds and PWK Lab.
+
 <br/>
 
 # HackTheBox writeups
