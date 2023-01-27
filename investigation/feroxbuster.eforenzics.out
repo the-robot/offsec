@@ -1,0 +1,10 @@
+200      GET      208l      629w    10957c http://eforenzics.htb/
+301      GET        9l       28w      317c http://eforenzics.htb/assets => http://eforenzics.htb/assets/
+200      GET      208l      629w    10957c http://eforenzics.htb/
+403      GET        9l       28w      279c http://eforenzics.htb/.php
+301      GET        9l       28w      317c http://eforenzics.htb/assets => http://eforenzics.htb/assets/
+200      GET       82l      198w        0c http://eforenzics.htb/upload.php
+301      GET        9l       28w      321c http://eforenzics.htb/assets/css => http://eforenzics.htb/assets/css/
+301      GET        9l       28w      322c http://eforenzics.htb/assets/imgs => http://eforenzics.htb/assets/imgs/
+301      GET        9l       28w      320c http://eforenzics.htb/assets/js => http://eforenzics.htb/assets/js/
+301      GET        9l       28w      325c http://eforenzics.htb/assets/vendors => http://eforenzics.htb/assets/vendors/

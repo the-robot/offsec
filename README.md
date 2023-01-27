@@ -143,6 +143,7 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 - [x] Stocker
 - [x] Soccer
 - [x] Precious
+- [x] Investigation
 
 <br/>
 
