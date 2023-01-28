@@ -1,0 +1,11 @@
+Target: http://hat-valley.htb/
+Total requests: 4989
+==================================================================
+ID    Response   Lines      Word         Chars          Request    
+==================================================================
+00081:  C=401      7 L	      12 W	    188 Ch	  "store"
+
+Total time: 0
+Processed Requests: 1690
+Filtered Requests: 1689
+Requests/sec.: 0

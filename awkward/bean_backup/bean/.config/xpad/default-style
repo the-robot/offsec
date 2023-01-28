@@ -1,0 +1,23 @@
+decorations 0
+height 200
+width 200
+confirm_destroy 1
+edit_lock 0
+sticky_on_start 0
+tray_enabled 1
+tray_click_configuration 1
+back rgb(255,238,153)
+use_back 1
+text rgb(0,0,0)
+use_text 1
+fontname Sans 9
+toolbar 1
+auto_hide_toolbar 1
+scrollbar 1
+buttons New, Delete, Separator, Cut, Copy, Paste, Separator, Undo, Redo
+autostart_wait_systray 1
+autostart_delay 0
+autostart_new_pad 0
+autostart_display_pads 2
+hide_from_taskbar 0
+hide_from_task_switcher 0
