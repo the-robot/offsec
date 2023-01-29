@@ -1,5 +1,0 @@
-christopher.jones:chris123  // hat-valley.htb/hr
-bean.hill:014mrbeanrules!#P // SSH
-admin:014mrbeanrules!#P     // store.hat-valley.htb
-
-123beany123  // jwt secret

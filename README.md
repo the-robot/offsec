@@ -144,6 +144,7 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 - [x] Soccer
 - [x] Precious
 - [x] Investigation
+- [x] Awkward
 
 <br/>
 

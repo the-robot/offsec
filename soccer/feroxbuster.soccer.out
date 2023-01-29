@@ -1,3 +1,0 @@
-200      GET      147l      526w     6917c http://soccer.htb/
-301      GET        7l       12w      178c http://soccer.htb/tiny => http://soccer.htb/tiny/
-301      GET        7l       12w      178c http://soccer.htb/tiny/uploads => http://soccer.htb/tiny/uploads/
