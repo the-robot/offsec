@@ -146,6 +146,8 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 - [x] Investigation
 - [x] Awkward
 - [x] Forgot
+- [x] Mentor
+- [ ] BroScience
 
 <br/>
 
