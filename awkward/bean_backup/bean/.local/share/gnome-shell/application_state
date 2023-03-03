@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="xpad.desktop" score="10" last-seen="1663242380"/>
+    <application id="gnome-initial-setup.desktop" score="1" last-seen="1663241771"/>
+    <application id="org.gnome.Terminal.desktop" score="69" last-seen="1663242380"/>
+  </context>
+</application-state>
