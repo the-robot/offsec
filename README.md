@@ -34,6 +34,10 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 
 - [Offsec Machine Summary](https://docs.google.com/spreadsheets/d/18r9XQZrtxxADBotsvSYpT6-hZJWvDBXLK5zufNaYlUU/edit?usp=sharing) - It can generate random machines to do as mock exam. Machines are from HackTheBox, Proving Grounds and PWK Lab.
 
+### HTB CBBH Preperation
+
+- [CBBH Prep](https://github.com/the-robot/offsec/tree/master/CBBH)
+
 <br/>
 
 # HackTheBox writeups
