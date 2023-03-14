@@ -1,0 +1,7 @@
+302      GET       12l       22w      346c http://10.10.11.153/ => http://10.10.11.153/login
+200      GET      172l      372w     6104c http://10.10.11.153/login
+500      GET      217l    17833w        0c http://10.10.11.153/register
+301      GET        9l       28w      310c http://10.10.11.153/css => http://10.10.11.153/css/
+301      GET        9l       28w      309c http://10.10.11.153/js => http://10.10.11.153/js/
+301      GET        9l       28w      312c http://10.10.11.153/fonts => http://10.10.11.153/fonts/
+403      GET        9l       28w      277c http://10.10.11.153/server-status
