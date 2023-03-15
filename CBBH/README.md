@@ -180,5 +180,5 @@
 - [ ] Apocalyst
 - [ ] Tenet
 - [ ] Pressed
-- [ ] SteamCloud
+- [x] SteamCloud
 - [x] Ransom
