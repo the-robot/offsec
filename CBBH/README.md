@@ -178,7 +178,7 @@
 - [ ] Unicode
 - [ ] Backdoor
 - [ ] Apocalyst
-- [ ] Tenet
+- [x] Tenet
 - [ ] Pressed
 - [x] SteamCloud
 - [x] Ransom
