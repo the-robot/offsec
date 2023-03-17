@@ -177,7 +177,7 @@
 - [ ] Pikaboo
 - [ ] Unicode
 - [ ] Backdoor
-- [ ] Apocalyst
+- [x] Apocalyst
 - [x] Tenet
 - [ ] Pressed
 - [x] SteamCloud

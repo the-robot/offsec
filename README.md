@@ -156,6 +156,7 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 - [x] Ransom
 - [x] SteamCloud
 - [x] Tenet
+- [x] Apocalyst
 
 <br/>
 
