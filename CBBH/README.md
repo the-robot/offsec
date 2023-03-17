@@ -176,7 +176,7 @@
 - [ ] Player
 - [ ] Pikaboo
 - [ ] Unicode
-- [ ] Backdoor
+- [x] Backdoor
 - [x] Apocalyst
 - [x] Tenet
 - [ ] Pressed

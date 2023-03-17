@@ -157,6 +157,8 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 - [x] SteamCloud
 - [x] Tenet
 - [x] Apocalyst
+- [x] Backdoor
+- [ ] LaCasaDePapel
 
 <br/>
 
