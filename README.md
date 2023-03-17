@@ -159,6 +159,7 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 - [x] Apocalyst
 - [x] Backdoor
 - [ ] LaCasaDePapel
+- [x] Inject
 
 <br/>
 
