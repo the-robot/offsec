@@ -161,6 +161,7 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 - [ ] LaCasaDePapel
 - [x] Inject
 - [x] Agile
+- [x] Bagel
 
 <br/>
 
