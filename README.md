@@ -163,6 +163,7 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 - [x] Bagel
 - [x] Escape
 - [x] Interface
+- [x] Vessel
 
 <br/>
 
