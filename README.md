@@ -5,7 +5,7 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 ![](https://geps.dev/progress/78)  
 **131/168** done. 
 
-**Active boxes are password protected.**
+**Active boxes and Fortresses are password protected.**
 
 <br/>
 
