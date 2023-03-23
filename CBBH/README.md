@@ -2,7 +2,7 @@
 
 ## Fortress
 
-- [ ] Akerva
+- [x] Akerva
 
 ## Pro Labs
 

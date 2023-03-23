@@ -166,6 +166,10 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 - [x] Vessel
 - [x] Pollution
 
+## Fortresses
+
+- [x] Akerva
+
 <br/>
 
 # Proving Grounds
