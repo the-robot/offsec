@@ -15,7 +15,7 @@
 - [x] Tenet
 - [x] SteamCloud
 - [x] Ransom
-- [ ] Nineveh
+- [x] Nineveh
 - [ ] Forge
 - [ ] Meta
 - [ ] Academy

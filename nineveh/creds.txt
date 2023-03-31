@@ -1,0 +1,2 @@
+admin:1q2w3e4r5t  // /department/login.php
+password123 // phpLiteAdmin
