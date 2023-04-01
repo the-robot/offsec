@@ -19,7 +19,7 @@
 - [ ] Forge
 - [ ] Meta
 - [x] Academy
-- [ ] Horizontall
+- [x] Horizontall
 - [x] BountyHunter
 
 ## Extra
