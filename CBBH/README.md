@@ -20,7 +20,7 @@
 - [ ] Meta
 - [x] Academy
 - [ ] Horizontall
-- [ ] BountyHunter
+- [x] BountyHunter
 
 ## Extra
 - [ ] [PortSwigger Web Academy](https://portswigger.net/web-security/all-labs)
