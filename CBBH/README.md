@@ -18,7 +18,7 @@
 - [x] Nineveh
 - [ ] Forge
 - [ ] Meta
-- [ ] Academy
+- [x] Academy
 - [ ] Horizontall
 - [ ] BountyHunter
 

@@ -165,6 +165,7 @@ It consists of machines I did for the OSCP exam preperation and also HackTheBox 
 - [x] Interface
 - [x] Vessel
 - [x] Pollution
+- [x] Academy
 
 ## Fortresses
 
