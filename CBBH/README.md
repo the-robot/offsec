@@ -16,7 +16,7 @@
 - [x] SteamCloud
 - [x] Ransom
 - [x] Nineveh
-- [ ] Forge
+- [x] Forge
 - [ ] Meta
 - [x] Academy
 - [x] Horizontall
