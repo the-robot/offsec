@@ -17,7 +17,7 @@
 - [x] Ransom
 - [x] Nineveh
 - [x] Forge
-- [ ] Meta
+- [x] Meta
 - [x] Academy
 - [x] Horizontall
 - [x] BountyHunter
